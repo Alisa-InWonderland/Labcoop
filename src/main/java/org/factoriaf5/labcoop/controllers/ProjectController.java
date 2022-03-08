@@ -1,5 +1,6 @@
-package org.factoriaf5.labcoop;
+package org.factoriaf5.labcoop.controllers;
 
+import org.factoriaf5.labcoop.Project;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,7 @@ public class ProjectController {
                 new Project("21F008", "Formació Socis",  "Som Energía", "", "Aprobada", "Contracte", "petit", "ess", "Set22", "Gen22"),
                 new Project("21F012", "Tallers Viertuals", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22"),
                 new Project("", "Singulars Cooperative Joves", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22"),
-                new Project("", "Empendroria verda", "Espai ambiental", "","Pendent", "Contracte", "Mini", "ess", "", ""),
+                new Project("", "Empendoria verda", "Espai ambiental", "","Pendent", "Contracte", "Mini", "ess", "", ""),
                 new Project("", "Formació y emprendimiento verde", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21"),
                 new Project("", "Juntes Emprenem amb", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21"),
                 new Project("", "Escola popular d'economia feminista", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "")
