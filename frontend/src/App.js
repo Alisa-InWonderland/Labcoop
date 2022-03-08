@@ -1,11 +1,11 @@
 import './App.css';
 /*import  { Menu } from './Components/Menu/index'*/
-import {ProjectList} from "./Components/ProjectList/index";
-import {ProjectForm} from "./Components/ProjectForm/index";
 import {useEffect, useState} from "react";
 import {Route, Routes} from "react-router-dom";
 import {getProjects} from "./Services/getProjects";
-import {API_URL} from "./services/settings";
+import {API_URL} from "./Services/settings";
+import {ProjectList} from "./Components/ProjectList/index";
+import {ProjectForm} from "./Components/ProjectForm/index";
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
   }, [requiresUpdate])
 
 
-  const addExperience = (project) => {
+  const addProject = (project) => {
     return fetch(API_URL,
         {
           method: 'POST',
@@ -35,8 +35,8 @@ function App() {
 
   }
 
-  const deleteExperience = (id) => {
-    fetch(`http://localhost:8080/api/experiences/delete/${id}`,
+  const deleteProject = (id) => {
+    fetch(`${API_URL}/delete/${id}`,
         {
           method: 'DELETE'
         }
@@ -47,11 +47,10 @@ function App() {
 
   return (
       <div className="App">
-          {/*<Menu loggedIn={loggedIn} onLoginChange={(value) => setLoggedIn(value)}/>*/}
         <main className="main">
           <Routes>
-            <Route path="/projects" element={<ProjectList loggedIn={loggedIn} experiences={experiences} deleteExperience={deleteExperience}/>}/>
-            <Route path="/projects/:id" element={<ProjectForm addExperience={addExperience}/>}/>
+            <Route path="/projects" element={<ProjectList projects={projects} />}/>
+            <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
           </Routes>
         </main>
       </div>

@@ -4,7 +4,7 @@ import "./style.css"
 
 
 
-export const ProjectForm = (props) => {
+export const ProjectForm = ({props, project, deleteProject}) => {
 
     let navigate = useNavigate();
 
@@ -12,13 +12,16 @@ export const ProjectForm = (props) => {
     const data = location.state ? location.state.data : null;
 
     const [datos, setDatos] = useState(data || {
+        code: '',
         name: '',
-        description: '',
-        price: null,
-        duration: '',
-        accessibility: '',
-        payment: '',
-        tags: ''
+        client: '',
+        manager: '',
+        status: '',
+        type: '',
+        size: '',
+        target: '',
+        startdate: '',
+        enddate: ''
     })
 
     const handleInputChange = (event) => {
@@ -29,86 +32,115 @@ export const ProjectForm = (props) => {
     }
     const enviarDatos = (event) => {
         event.preventDefault()
-        props.addExperience(datos)
+        props.addProject(datos)
             .then(() => navigate("/"))
     }
 
 
     return (
-        <div className='section-form-experience' style={{backgroundImage: `url(${backgreserve})`}}>
+        <div className='section-form-experience'>
             <section className="experience-form-section">
                 <div className="experience-form-wrapper">
 
-                    <h1>{data ? 'Editar experiencia' : 'Nueva experiencia'}</h1>
+                    <h1>{data ? 'Editar proyecto' : 'Nuevo proyecto'}</h1>
                     <div className="experience-form-container">
                         <form className="edit-experience-form" onSubmit={enviarDatos} action="">
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Nombre de<br/>
-
-                                    la experiencia</label>
+                                <label htmlFor="">CODI PROJECTE</label>
                                 <input type="text"
                                        className="experience-form-control"
                                        onChange={handleInputChange}
-                                       name="name"
-                                       value={datos.name}/>
+                                       name="code"
+                                       value={datos.code}/>
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Descripción</label>
-                                <textarea value={datos.description}
-                                          name="description" id="" cols="50" rows="4"
+                                <label htmlFor="">NOM PROJECTE</label>
+                                <textarea value={datos.name}
+                                          name="name" id="" cols="50" rows="4"
                                           className="experience-form-control"
                                           onChange={handleInputChange}/>
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Precio p/p</label>
+                                <label htmlFor="">CLIENT</label>
                                 <input type="text"
                                        className="experience-form-control"
                                        onChange={handleInputChange}
-                                       name="price"
-                                       value={datos.price}/>
+                                       name="client"
+                                       value={datos.client}/>
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Duración</label>
+                                <label htmlFor="">PERSONA COORDINADORA</label>
                                 <input type="text"
                                        className="experience-form-control"
                                        onChange={handleInputChange}
-                                       name="duration"
-                                       value={datos.duration}/>
+                                       name="manager"
+                                       value={datos.manager}/>
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Accesibilidad</label>
-                                <textarea value={datos.accessibility}
-                                          name="accessibility" id="" cols="50" rows="3"
+                                <label htmlFor="">ESTAT</label>
+                                <textarea value={datos.status}
+                                          name="status" id="" cols="50" rows="3"
                                           className="experience-form-control"
                                           onChange={handleInputChange}/>
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Pago</label>
-                                <input value={datos.payment}
-                                       name="payment" id="" cols="50" rows="5"
+                                <label htmlFor="">TIPO</label>
+                                <input value={datos.type}
+                                       name="type" id="" cols="50" rows="5"
                                        className="form-control"
                                        onChange={handleInputChange}/>
                             </div>
 
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Tags</label>
+                                <label htmlFor="">TAMAÑO</label>
                                 <input type="text"
                                        className="experience-form-control"
                                        onChange={handleInputChange}
-                                       value={datos.tags}
-                                       name="tags"/>
+                                       value={datos.size}
+                                       name="size"/>
+                            </div>
+
+                            <div className="experience-form-group">
+                                <label htmlFor="">TARGET</label>
+                                <input type="text"
+                                       className="experience-form-control"
+                                       onChange={handleInputChange}
+                                       value={datos.target}
+                                       name="target"/>
+                            </div>
+
+                            <div className="experience-form-group">
+                                <label htmlFor="">MES INICI</label>
+                                <input type="text"
+                                       className="experience-form-control"
+                                       onChange={handleInputChange}
+                                       value={datos.startdate}
+                                       name="startdate"/>
+                            </div>
+
+                            <div className="experience-form-group">
+                                <label htmlFor="">MES FIN</label>
+                                <input type="text"
+                                       className="experience-form-control"
+                                       onChange={handleInputChange}
+                                       value={datos.enddate}
+                                       name="enddate"/>
                             </div>
 
 
                             <div className="btn-edit-container">
                                 <button type="submit" className="btn-edit">Guardar</button>
+                            </div>
+
+                            <div className="btn-edit-container">
+                                <button className="btn-edit" onClick={() => deleteProject(project.id)}>Eliminar</button>
                             </div>
                         </form>
                     </div>
