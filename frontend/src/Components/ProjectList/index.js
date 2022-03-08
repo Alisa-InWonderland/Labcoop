@@ -4,7 +4,7 @@ import {ProjectListItem} from "../ProjectListItem/index";
 
 
 
-export function ProjectList({experiences, deleteExperience, loggedIn}) {
+export function ProjectList({projects, deleteProject}) {
 
 
     const [state, setState] = React.useState({filter: ""});
@@ -14,39 +14,36 @@ export function ProjectList({experiences, deleteExperience, loggedIn}) {
     }
 
     return (
-        <>
-            <Hero/>
-
             <section className='experienceCatalog'>
 
-                <h1 className="catalog-title">Nuestras experiencias</h1>
+                <h1 className="catalog-title">Proyectos</h1>
 
                 <div className="barra-de-busqueda-container">
                     <input
                         className="barra-de-busqueda"
-                        name="experience"
+                        name="project"
                         type="text"
                         onChange={getData}
-                        placeholder="Busca una experiencia"
+                        placeholder="Busca un proyecto"
                     />
 
                 </div>
 
                 <div className="container-card">
-                    {experiences.map((experience) => {
+                    {projects.map((project) => {
                         if (
-                            experience.name.toLowerCase().indexOf(state.filter) >= 0 ||
+                            project.name.toLowerCase().indexOf(state.filter) >= 0 ||
                             state.filter.length === 0
                         ) {
-                            return <ProjectListItem key={experience.id} experience={experience}
-                                                   deleteExperience={deleteExperience} loggedIn={loggedIn}/>;
+                            return <ProjectListItem key={project.id} project={project}
+                                                   deleteProject={deleteProject}/>;
                         }
                         if (
-                            experience.duration.toLowerCase().indexOf(state.filter) >= 0 ||
+                            project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                             state.filter.length === 0
                         ) {
-                            return <ProjectListItem key={experience.id} experience={experience}
-                                                   deleteExperience={deleteExperience}/>;
+                            return <ProjectListItem key={project.id} project={project}
+                                                    deleteProject={deleteProject} />;
                         }
 
                         return "";
@@ -54,7 +51,6 @@ export function ProjectList({experiences, deleteExperience, loggedIn}) {
                 </div>
 
             </section>
-        </>
     );
 }
 

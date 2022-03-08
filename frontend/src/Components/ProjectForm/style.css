@@ -17,7 +17,7 @@
 }
 
 .experience-form-section {
-    width: 45%;
+    width: 80%;
     background-color: #e8a036;
     padding: 20px 20px 2px 20px;
     border-radius: 10px;
@@ -46,7 +46,7 @@
 }
 
 .experience-form-group input {
-    width: 57%;
+    width: 70%;
     font-family: 'Poppins', sans-serif;
     height: 25px;
     border-radius: 5px;
@@ -72,7 +72,7 @@
     padding: 3px;
     font-family: 'Poppins', sans-serif;
     border-radius: 5px;
-    width: 57%;
+    width: 70%;
     overflow: hidden;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
