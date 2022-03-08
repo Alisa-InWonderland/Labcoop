@@ -1,27 +1,54 @@
 package org.factoriaf5.labcoop;
 
-public class Project {
-    private final String name;
-    private String target;
-    private int code;
-    private int date;
-    private  String manager;
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "projects")
+public class Project implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String code;
+    private String name;
     private String client;
+    private String manager;
     private String status;
     private String type;
     private String size;
+    private String target;
+    private String startdate;
+    private String enddate;
 
-    public Project(String name, String target, int code, int date, String manager, String client, String status, String type, String size) {
-        this.name = name;
-        this.target = target;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Project() {
+
+    }
+
+
+    public Project(String code, String name, String client, String manager, String status, String type, String size, String target,  String startdate, String enddate) {
+
         this.code = code;
-        this.date = date;
-        this.manager = manager;
+        this.name = name;
         this.client = client;
+        this.manager = manager;
         this.status = status;
         this.type = type;
         this.size = size;
+        this.target = target;
+        this.startdate = startdate;
+        this.enddate = enddate;
+
     }
+
 
     public String getName() {
         return name;
@@ -35,20 +62,20 @@ public class Project {
         this.target = target;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public int getDate() {
-        return date;
+    public String getStartdate() {
+        return startdate;
     }
 
-    public void setDate(int date) {
-        this.date = date;
+    public void setEnddate(int date) {
+        this.enddate = enddate;
     }
 
     public String getManager() {
@@ -102,15 +129,16 @@ public class Project {
     @Override
     public String toString() {
         return "Project{" +
-                "name='" + name + '\'' +
-                ", target='" + target + '\'' +
-                ", code=" + code +
-                ", date=" + date +
-                ", manager='" + manager + '\'' +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
                 ", client='" + client + '\'' +
+                ", manager='" + manager + '\'' +
                 ", status='" + status + '\'' +
                 ", type='" + type + '\'' +
                 ", size='" + size + '\'' +
+                ", target='" + target + '\'' +
+                ", startdate='" + startdate + '\'' +
+                ", enddate='" + enddate + '\'' +
                 '}';
     }
 }
