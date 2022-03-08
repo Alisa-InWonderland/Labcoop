@@ -27,8 +27,16 @@ public class ProjectController {
 
     @GetMapping("/projects/{id}")
     public Project findProject(@PathVariable Long id) {
-        return  projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+
     }
+    @PostMapping("/projects")
+        public Project createNewProject(@RequestBody Project project) {
+            return projectsRepository.save(project);
+        }
+
+
+
 
 
     // provisional
