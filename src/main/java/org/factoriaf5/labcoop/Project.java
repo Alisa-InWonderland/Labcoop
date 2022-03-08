@@ -3,9 +3,12 @@ package org.factoriaf5.labcoop;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
+@Entity
 @Table(name = "projects")
 public class Project implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String code;
     private String name;
@@ -17,6 +20,14 @@ public class Project implements Serializable {
     private String target;
     private String startdate;
     private String enddate;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Project() {
 
