@@ -9,11 +9,13 @@ import java.util.List;
 public class ProjectController {
 
 
-    @GetMapping("/")
+    @GetMapping("/projects")
     public List<Project> allProjects() {
         return List.of(
                 new Project("Project1"),
                 new Project("Project2")
         );
     }
+
+
 }
