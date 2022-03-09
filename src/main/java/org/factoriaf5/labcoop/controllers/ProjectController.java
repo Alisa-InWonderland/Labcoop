@@ -38,7 +38,6 @@ public class ProjectController {
 
 
 
-
     // provisional
     @PostConstruct
     private void cargarDatosDePrueba() {
@@ -53,10 +52,7 @@ public class ProjectController {
                         new Project("", "Formació y emprendimiento verde", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21"),
                         new Project("", "Juntes Emprenem amb", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21"),
                         new Project("", "Escola popular d'economia feminista", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "")
-
-
                 ));
     }
-
 
 }
