@@ -46,13 +46,13 @@ public class ProjectController {
                         new Project("21F012", "Tallers Viertuals", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", ""),
                         new Project("", "Singulars Cooperative Joves", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22", ""),
                         new Project("", "Empendoria verda", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", "", ""),
-                        new Project("", "Formació y emprendimiento verde", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""),
+                        new Project("", "Formació y emprendimiento verde", "Fundación biodiversitat", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""),
                         new Project("", "Juntes Emprenem amb", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21", ""),
                         new Project("", "Escola popular d'economia feminista", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", "")
                 ));
     }
 
-    @DeleteMapping("/project/delete/{id}")
+    @DeleteMapping("/projects/delete/{id}")
     public Project deleteProjectById(@PathVariable Long id) {
         Project project = projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
         projectsRepository.deleteById(id);

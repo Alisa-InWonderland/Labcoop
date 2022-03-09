@@ -49,7 +49,7 @@ public class ApplicationTest {
     }
 
 
-    private void addSampleProjects(){
+    /*private void addSampleProjects(){
         List<Project> projects = List.of(
                 new Project("21F010", "Emprendoria i Génere 2022", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22"),
                 new Project("21F011", "Formació en cures", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22"),
@@ -58,12 +58,11 @@ public class ApplicationTest {
                 new Project("", "Empendoria verda", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", ""),
                 new Project("", "Formació y emprendimiento verde", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21"),
                 new Project("", "Juntes Emprenem amb", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21"),
-                new Project("", "Escola popular d'economia feminista", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "")
+                new Project("", "Escola popular d'economia feminista", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", ""));*/
 
 
-);
 
-    }
+
 
 
 
@@ -92,6 +91,10 @@ public class ApplicationTest {
 
     @Test
     void deleteProject() throws Exception{
+        Project project = projectsRepository.save(new Project("", "Formació y emprendimiento verde", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""));
+        mockMvc.perform(delete("/projects/delete/" + project.getId()))
+                .andExpect(status().is(200));
 
+        assertThat(projectsRepository.findById(project.getId()), equalTo(Optional.empty()));
     }
 }
