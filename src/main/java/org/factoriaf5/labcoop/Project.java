@@ -72,9 +72,6 @@ public class Project implements Serializable {
         this.code = code;
     }
 
-
-
-
     public String getManager() {
         return manager;
     }
