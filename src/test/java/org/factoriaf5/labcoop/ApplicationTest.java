@@ -74,6 +74,10 @@ public class ApplicationTest {
 
     @Test
     void deleteProject() throws Exception{
+        Project project = projectsRepository.save(new Project("", "Formació y emprendimiento verde", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""));
+        mockMvc.perform(delete("/projects/delete/" + project.getId()))
+                .andExpect(status().is(200));
 
+        assertThat(projectsRepository.findById(project.getId()), equalTo(Optional.empty()));
     }
 }
