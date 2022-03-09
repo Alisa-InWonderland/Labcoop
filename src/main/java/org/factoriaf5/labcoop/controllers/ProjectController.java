@@ -4,14 +4,12 @@ import org.factoriaf5.labcoop.Project;
 import org.factoriaf5.labcoop.ProjectNotFoundException;
 import org.factoriaf5.labcoop.repository.ProjectsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class ProjectController {
 
@@ -29,8 +27,16 @@ public class ProjectController {
 
     @GetMapping("/projects/{id}")
     public Project findProject(@PathVariable Long id) {
-        return  projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+
     }
+    @PostMapping("/projects")
+        public Project createNewProject(@RequestBody Project project) {
+            return projectsRepository.save(project);
+        }
+
+
+
 
     // provisional
     @PostConstruct
