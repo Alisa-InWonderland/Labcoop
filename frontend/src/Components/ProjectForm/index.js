@@ -4,7 +4,7 @@ import "./style.css"
 
 
 
-export const ProjectForm = ({props, project, deleteProject}) => {
+export const ProjectForm = ({addProject, project, deleteProject}) => {
 
     let navigate = useNavigate();
 
@@ -30,10 +30,11 @@ export const ProjectForm = ({props, project, deleteProject}) => {
             [event.target.name]: event.target.value
         })
     }
+
     const enviarDatos = (event) => {
         event.preventDefault()
-        props.addProject(datos)
-            .then(() => navigate("/"))
+        addProject(datos)
+            .then(() => navigate("/projects"))
     }
 
 

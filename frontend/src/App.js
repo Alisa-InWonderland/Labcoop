@@ -51,6 +51,7 @@ function App() {
           <Routes>
             <Route path="/projects" element={<ProjectList projects={projects} />}/>
             <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+            <Route path="/projects/new" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
           </Routes>
         </main>
       </div>

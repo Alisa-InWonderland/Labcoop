@@ -5,7 +5,7 @@ import "./style.css"
 
 
 
-export function ProjectListItem({project, deleteProject, loggedIn}) {
+export function ProjectListItem({project, deleteProject}) {
 
     const { id, code, name, client, manager, status, type, size, target, startdate, enddate } = project;
 
