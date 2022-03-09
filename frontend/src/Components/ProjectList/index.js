@@ -1,10 +1,11 @@
 import React from "react";
 import "./style.css"
 import {ProjectListItem} from "../ProjectListItem/index";
+import {Link} from "react-router-dom";
 
 
 
-export function ProjectList({projects, deleteProject}) {
+export function ProjectList({ projects, deleteProject}) {
 
 
     const [state, setState] = React.useState({filter: ""});
@@ -26,6 +27,14 @@ export function ProjectList({projects, deleteProject}) {
                         onChange={getData}
                         placeholder="Busca un proyecto"
                     />
+
+                </div>
+
+                <div className="btn-edit-container">
+
+                    <button className="btn-orange editar">
+                        <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>
+                    </button>
 
                 </div>
 

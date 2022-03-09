@@ -30,10 +30,12 @@ public class ProjectController {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
 
     }
+
     @PostMapping("/projects")
         public Project createNewProject(@RequestBody Project project) {
             return projectsRepository.save(project);
         }
+
 
     // provisional
     @PostConstruct
