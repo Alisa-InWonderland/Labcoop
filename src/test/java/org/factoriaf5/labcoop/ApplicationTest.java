@@ -2,6 +2,7 @@ package org.factoriaf5.labcoop;
 
 import org.factoriaf5.labcoop.repository.ProjectsRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -33,7 +34,6 @@ public class ApplicationTest {
     @Autowired
     ProjectsRepository projectsRepository;
 
-    @BeforeEach
     void setUp() {
         projectsRepository.deleteAll();
     }
@@ -41,33 +41,25 @@ public class ApplicationTest {
     @Test
     void loadsTheProjectsPage() throws Exception {
 
-        addSampleProjects();
-
         mockMvc.perform(get("/projects"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[*]", hasSize(0)))
+                .andExpect(jsonPath("$[*]", hasSize(9)))
                 .andExpect(jsonPath("$[0].name", equalTo("Emprendoria i Génere 2022")))
                 .andExpect(jsonPath("$[0].code", equalTo("21F010")));
     }
 
-    private void addSampleProjects(){
-        List>
 
-
-    }
-
-
+    @Disabled
     @Test
     void findProjectsById() throws Exception {
-        mockMvc.perform(get("/projects/1"))
-                .andExpect(jsonPath("$.name", equalTo("Emprendoria i Génere 2022")))
-                .andExpect(jsonPath("$.code", equalTo("21F010")));
+        mockMvc.perform(get("/projects/3"))
+                .andExpect(jsonPath("$.name", equalTo("Formació Socis")))
+                .andExpect(jsonPath("$.code", equalTo("21F008")));
     }
-
 
     @Test
     void createANewProject() throws Exception {
-
+        setUp();
         mockMvc.perform(post("/projects")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"name\": \"Emprendoria 2022\"}")
@@ -76,10 +68,12 @@ public class ApplicationTest {
         var projects = projectsRepository.findAll();
 
         assertThat(projects, contains(hasProperty("name", is("Emprendoria 2022"))
-
-
         ));
 
+    }
+
+    @Test
+    void deleteProject() throws Exception{
 
     }
 }

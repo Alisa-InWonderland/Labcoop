@@ -21,6 +21,8 @@ public class Project implements Serializable {
     private String target;
     private String startdate;
     private String enddate;
+    @Lob
+    private String comments;
 
     public Long getId() {
         return id;
@@ -34,8 +36,7 @@ public class Project implements Serializable {
 
     }
 
-
-    public Project(String code, String name, String client, String manager, String status, String type, String size, String target,  String startdate, String enddate) {
+    public Project(String code, String name, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, String comments) {
 
         this.code = code;
         this.name = name;
@@ -47,7 +48,7 @@ public class Project implements Serializable {
         this.target = target;
         this.startdate = startdate;
         this.enddate = enddate;
-
+        this.comments = comments;
     }
 
 
@@ -127,9 +128,34 @@ public class Project implements Serializable {
         this.size = size;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStartdate(String startdate) {
+        this.startdate = startdate;
+    }
+
+    public String getEnddate() {
+        return enddate;
+    }
+
+    public void setEnddate(String enddate) {
+        this.enddate = enddate;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
     @Override
     public String toString() {
         return "Project{" +
+                "id=" + id +
                 ", code='" + code + '\'' +
                 ", name='" + name + '\'' +
                 ", client='" + client + '\'' +
@@ -140,6 +166,7 @@ public class Project implements Serializable {
                 ", target='" + target + '\'' +
                 ", startdate='" + startdate + '\'' +
                 ", enddate='" + enddate + '\'' +
+                ", comments='" + comments + '\'' +
                 '}';
     }
 }
