@@ -76,10 +76,6 @@ public class Project implements Serializable {
         return startdate;
     }
 
-    public void setEnddate(int date) {
-        this.enddate = enddate;
-    }
-
     public String getManager() {
         return manager;
     }

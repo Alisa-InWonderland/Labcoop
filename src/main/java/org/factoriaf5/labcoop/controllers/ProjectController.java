@@ -54,7 +54,7 @@ public class ProjectController {
                 ));
     }
 
-    @DeleteMapping("/project/delete/{id}")
+    @DeleteMapping("/projects/delete/{id}")
     public Project deleteProjectById(@PathVariable Long id) {
         Project project = projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
         projectsRepository.deleteById(id);

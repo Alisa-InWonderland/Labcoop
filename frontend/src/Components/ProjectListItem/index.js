@@ -12,7 +12,7 @@ export function ProjectListItem({project, deleteProject}) {
 
     return (
         <tr className='reserva-table-row'>
-            <td className="reserva-td"><Link to={`/projects/${id}`} state={{data: project}}>
+            <td className="reserva-td"><Link to={`/projects/${id}`} project={project} key={project.id} deleteProject={deleteProject} state={{data: project}}>
                 {code}
             </Link>
             </td>
