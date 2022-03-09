@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {useLocation, useNavigate} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import "./style.css"
 
 
+export const ProjectForm = ({addProject, deleteProject}) => {
 
-export const ProjectForm = ({addProject, project, deleteProject}) => {
+    const params  = useParams();
 
     let navigate = useNavigate();
 
@@ -45,7 +46,7 @@ export const ProjectForm = ({addProject, project, deleteProject}) => {
 
                     <h1>{data ? 'Editar proyecto' : 'Nuevo proyecto'}</h1>
                     <div className="experience-form-container">
-                        <form className="edit-experience-form" onSubmit={enviarDatos} action="">
+                        <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 
                             <div className="experience-form-group">
                                 <label htmlFor="">CODI PROJECTE</label>
@@ -141,7 +142,7 @@ export const ProjectForm = ({addProject, project, deleteProject}) => {
                             </div>
 
                             <div className="btn-edit-container">
-                                <button className="btn-edit" onClick={() => deleteProject(project.id)}>Eliminar</button>
+                                <button className="btn-edit" onClick={() => deleteProject(params.id)}>Eliminar</button>
                             </div>
                         </form>
                     </div>

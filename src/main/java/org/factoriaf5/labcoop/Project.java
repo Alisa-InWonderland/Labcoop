@@ -72,14 +72,6 @@ public class Project implements Serializable {
         this.code = code;
     }
 
-    public String getStartdate() {
-        return startdate;
-    }
-
-    public void setEnddate(int date) {
-        this.enddate = enddate;
-    }
-
     public String getManager() {
         return manager;
     }
@@ -130,6 +122,10 @@ public class Project implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStartdate() {
+        return startdate;
     }
 
     public void setStartdate(String startdate) {
