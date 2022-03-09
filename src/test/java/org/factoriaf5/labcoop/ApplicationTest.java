@@ -48,7 +48,7 @@ public class ApplicationTest {
                 .andExpect(jsonPath("$[0].code", equalTo("21F010")));
     }
 
-<<<<<<< HEAD
+
     private void addSampleProjects(){
         List<Project> projects = List.of(
                 new Project("21F010", "Emprendoria i Génere 2022", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22"),
@@ -66,8 +66,7 @@ public class ApplicationTest {
 
     }
 
-=======
->>>>>>> e2e1b282f567220d4c354eb51fff2a21e956ace3
+
 
     @Disabled
     @Test
