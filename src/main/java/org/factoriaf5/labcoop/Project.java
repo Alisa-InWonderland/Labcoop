@@ -59,11 +59,11 @@ public class Project implements Serializable {
     }
 
     public String getArea() {
-        return target;
+        return area;
     }
 
     public void setArea(String area) {
-        this.target = target;
+        this.area = area;
     }
 
     public String getCode() {
