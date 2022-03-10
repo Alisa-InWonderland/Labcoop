@@ -19,7 +19,7 @@ export function ProjectListItem({project}) {
                 to={`/projects/${id}`}
                 state={{data: project}}
                 >
-                {name}
+                {name || 'no name'}
                 </Link>
             </td>
             <td className="reserva-td">{client}</td>
