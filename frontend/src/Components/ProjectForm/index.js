@@ -62,7 +62,7 @@ export const ProjectForm = ({addProject, deleteProject}) => {
 
                             <div className="experience-form-group">
                                 <label htmlFor="">NOM PROJECTE</label>
-                                <tinput type="text"
+                                <input type="text"
                                         value={datos.name}
                                         name="name"
                                         className="experience-form-control"
