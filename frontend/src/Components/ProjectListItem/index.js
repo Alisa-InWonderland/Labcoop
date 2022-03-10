@@ -13,15 +13,8 @@ export function ProjectListItem({project}) {
     return (
         <tr className='reserva-table-row'>
 
-            <td className="reserva-td">
-                <Link
-                to={`/projects/${id}`}
-                state={{data: project}}
-                >
-                {code}
-                </Link>
-            </td>
-            <td className="reserva-td">
+            <td className="reserva-td">{code}</td>
+            <td className="reserva-td name">
                 <Link
                 to={`/projects/${id}`}
                 state={{data: project}}
