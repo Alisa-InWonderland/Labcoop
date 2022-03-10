@@ -131,13 +131,9 @@
     left: 0;
 }
 
-.btn-edit-container {
-    display: flex;
-    justify-content: right;
-}
 
 .btn-orange:after {
-    border-radius: 5px;
+    border-radius: 25px;
     position: absolute;
     content: "";
     width: 0;

@@ -18,11 +18,14 @@ export const ProjectForm = ({addProject, deleteProject}) => {
         client: '',
         manager: '',
         status: '',
+        area: '',
         type: '',
         size: '',
         target: '',
         startdate: '',
-        enddate: ''
+        enddate: '',
+        comments: '',
+
     })
 
     const handleInputChange = (event) => {
@@ -59,10 +62,11 @@ export const ProjectForm = ({addProject, deleteProject}) => {
 
                             <div className="experience-form-group">
                                 <label htmlFor="">NOM PROJECTE</label>
-                                <textarea value={datos.name}
-                                          name="name" id="" cols="50" rows="4"
-                                          className="experience-form-control"
-                                          onChange={handleInputChange}/>
+                                <input type="text"
+                                        value={datos.name}
+                                        name="name"
+                                        className="experience-form-control"
+                                        onChange={handleInputChange}/>
                             </div>
 
                             <div className="experience-form-group">
@@ -85,15 +89,26 @@ export const ProjectForm = ({addProject, deleteProject}) => {
 
                             <div className="experience-form-group">
                                 <label htmlFor="">ESTAT</label>
-                                <textarea value={datos.status}
-                                          name="status" id="" cols="50" rows="3"
-                                          className="experience-form-control"
-                                          onChange={handleInputChange}/>
+                                <input type="text"
+                                       value={datos.status}
+                                       name="status"
+                                       className="experience-form-control"
+                                       onChange={handleInputChange}/>
+                            </div>
+
+                            <div className="experience-form-group">
+                                <label htmlFor="">AREA</label>
+                                <input type="text"
+                                       value={datos.area}
+                                       name="area"
+                                       className="experience-form-control"
+                                       onChange={handleInputChange}/>
                             </div>
 
                             <div className="experience-form-group">
                                 <label htmlFor="">TIPO</label>
-                                <input value={datos.type}
+                                <input type="text"
+                                       value={datos.type}
                                        name="type" id="" cols="50" rows="5"
                                        className="form-control"
                                        onChange={handleInputChange}/>
@@ -134,6 +149,15 @@ export const ProjectForm = ({addProject, deleteProject}) => {
                                        onChange={handleInputChange}
                                        value={datos.enddate}
                                        name="enddate"/>
+                            </div>
+
+                            <div className="experience-form-group">
+                                <label htmlFor="">OBSERVACIONS</label>
+                                <textarea type="text"
+                                          value={datos.comments}
+                                          name="comments" cols="50" rows="3"
+                                          className="experience-form-control"
+                                          onChange={handleInputChange}/>
                             </div>
 
 
