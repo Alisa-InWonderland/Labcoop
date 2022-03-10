@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 
 
-export function ProjectList({ projects, deleteProject}) {
+export function ProjectList({projects}) {
 
 
     const [state, setState] = React.useState({filter: ""});
@@ -35,14 +35,6 @@ export function ProjectList({ projects, deleteProject}) {
 
                 </div>
 
-                {/*<div className="btn-edit-container">*/}
-
-                {/*    <button className="btn-orange editar">*/}
-                {/*        <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>*/}
-                {/*    </button>*/}
-
-                {/*</div>*/}
-
                 <div className='tablelist'>
 
                     <table className="reserva-table">
@@ -53,11 +45,13 @@ export function ProjectList({ projects, deleteProject}) {
                             <th className='reserva-th'>CLIENT</th>
                             <th className='reserva-th'>PERSONA COORDINADORA</th>
                             <th className='reserva-th'>ESTAT</th>
+                            <th className='reserva-th'>AREA</th>
                             <th className='reserva-th'>TIPO</th>
                             <th className='reserva-th'>TAMAÑO</th>
                             <th className='reserva-th'>TARGET</th>
                             <th className='reserva-th'>MES INICI</th>
                             <th className='reserva-th'>MES FIN</th>
+                            <th className='reserva-th'>OBSERVACIONS</th>
                         </tr>
 
                         {projects.map((project) => {
@@ -65,15 +59,61 @@ export function ProjectList({ projects, deleteProject}) {
                                 project.name.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}
-                                                       deleteProject={deleteProject}/>;
+                                return <ProjectListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}
-                                                        deleteProject={deleteProject} />;
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.size.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.code.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.manager.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.target.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.type.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.status.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.comments.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
+                            if (
+                                project.area.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
                             }
 
                             return "";
