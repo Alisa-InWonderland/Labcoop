@@ -28,15 +28,20 @@ export function ProjectList({ projects, deleteProject}) {
                         placeholder="Busca un proyecto"
                     />
 
-                </div>
+                        <button className="btn-orange">
+                            <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>
+                        </button>
 
-                <div className="btn-edit-container">
-
-                    <button className="btn-orange editar">
-                        <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>
-                    </button>
 
                 </div>
+
+                {/*<div className="btn-edit-container">*/}
+
+                {/*    <button className="btn-orange editar">*/}
+                {/*        <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>*/}
+                {/*    </button>*/}
+
+                {/*</div>*/}
 
                 <div className='tablelist'>
 
