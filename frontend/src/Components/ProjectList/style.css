@@ -3,7 +3,6 @@
     margin-bottom: 25px;
 }
 
-
 .tablelist {
     border-radius: 20px;
 }
@@ -17,8 +16,6 @@
     margin: 45px;
     text-align: left;
     border-collapse: collapse;
-
-
 }
 
 .reserva-th {
@@ -28,26 +25,12 @@
     background: #4b7f55;
     border-top: 4px solid #4b7f55;
     border-bottom: 1px solid #fff;
-    color: #ffffff; }
-
-.reserva-td {
-    padding: 8px;
-    background: #e8a036;
-    border-bottom: 1px solid #fff;
-    color: #000000;
-    border-top: 1px solid transparent; }
-
-.reserva-td:hover {
-    background: #eabc78;
-    color: #38603f;
-    cursor: pointer;
+    color: #ffffff;
 }
 
-.table-container
-{
+.table-container {
     width: 100%;
     overflow-y: auto;
-    _overflow: auto;
     margin: 0 0 1em;
 }
 
@@ -75,7 +58,6 @@
     align-items: center;
     padding: 10px 20px;
 }
-
 
 
 .barra-de-busqueda-container input {
