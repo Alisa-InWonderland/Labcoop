@@ -57,16 +57,18 @@ export const ProjectForm = ({addProject, deleteProject}) => {
                                        className="experience-form-control"
                                        onChange={handleInputChange}
                                        name="code"
-                                       value={datos.code}/>
+                                       value={datos.code}
+                                       />
                             </div>
 
                             <div className="experience-form-group">
                                 <label htmlFor="">NOM PROJECTE</label>
-                                <input type="text"
+                                <input  type="text"
                                         value={datos.name}
                                         name="name"
                                         className="experience-form-control"
-                                        onChange={handleInputChange}/>
+                                        onChange={handleInputChange}
+                                        required/>
                             </div>
 
                             <div className="experience-form-group">
@@ -75,7 +77,8 @@ export const ProjectForm = ({addProject, deleteProject}) => {
                                        className="experience-form-control"
                                        onChange={handleInputChange}
                                        name="client"
-                                       value={datos.client}/>
+                                       value={datos.client}
+                                       required/>
                             </div>
 
                             <div className="experience-form-group">
@@ -160,13 +163,14 @@ export const ProjectForm = ({addProject, deleteProject}) => {
                                           onChange={handleInputChange}/>
                             </div>
 
-
-                            <div className="btn-edit-container">
+                            <div className="btn-flexbox">
+                              <div className="btn-edit-container">
                                 <button type="submit" className="btn-edit">Guardar</button>
-                            </div>
+                              </div>
 
-                            <div className="btn-edit-container">
+                              <div className="btn-edit-container">
                                 <button className="btn-edit" onClick={() => deleteProject(params.id)}>Eliminar</button>
+                              </div>
                             </div>
                         </form>
                     </div>
