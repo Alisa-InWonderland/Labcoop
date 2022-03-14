@@ -109,7 +109,7 @@ export const ProjectForm = ({addProject, deleteProject}) => {
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">TIPO</label>
+                                <label htmlFor="">TIPUS</label>
                                 <input type="text"
                                        value={datos.type}
                                        name="type" id="" cols="50" rows="5"
@@ -119,7 +119,7 @@ export const ProjectForm = ({addProject, deleteProject}) => {
 
 
                             <div className="experience-form-group">
-                                <label htmlFor="">TAMAÑO</label>
+                                <label htmlFor="">MIDA</label>
                                 <input type="text"
                                        className="experience-form-control"
                                        onChange={handleInputChange}
@@ -137,7 +137,7 @@ export const ProjectForm = ({addProject, deleteProject}) => {
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">MES INICI</label>
+                                <label htmlFor="">DATA INICI</label>
                                 <input type="text"
                                        className="experience-form-control"
                                        onChange={handleInputChange}
@@ -146,7 +146,7 @@ export const ProjectForm = ({addProject, deleteProject}) => {
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">MES FIN</label>
+                                <label htmlFor="">DATA FI</label>
                                 <input type="text"
                                        className="experience-form-control"
                                        onChange={handleInputChange}

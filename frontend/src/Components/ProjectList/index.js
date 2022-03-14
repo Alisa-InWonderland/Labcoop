@@ -40,17 +40,17 @@ export function ProjectList({projects}) {
                     <table className="reserva-table">
 
                         <tr className='reserva-table-title'>
-                            <th className='reserva-th'>CODI PROJECTE</th>
-                            <th className='reserva-th'>NOM PROJECTE</th>
+                            <th className='reserva-th'>CODI</th>
+                            <th className='reserva-th'>NOM</th>
                             <th className='reserva-th'>CLIENT</th>
-                            <th className='reserva-th'>PERSONA COORDINADORA</th>
+                            <th className='reserva-th'>COORDINA</th>
                             <th className='reserva-th'>ESTAT</th>
                             <th className='reserva-th'>AREA</th>
-                            <th className='reserva-th'>TIPO</th>
-                            <th className='reserva-th'>TAMAÑO</th>
+                            <th className='reserva-th'>TIPUS</th>
+                            <th className='reserva-th'>MIDA</th>
                             <th className='reserva-th'>TARGET</th>
-                            <th className='reserva-th'>MES INICI</th>
-                            <th className='reserva-th'>MES FIN</th>
+                            <th className='reserva-th'>INICI</th>
+                            <th className='reserva-th'>FI</th>
                             <th className='reserva-th'>OBSERVACIONS</th>
                         </tr>
 
