@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Rubik+Beastly&family=Volkhov:wght@700&display=swap');
 
-h1{
+h1, h3{
     color:#ffffff;
 }
 
@@ -21,7 +21,7 @@ h1{
 }
 
 .experience-form-section {
-    width: 80%;
+    width: 100%;
     background-color: #AB005A;
     padding: 20px 20px 2px 20px;
     border-radius: 10px;
@@ -42,6 +42,26 @@ h1{
     text-align: center;
 }
 
+.total-previsto-title, .total-ejecutado-title {
+    margin-bottom: 20px;
+}
+
+.total-ejecutado-title {
+    margin-top: 10px;
+}
+
+.proyecto-container {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+
+.totales {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
 .experience-form-group {
     margin-bottom: 15px;
     display: flex;
@@ -50,7 +70,7 @@ h1{
 }
 
 .experience-form-group input {
-    width: 70%;
+    width: 60%;
     font-family: 'Poppins', sans-serif;
     height: 25px;
     border-radius: 5px;
@@ -76,7 +96,7 @@ h1{
     padding: 3px;
     font-family: 'Poppins', sans-serif;
     border-radius: 5px;
-    width: 70%;
+    width: 60%;
     overflow: hidden;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);

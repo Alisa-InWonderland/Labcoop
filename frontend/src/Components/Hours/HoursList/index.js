@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css"
-import {ProjectListItem} from "../ProjectListItem/index";
+import {ProjectListItem} from "../HoursListItem";
 import {Link} from "react-router-dom";
 
 

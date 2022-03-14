@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import {Link} from "react-router-dom";
-import {ProjectList} from "../ProjectList/index";
+import {ProjectList} from "../Projects/ProjectList/index";
 
 
 const drawerWidth = 240;

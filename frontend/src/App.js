@@ -1,13 +1,13 @@
 import './App.css';
-/*import  { Menu } from './Components/Menu/index'*/
+
 import {useEffect, useState} from "react";
 import {Route, Routes} from "react-router-dom";
 import {getProjects} from "./Services/getProjects";
 import {API_URL} from "./Services/settings";
-import {ProjectList} from "./Components/ProjectList/index";
+import {ProjectList} from "./Components/Projects/ProjectList/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
-import {Menu} from "./Components/Menu/index"
-import {Navbar} from "./Components/Navbar";
+// import {Menu} from "./Components/Menu/index"
+// import {Navbar} from "./Components/Navbar";
 
 
 
