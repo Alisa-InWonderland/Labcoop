@@ -6,6 +6,7 @@ import {getProjects} from "./Services/getProjects";
 import {API_URL} from "./Services/settings";
 import {ProjectList} from "./Components/ProjectList/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
+import {Menu} from "./Components/Menu/index"
 
 
 function App() {
@@ -47,13 +48,15 @@ function App() {
 
   return (
       <div className="App">
-        <main className="main">
-          <Routes>
-            <Route path="/projects" element={<ProjectList projects={projects} />}/>
-            <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
-            <Route path="/projects/new" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
-          </Routes>
-        </main>
+
+            <main className="main">
+              <Routes>
+                <Route path="/projects" element={<ProjectList projects={projects} />}/>
+                <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+                <Route path="/projects/new" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+              </Routes>
+            </main>
+
       </div>
   );
 }
