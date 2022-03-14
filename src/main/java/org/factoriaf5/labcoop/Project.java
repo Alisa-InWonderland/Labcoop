@@ -13,6 +13,7 @@ public class Project implements Serializable {
 
     private String code;
     private String name;
+    private String area;
     private String client;
     private String manager;
     private String status;
@@ -36,10 +37,11 @@ public class Project implements Serializable {
 
     }
 
-    public Project(String code, String name, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, String comments) {
+    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, String comments) {
 
         this.code = code;
         this.name = name;
+        this.area = area;
         this.client = client;
         this.manager = manager;
         this.status = status;
@@ -154,6 +156,7 @@ public class Project implements Serializable {
                 "id=" + id +
                 ", code='" + code + '\'' +
                 ", name='" + name + '\'' +
+                ", area='" + area + '\'' +
                 ", client='" + client + '\'' +
                 ", manager='" + manager + '\'' +
                 ", status='" + status + '\'' +
