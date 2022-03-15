@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css"
-import {ProjectListItem} from "../FacturasRecibidasListItem";
+import {FacturasRecibidasListItem} from "../FacturasRecibidasListItem/index";
 import {Link} from "react-router-dom";
 
 
 
-export function ProjectList({projects}) {
+export function FacturasRecibidasList({projects, facturasR}) {
 
 
     const [state, setState] = React.useState({filter: ""});
@@ -59,61 +59,61 @@ export function ProjectList({projects}) {
                                 project.name.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.size.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.code.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.manager.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.target.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.type.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.status.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.comments.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
                             if (
                                 project.area.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <FacturasRecibidasListItem key={project.id} project={project}/>;
                             }
 
                             return "";

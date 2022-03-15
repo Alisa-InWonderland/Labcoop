@@ -5,7 +5,7 @@ import "./style.css"
 
 
 
-export function ProjectListItem({project}) {
+export function FacturasRecibidasListItem({project}) {
 
     const { id, code, name, client, manager, status, area, type, size, target, startdate, enddate, comments } = project;
 
