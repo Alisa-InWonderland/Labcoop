@@ -1,6 +1,6 @@
 package org.factoriaf5.labcoop.controllers;
 
-import org.factoriaf5.labcoop.Project;
+import org.factoriaf5.labcoop.repository.Project;
 import org.factoriaf5.labcoop.ProjectNotFoundException;
 import org.factoriaf5.labcoop.repository.ProjectsRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,6 @@
-package org.factoriaf5.labcoop;
+package org.factoriaf5.labcoop.repository;
+
+import org.factoriaf5.labcoop.repository.Project;
 
 import javax.persistence.*;
 
@@ -15,6 +17,20 @@ public class FacturaEmitida {
     private int iva;
     private int total;
     private boolean cobrado;
+
+    @OneToMany(orphanRemoval = true)
+    @JoinTable(name = "project",
+            joinColumns = @JoinColumn(name = "factura_emitida_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id"))
+    private Project project;
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
 
     public FacturaEmitida(int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
