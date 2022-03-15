@@ -1,6 +1,5 @@
 package org.factoriaf5.labcoop.repository;
 
-import org.factoriaf5.labcoop.repository.Project;
 
 import javax.persistence.*;
 
