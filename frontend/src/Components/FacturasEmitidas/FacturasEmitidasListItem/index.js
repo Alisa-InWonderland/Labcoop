@@ -3,35 +3,31 @@ import {Link} from "react-router-dom";
 import "./style.css"
 
 
+export function FacturasEmitidasListItem({project, facturaE}) {
 
-
-export function ProjectListItem({project}) {
-
-    const { id, code, name, client, manager, status, area, type, size, target, startdate, enddate, comments } = project;
+    const { id, code, name, client } = project;
+    const {numFactura, fecha, importe, iva, total, cobrado} = facturaE;
 
 
     return (
         <tr className='reserva-table-row'>
 
             <td className="reserva-td">{code}</td>
-            <td className="reserva-td name">
+            <td className="reserva-td name">{name}</td>
+            <td className="reserva-td">{client}</td>
+            <td className="reserva-td">
                 <Link
-                to={`/projects/${id}`}
-                state={{data: project}}
+                    to={`/facturas-emitidas/${id}`}
+                    state={{data: project}}
+                    {numFactura}
                 >
-                {name || 'no name'}
                 </Link>
             </td>
-            <td className="reserva-td">{client}</td>
-            <td className="reserva-td">{manager}</td>
-            <td className="reserva-td">{status}</td>
-            <td className="reserva-td">{area}</td>
-            <td className="reserva-td">{type}</td>
-            <td className="reserva-td">{size}</td>
-            <td className="reserva-td">{target}</td>
-            <td className="reserva-td">{startdate}</td>
-            <td className="reserva-td">{enddate}</td>
-            <td className="reserva-td">{comments}</td>
+            <td className="reserva-td">{fecha}</td>
+            <td className="reserva-td">{importe}</td>
+            <td className="reserva-td">{iva}</td>
+            <td className="reserva-td">{total}</td>
+            <td className="reserva-td">{cobrado}</td>
         </tr>
 
     );
