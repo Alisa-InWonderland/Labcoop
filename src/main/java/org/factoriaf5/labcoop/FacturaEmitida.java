@@ -1,12 +1,14 @@
 package org.factoriaf5.labcoop;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="facturasEmitidas")
 public class FacturaEmitida {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private int numFactura;
     private String fecha;
     private int importe;
@@ -22,6 +24,10 @@ public class FacturaEmitida {
         this.iva = iva;
         this.total = total;
         this.cobrado = cobrado;
+    }
+
+    public FacturaEmitida() {
+
     }
 
     public int getNumFactura() {
