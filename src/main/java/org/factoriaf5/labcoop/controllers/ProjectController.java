@@ -1,8 +1,10 @@
 package org.factoriaf5.labcoop.controllers;
 
-import org.factoriaf5.labcoop.Project;
+import org.factoriaf5.labcoop.repository.FacturaEmitida;
+import org.factoriaf5.labcoop.repository.Project;
 import org.factoriaf5.labcoop.ProjectNotFoundException;
 import org.factoriaf5.labcoop.repository.ProjectsRepository;
+import org.factoriaf5.labcoop.repository.FacturasEmitidasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +27,7 @@ public class ProjectController {
         return projectsRepository.findAll();
     }
 
+
     @GetMapping("/projects/{id}")
     public Project findProject(@PathVariable Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
@@ -38,7 +41,7 @@ public class ProjectController {
 
 
     // provisional
-    @PostConstruct
+   /* @PostConstruct
     private void cargarDatosDePrueba() {
         projectsRepository.saveAll(
                 List.of(
@@ -52,7 +55,7 @@ public class ProjectController {
                         new Project("", "Juntes Emprenem amb","Formació", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "Dones", "Oct21", "Des21", ""),
                         new Project("", "Escola Popular d'Economia Feminista","Formació", "Cooperació", "", "Pendent", "Contracte", "Petit", "Dones", "", "", "")
                 ));
-    }
+    }*/
 
     @DeleteMapping("/projects/delete/{id}")
     public Project deleteProjectById(@PathVariable Long id) {
