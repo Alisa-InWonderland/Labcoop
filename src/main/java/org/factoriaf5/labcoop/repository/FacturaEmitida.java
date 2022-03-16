@@ -1,4 +1,5 @@
-package org.factoriaf5.labcoop;
+package org.factoriaf5.labcoop.repository;
+
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ public class FacturaEmitida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    private Long id;
     private int numFactura;
     private String fecha;
     private int importe;
@@ -30,6 +32,13 @@ public class FacturaEmitida {
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     public int getNumFactura() {
         return numFactura;
     }
@@ -82,9 +91,9 @@ public class FacturaEmitida {
     @Override
     public String toString() {
         return "FacturaEmitida{" +
-                "numFactura=" + numFactura +
+                "id=" + id +
+                ", numFactura=" + numFactura +
                 ", fecha='" + fecha + '\'' +
-                ", cliente='" + '\'' +
                 ", importe=" + importe +
                 ", iva=" + iva +
                 ", total=" + total +

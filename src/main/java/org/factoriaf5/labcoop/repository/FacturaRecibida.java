@@ -1,4 +1,5 @@
-package org.factoriaf5.labcoop;
+
+package org.factoriaf5.labcoop.repository;
 
 public class FacturaRecibida {
 
@@ -111,3 +112,4 @@ public class FacturaRecibida {
                 '}';
     }
 }
+

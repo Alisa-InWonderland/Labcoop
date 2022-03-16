@@ -1,4 +1,4 @@
-package org.factoriaf5.labcoop;
+package org.factoriaf5.labcoop.repository;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +10,6 @@ public class Project implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     private String code;
     private String name;
     private String area;
@@ -25,6 +24,15 @@ public class Project implements Serializable {
     @Lob
     private String comments;
 
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    private FacturaEmitida facturaEmitida;
+
+    public Project() {
+
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -33,9 +41,6 @@ public class Project implements Serializable {
         this.id = id;
     }
 
-    public Project() {
-
-    }
 
     public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, String comments) {
 
@@ -51,6 +56,7 @@ public class Project implements Serializable {
         this.startdate = startdate;
         this.enddate = enddate;
         this.comments = comments;
+
     }
 
 
@@ -149,6 +155,16 @@ public class Project implements Serializable {
     public void setComments(String comments) {
         this.comments = comments;
     }
+
+    public FacturaEmitida getfacturaEmitida() {
+        return facturaEmitida;
+    }
+
+    public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
+        this.facturaEmitida = facturaEmitida;
+    }
+
+
 
     @Override
     public String toString() {

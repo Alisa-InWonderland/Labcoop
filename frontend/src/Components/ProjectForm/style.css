@@ -53,7 +53,8 @@ h1, h3{
 .proyecto-container {
     width: 100%;
     display: flex;
-    gap: 50px;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .totales {
@@ -70,7 +71,7 @@ h1, h3{
 }
 
 .experience-form-group input {
-    width: 60%;
+    width: 45%;
     font-family: 'Poppins', sans-serif;
     height: 25px;
     border-radius: 5px;
@@ -96,7 +97,7 @@ h1, h3{
     padding: 3px;
     font-family: 'Poppins', sans-serif;
     border-radius: 5px;
-    width: 60%;
+    width: 45%;
     overflow: hidden;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);

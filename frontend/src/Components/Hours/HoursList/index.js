@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 
 
-export function ProjectList({projects}) {
+export function HorasList({projects}) {
 
 
     const [state, setState] = React.useState({filter: ""});
