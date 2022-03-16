@@ -25,7 +25,7 @@ public class Project implements Serializable {
     @Lob
     private String comments;
 
-    @OneToMany(mappedBy = "facturaEmitida", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private FacturaEmitida facturaEmitida;
 
     public Project() {
@@ -56,6 +56,7 @@ public class Project implements Serializable {
         this.startdate = startdate;
         this.enddate = enddate;
         this.comments = comments;
+
     }
 
 
@@ -154,6 +155,16 @@ public class Project implements Serializable {
     public void setComments(String comments) {
         this.comments = comments;
     }
+
+    public FacturaEmitida getfacturaEmitida() {
+        return facturaEmitida;
+    }
+
+    public void setfacturaEmitida(FacturaEmitida facturaEmitida) {
+        this.facturaEmitida = facturaEmitida;
+    }
+
+
 
     @Override
     public String toString() {

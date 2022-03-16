@@ -1,6 +1,5 @@
 package org.factoriaf5.labcoop.repository;
 
-import org.factoriaf5.labcoop.repository.Project;
 
 import javax.persistence.*;
 
@@ -8,9 +7,12 @@ import javax.persistence.*;
 @Table(name="facturasEmitidas")
 public class FacturaEmitida {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    private Long id;
     private int numFactura;
     private String fecha;
     private int importe;
@@ -18,10 +20,10 @@ public class FacturaEmitida {
     private int total;
     private boolean cobrado;
 
-    @OneToMany(orphanRemoval = true)
-    @JoinTable(name = "project",
-            joinColumns = @JoinColumn(name = "factura_emitida_id"),
-            inverseJoinColumns = @JoinColumn(name = "project_id"))
+
+    @JoinColumn(name = "project_id")
+    @OneToOne(fetch = FetchType.LAZY)
+
     private Project project;
 
     public Project getProject() {
@@ -46,6 +48,13 @@ public class FacturaEmitida {
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     public int getNumFactura() {
         return numFactura;
     }
@@ -98,13 +107,14 @@ public class FacturaEmitida {
     @Override
     public String toString() {
         return "FacturaEmitida{" +
-                "numFactura=" + numFactura +
+                "id=" + id +
+                ", numFactura=" + numFactura +
                 ", fecha='" + fecha + '\'' +
-                ", cliente='" + '\'' +
                 ", importe=" + importe +
                 ", iva=" + iva +
                 ", total=" + total +
                 ", cobrado=" + cobrado +
+                ", project=" + project +
                 '}';
     }
 }

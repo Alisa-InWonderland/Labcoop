@@ -1,8 +1,10 @@
 package org.factoriaf5.labcoop.controllers;
 
+import org.factoriaf5.labcoop.repository.FacturaEmitida;
 import org.factoriaf5.labcoop.repository.Project;
 import org.factoriaf5.labcoop.ProjectNotFoundException;
 import org.factoriaf5.labcoop.repository.ProjectsRepository;
+import org.factoriaf5.labcoop.repository.FacturasEmitidasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,32 +27,35 @@ public class ProjectController {
         return projectsRepository.findAll();
     }
 
+
     @GetMapping("/projects/{id}")
     public Project findProject(@PathVariable Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
 
     }
+
     @PostMapping("/projects")
         public Project createNewProject(@RequestBody Project project) {
             return projectsRepository.save(project);
         }
 
+
     // provisional
-    @PostConstruct
+   /* @PostConstruct
     private void cargarDatosDePrueba() {
         projectsRepository.saveAll(
                 List.of(
-                        new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", ""),
-                        new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", ""),
-                        new Project("21F008", "Formació Socis","Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", ""),
-                        new Project("21F012", "Tallers Viertuals","Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", ""),
-                        new Project("", "Singulars Cooperative Joves","Formació", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22", ""),
-                        new Project("", "Empendoria verda","P-Territori", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", "", ""),
-                        new Project("", "Formació y emprendimiento verde","P-Territori", "Fundación biodiversitat", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""),
-                        new Project("", "Juntes Emprenem amb","Formació", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21", ""),
-                        new Project("", "Escola popular d'economia feminista","Formació", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", "")
+                        new Project("21F010", "Emprendoria i Gènere 2022", "Formació", "AJ Montornès Del Vallès", "", "Aprovada", "Contracte", "Mitjant", "Dones", "Abr22", "Nov22", ""),
+                        new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "Cures", "Gen22", "Març22", ""),
+                        new Project("21F008", "Formació Socis","Formació", "Som Energía", "", "Aprovada", "Contracte", "Petit", "Ess", "Set22", "Gen22", ""),
+                        new Project("21F012", "Tallers Virtuals","Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "Ess", "Des21", "Oct22", ""),
+                        new Project("", "Singulars Cooperative Joves","Formació", "LabCoop", "", "Aprovada", "Subvenció", "Gran", "Joves", "Nov21", "Set-22", ""),
+                        new Project("", "Empendoria Verda","P-Territori", "Espai Ambiental", "", "Pendent", "Contracte", "Mini", "Ess", "", "", ""),
+                        new Project("", "Formació y Emprendimiento verde","P-Territori", "Fundació biodiversitat", "", "Pendent", "Contracte", "Gran", "Ess", "Sep21", "Des21", ""),
+                        new Project("", "Juntes Emprenem amb","Formació", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "Dones", "Oct21", "Des21", ""),
+                        new Project("", "Escola Popular d'Economia Feminista","Formació", "Cooperació", "", "Pendent", "Contracte", "Petit", "Dones", "", "", "")
                 ));
-    }
+    }*/
 
     @DeleteMapping("/projects/delete/{id}")
     public Project deleteProjectById(@PathVariable Long id) {
