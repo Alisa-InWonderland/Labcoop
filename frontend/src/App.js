@@ -17,9 +17,6 @@ import {getFacturasE} from "./Services/getFacturasE";
 function App() {
 
   const [projects, setProjects] = useState([]);
-  // const [facturasR, setFacturasR] = useState([]);
-//const [facturasE, setFacturasE] = useState([]);
-  // const [horas, setHoras] = useState([]);
   const [requiresUpdate, setRequiresUpdate] = useState(true);
 
 
@@ -70,9 +67,6 @@ function App() {
 
 
 
-
-
-
   return (
       <div className="App">
 
@@ -83,6 +77,7 @@ function App() {
               <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
             {/*<Route path="/horas" element={<HorasList projects={projects} horas={horas}/>}/>*/}
             <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+            {/*<Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addFacturaE={addFacturaE} deleteFacturaE={deleteFacturaE}/>}/>*/}
             <Route path="/projects/new" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
           </Routes>
         </main>
