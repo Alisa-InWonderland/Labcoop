@@ -1,42 +1,23 @@
-package org.factoriaf5.labcoop.controllers;
+package org.factoriaf5.labcoop.repository;
 
-import org.factoriaf5.labcoop.repository.Project;
-import org.factoriaf5.labcoop.ProjectNotFoundException;
-import org.factoriaf5.labcoop.repository.ProjectsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 
-@CrossOrigin
-@RestController
-public class ProjectController {
+@Component
+
+public class SampleDataLoader {
 
     private final ProjectsRepository projectsRepository;
 
     @Autowired
-    public ProjectController(ProjectsRepository projectsRepository) {
+    public SampleDataLoader(ProjectsRepository projectsRepository) {
         this.projectsRepository = projectsRepository;
     }
 
-    @GetMapping("/projects")
-    public List<Project> allProjects() {
-        return projectsRepository.findAll();
-    }
-
-    @GetMapping("/projects/{id}")
-    public Project findProject(@PathVariable Long id) {
-        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
-
-    }
-    @PostMapping("/projects")
-        public Project createNewProject(@RequestBody Project project) {
-            return projectsRepository.save(project);
-        }
-
-    // provisional
-   /* @PostConstruct
+    @PostConstruct
     private void cargarDatosDePrueba() {
         projectsRepository.saveAll(
                 List.of(
@@ -48,15 +29,9 @@ public class ProjectController {
                         new Project("", "Empendoria verda","P-Territori", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", "", ""),
                         new Project("", "Formació y emprendimiento verde","P-Territori", "Fundación biodiversitat", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""),
                         new Project("", "Juntes Emprenem amb","Formació", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21", ""),
-                        new Project("", "Escola popular d'economia feminista","Formació", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", "")
-                ));
-    }*/
-
-    @DeleteMapping("/projects/delete/{id}")
-    public Project deleteProjectById(@PathVariable Long id) {
-        Project project = projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
-        projectsRepository.deleteById(id);
-        return project;
+                        new Project("", "Escola popular d'economia feminista","Formació", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", ""),
+                        new Project("22F028", "Que salga de una vez", "formación",  "SonLux", " ", "Aprobat", "Contracte", "Mitjant", "Dones", "feb21",   "maz22", "" ))
+                );
     }
 
 }

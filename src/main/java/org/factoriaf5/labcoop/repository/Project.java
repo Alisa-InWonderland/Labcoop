@@ -2,6 +2,7 @@ package org.factoriaf5.labcoop.repository;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "projects")
@@ -25,8 +26,8 @@ public class Project implements Serializable {
     @Lob
     private String comments;
 
-    @OneToMany(mappedBy = "facturaEmitida", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private FacturaEmitida facturaEmitida;
+    @OneToMany(targetEntity = FacturaEmitida.class)
+    private List <FacturaEmitida> facturaEmitida;
 
     public Project() {
 
