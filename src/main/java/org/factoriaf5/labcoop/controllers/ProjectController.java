@@ -32,6 +32,10 @@ public class ProjectController {
         return projectsRepository.findAll();
     }
 
+    @GetMapping("/facturas-recibidas")
+    public List<Project> allProjectsFacturasRecibidas() {
+        return projectsRepository.findAll();
+    }
 
     @GetMapping("/projects/{id}")
     public Project findProject(@PathVariable Long id) {

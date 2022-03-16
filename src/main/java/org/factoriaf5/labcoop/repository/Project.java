@@ -28,6 +28,9 @@ public class Project implements Serializable {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private FacturaRecibida facturaRecibida;
+
     public Project() {
 
     }
@@ -162,6 +165,10 @@ public class Project implements Serializable {
 
     public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
         this.facturaEmitida = facturaEmitida;
+    }
+
+    public void setFacturaRecibida(FacturaRecibida facturaRecibida) {
+        this.facturaRecibida = facturaRecibida;
     }
 
 
