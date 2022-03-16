@@ -10,7 +10,6 @@ public class Project implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     private String code;
     private String name;
     private String area;
@@ -25,7 +24,8 @@ public class Project implements Serializable {
     @Lob
     private String comments;
 
-    @OneToOne(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
 
     public Project() {
@@ -160,7 +160,7 @@ public class Project implements Serializable {
         return facturaEmitida;
     }
 
-    public void setfacturaEmitida(FacturaEmitida facturaEmitida) {
+    public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
         this.facturaEmitida = facturaEmitida;
     }
 

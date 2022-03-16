@@ -7,8 +7,6 @@ import javax.persistence.*;
 @Table(name="facturasEmitidas")
 public class FacturaEmitida {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -19,20 +17,6 @@ public class FacturaEmitida {
     private int iva;
     private int total;
     private boolean cobrado;
-
-
-    @JoinColumn(name = "project_id")
-    @OneToOne(fetch = FetchType.LAZY)
-
-    private Project project;
-
-    public Project getProject() {
-        return project;
-    }
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
 
 
     public FacturaEmitida(int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
@@ -114,7 +98,6 @@ public class FacturaEmitida {
                 ", iva=" + iva +
                 ", total=" + total +
                 ", cobrado=" + cobrado +
-                ", project=" + project +
                 '}';
     }
 }
