@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Rubik+Beastly&family=Volkhov:wght@700&display=swap');
+
+h1, h3{
+    color:#ffffff;
+}
+
+.experience-form-wrapper {
+    margin-bottom: 30px;
+}
+
+.section-form-experience {
+
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-position: bottom;
+    margin-top: -40px;
+}
+
+.experience-form-section {
+    width: 100%;
+    background-color: #AB005A;
+    padding: 20px 20px 2px 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    margin-left: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+
+.experience-form-section h1 {
+    font-family: 'Volkhov', serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.total-previsto-title, .total-ejecutado-title {
+    margin-bottom: 20px;
+}
+
+.total-ejecutado-title {
+    margin-top: 10px;
+}
+
+.proyecto-container {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+
+.totales {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-form-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.experience-form-group input {
+    width: 60%;
+    font-family: 'Poppins', sans-serif;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #ccc7c7;
+    padding: 5px;
+    margin-left: 25px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+}
+
+.experience-form-group input:hover {
+    cursor: pointer;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #AB005A;
+}
+
+.experience-form-group textarea, select {
+    background-color: #ffffff;
+    padding: 3px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    width: 60%;
+    overflow: hidden;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;
+}
+
+textarea:hover {
+    cursor: pointer;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #AB005A;
+}
+
+.add-experience-form {
+    margin-bottom: 20px;
+}
+
+
+.btn-add {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+
+}
+
+.btn-edit {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    min-width: 130px;
+    height: 40px;
+    color: #000000;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, .5), 7px 7px 20px 0 rgba(0, 0, 0, .1), 4px 4px 5px 0 rgba(0, 0, 0, .1);
+    z-index: 1;
+    margin-top: 15px;
+}
+
+.btn-edit:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.btn-edit:after {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, .5), 7px 7px 20px 0 rgba(0, 0, 0, .1), 4px 4px 5px 0 rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+    background-color: #cbc8c8;
+    right: 0;
+}
+
+.btn-edit:active {
+    top: 2px;
+}
+
+.btn-flexbox {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+label {
+    color:#ffffff;
+}
+
+
+
+@media(max-width: 844px) {
+    .experience-form-section {
+        width: 100%;
+    }
+}
+
+
+@media(min-width: 845px) and (max-width: 1180px) {
+    .section-form-experience {
+        background-position: right;
+    }
+}
