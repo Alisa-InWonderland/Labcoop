@@ -31,7 +31,7 @@ public class Project implements Serializable {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
 
-    @ManyToMany
+    @OneToMany
     private List<FacturaRecibida> facturaRecibida;
 
 
