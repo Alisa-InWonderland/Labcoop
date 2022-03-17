@@ -32,6 +32,16 @@ public class ProjectController {
         return projectsRepository.findAll();
     }
 
+    @GetMapping("/facturas-emitidas/{id}")
+ public Project findFacturaE(@PathVariable Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+
+    }
+
+    @GetMapping("/facturas-recibidas")
+    public List<Project> allInvoicesProject() {
+        return projectsRepository.findAll();
+    }
 
     @GetMapping("/projects/{id}")
     public Project findProject(@PathVariable Long id) {

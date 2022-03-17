@@ -2,6 +2,9 @@ package org.factoriaf5.labcoop.repository;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
+
 
 @Entity
 @Table(name = "projects")
@@ -27,6 +30,10 @@ public class Project implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
+
+    @ManyToMany
+    private List<FacturaRecibida> facturaRecibida;
+
 
     public Project() {
 
@@ -164,7 +171,17 @@ public class Project implements Serializable {
         this.facturaEmitida = facturaEmitida;
     }
 
+    public FacturaEmitida getFacturaEmitida() {
+        return facturaEmitida;
+    }
 
+    public List<FacturaRecibida> getFacturaRecibida() {
+        return facturaRecibida;
+    }
+
+    public void setFacturaRecibida(List<FacturaRecibida> facturaRecibida) {
+        this.facturaRecibida = facturaRecibida;
+    }
 
     @Override
     public String toString() {

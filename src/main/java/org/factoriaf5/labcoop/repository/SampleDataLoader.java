@@ -22,15 +22,21 @@ public class SampleDataLoader {
 
         FacturaEmitida facturaProyecto1 = new FacturaEmitida(33, "feb2022", 3, 3, 3, true);
         FacturaEmitida facturaProyecto2 = new FacturaEmitida(22, "ene22", 2, 2, 2, true);
+        FacturaRecibida facturaRecibidaProyecto2 = new FacturaRecibida(" ", " ", "Març22", " ", 280, 10, 7, 1800, true);
+
         // TODO: Builder pattern
         Project project1 = new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", "");
         project1.setFacturaEmitida(facturaProyecto1);
         Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
         project2.setFacturaEmitida(facturaProyecto2);
+       /* Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
+        project2.setFacturaRecibida(facturaRecibidaProyecto2);*/
+
                 projectsRepository.saveAll(
                 List.of(
                         project1,
                         project2
+                        /*projectrecibida1*/
 //                        new Project("21F008", "Formació Socis", "Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", ""),
 //                        new Project("21F012", "Tallers Viertuals", "Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", ""),
 //                        new Project("", "Singulars Cooperative Joves", "Formació", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22", ""),
