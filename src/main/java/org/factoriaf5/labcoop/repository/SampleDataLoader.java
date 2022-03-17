@@ -41,6 +41,9 @@ public class SampleDataLoader {
         Project project4 = new Project("21F012", "Tallers Viertuals", "Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", "");
         project4.setFacturasRecibidas(List.of(facturaRProyecto1));
 
+        /* Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
+        project2.setFacturaRecibida List of factura facturaRecibidaProyecto2 (facturaRecibidaProyecto2);*/
+
 
         projectsRepository.saveAll(
                 List.of(
