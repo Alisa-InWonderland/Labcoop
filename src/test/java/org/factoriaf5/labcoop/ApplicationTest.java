@@ -1,5 +1,6 @@
 package org.factoriaf5.labcoop;
 
+import org.factoriaf5.labcoop.repository.Project;
 import org.factoriaf5.labcoop.repository.ProjectsRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
