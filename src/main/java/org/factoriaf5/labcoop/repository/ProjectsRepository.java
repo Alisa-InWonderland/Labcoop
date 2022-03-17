@@ -1,6 +1,7 @@
 package org.factoriaf5.labcoop.repository;
 
 
+import org.factoriaf5.labcoop.Project;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
