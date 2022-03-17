@@ -28,10 +28,11 @@ public class ProjectController {
     }
 
     @GetMapping("/facturas-emitidas")
-    public List<Project> allProjectsFacturas() {
+    public List<Project> allProjectFacturasE() {
         return projectsRepository.findAll();
     }
 
+<<<<<<< HEAD
     @GetMapping("/facturas-emitidas/{id}")
  public Project findFacturaE(@PathVariable Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
@@ -43,16 +44,23 @@ public class ProjectController {
         return projectsRepository.findAll();
     }
 
+=======
+>>>>>>> 19a069df012403619ba971089610f61938ce11b6
     @GetMapping("/projects/{id}")
     public Project findProject(@PathVariable Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    }
 
+    @GetMapping("/facturas-emitidas/{id}")
+    public Project findFacturaE(@PathVariable Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 
     @PostMapping("/projects")
         public Project createNewProject(@RequestBody Project project) {
             return projectsRepository.save(project);
         }
+
 
 
     // provisional
