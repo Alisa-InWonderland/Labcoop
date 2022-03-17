@@ -1,5 +1,5 @@
 // import React from "react";
-// import "./style.css"
+// import "./index.css"
 // import {FacturasRecibidasListItem} from "../FacturasRecibidasListItem/index";
 // import {Link} from "react-router-dom";
 //

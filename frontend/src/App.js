@@ -7,7 +7,7 @@ import {API_URL} from "./Services/settings";
 import {ProjectList} from "./Components/Projects/ProjectList/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
 // import {Menu} from "./Components/Menu/index"
-// import {Navbar} from "./Components/Navbar";
+import {Style} from "./Components/Sidebar/style";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 // import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
 // import {HorasList} from "./Components/Hours/HoursList";
@@ -69,9 +69,10 @@ function App() {
 
   return (
       <div className="App">
-
+       <Style/>
         <main className="main">
           <Routes>
+
             <Route path="/projects" element={<ProjectList projects={projects} />}/>
             {/*<Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects} facturasR={facturasR}/>}/>*/}
               <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
