@@ -34,7 +34,7 @@ public class SampleDataLoader {
         project3.setFacturaEmitida(facturaProyecto3);
 
         /* Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
-        project2.setFacturaRecibida(facturaRecibidaProyecto2);*/
+        project2.setFacturaRecibida List of factura facturaRecibidaProyecto2 (facturaRecibidaProyecto2);*/
 
         projectsRepository.saveAll(
                 List.of(
