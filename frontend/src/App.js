@@ -7,7 +7,7 @@ import {API_URL} from "./Services/settings";
 import {ProjectList} from "./Components/Projects/ProjectList/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
 // import {Menu} from "./Components/Menu/index"
-import {Sidebar} from "./Components/Sidebar/index";
+import Sidebar from "./Components/Sidebar/index";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
 // import {HorasList} from "./Components/Hours/HoursList";
