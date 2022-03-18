@@ -19,11 +19,7 @@ public class SampleDataLoaderFacturaEmitida {
 
     @PostConstruct
     private void cargarDatosDePrueba2() {
-        facturasEmitidasRepository.saveAll(
-                List.of(
-                        new FacturaEmitida(33, "feb2022", 3, 3, 3, true),
-                        new FacturaEmitida(22, "ene22", 2, 2, 2, true))
-                );
+
     }
 
 }
