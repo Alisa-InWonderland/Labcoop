@@ -34,8 +34,13 @@ public class SampleDataLoader {
         // TODO: Builder pattern
         Project project1 = new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", "");
         project1.setFacturaEmitida(facturaProyecto1);
+
         Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
+
         project2.setFacturaEmitida(facturaProyecto2);
+
+
+
         Project project3 = new Project("21F008", "Formació Socis", "Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", "");
         project3.setFacturaEmitida(facturaProyecto3);
 

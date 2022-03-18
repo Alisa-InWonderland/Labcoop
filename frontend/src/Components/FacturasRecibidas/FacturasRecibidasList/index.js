@@ -19,7 +19,7 @@ export function FacturasRecibidasList({projects}) {
 
         //project.hasOwnProperty('facturaEmitida');
 
-        const facturaRecibidaExist = projects.find(item => item.numInvoices !== null);
+        const facturaRecibidaExist = projects.find(item => item.facturaRecibida !== null);
         return facturaRecibidaExist === undefined;
 
     }

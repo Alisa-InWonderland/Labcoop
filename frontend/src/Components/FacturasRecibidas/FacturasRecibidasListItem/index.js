@@ -5,10 +5,12 @@ import "./style.css"
 
 
 
-export function FacturasRecibidasListItem({project}) {
+export function FacturasRecibidasListItem(props){project} {
 
-    const { code, name } = project;
-    const { id, expenseType, numInvoices, date, supplier, cost, iva, irpf, total, paidOut } = project.facturaRecibida;
+
+    const facturasRecibidasList = (props.id.expenseType.numInvoices.date.supplier.cost.iva.irpf.total.paidOut)
+   // const { code, name } = project;
+ //   const { id, expenseType, numInvoices, date, supplier, cost, iva, irpf, total, paidOut } = project.facturaRecibida;
 
 
     return (
