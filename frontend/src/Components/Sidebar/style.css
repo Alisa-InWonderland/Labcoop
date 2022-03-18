@@ -54,3 +54,7 @@
 .sidebar.active .hamburger div {
     transform: scale(0);
 }
+
+#areaA {
+    background-color: lime;
+}

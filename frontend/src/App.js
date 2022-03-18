@@ -7,7 +7,7 @@ import {API_URL} from "./Services/settings";
 import {ProjectList} from "./Components/Projects/ProjectList/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
 // import {Menu} from "./Components/Menu/index"
-import {Index} from "./Components/Sidebar";
+import {Sidebar} from "./Components/Sidebar/index";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 // import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
 // import {HorasList} from "./Components/Hours/HoursList";
@@ -68,9 +68,11 @@ function App() {
 
 
   return (
-      <div className="App">
-       <Index/>
-        <main className="main">
+      <div className="App" id="grid">
+
+       <Sidebar/>
+
+        <main className="main" id= "areaB">
           <Routes>
 
             <Route path="/projects" element={<ProjectList projects={projects} />}/>

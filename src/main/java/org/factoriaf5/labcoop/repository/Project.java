@@ -163,10 +163,6 @@ public class Project implements Serializable {
         this.comments = comments;
     }
 
-    public FacturaEmitida getfacturaEmitida() {
-        return facturaEmitida;
-    }
-
     public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
         this.facturaEmitida = facturaEmitida;
     }

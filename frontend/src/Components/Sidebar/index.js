@@ -4,13 +4,12 @@ import "./style.css";
 
 
 
-export function Index() {
+export function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
     return (
-        <nav className={sidebar ? "sidebar active" : "sidebar"}>
+        <nav className={sidebar ? "sidebar active" : "sidebar"} id="areaA">
             <button className="hamburger" type="button" onClick={showSidebar}>
-                <div></div>
             </button>
             <ul onClick={showSidebar}>
                 <li><Link to="/">Home</Link></li>
