@@ -1,38 +1,18 @@
 package org.factoriaf5.labcoop.repository;
 
 public class HorasTrabajadoras {
-    private String codigoDeProyecto;
-    private String nombreDeProyecto;
     private String cliente;
     private int numHorasAsignadas;
     private int numHorasEjecutadas;
     private int numHorasPendientes;
     private int precioHora;
 
-    public HorasTrabajadoras(String codigoDeProyecto, String nombreDeProyecto, String cliente, int numHorasAsignadas, int numHorasEjecutadas, int numHorasPendientes, int precioHora) {
-        this.codigoDeProyecto = codigoDeProyecto;
-        this.nombreDeProyecto = nombreDeProyecto;
+    public HorasTrabajadoras(String cliente, int numHorasAsignadas, int numHorasEjecutadas, int numHorasPendientes, int precioHora) {
         this.cliente = cliente;
         this.numHorasAsignadas = numHorasAsignadas;
         this.numHorasEjecutadas = numHorasEjecutadas;
         this.numHorasPendientes = numHorasPendientes;
         this.precioHora = precioHora;
-    }
-
-    public String getCodigoDeProyecto() {
-        return codigoDeProyecto;
-    }
-
-    public void setCodigoDeProyecto(String codigoDeProyecto) {
-        this.codigoDeProyecto = codigoDeProyecto;
-    }
-
-    public String getNombreDeProyecto() {
-        return nombreDeProyecto;
-    }
-
-    public void setNombreDeProyecto(String nombreDeProyecto) {
-        this.nombreDeProyecto = nombreDeProyecto;
     }
 
     public String getCliente() {
@@ -78,8 +58,6 @@ public class HorasTrabajadoras {
     @Override
     public String toString() {
         return "HorasTrabajadoras{" +
-                "codigoDeProyecto='" + codigoDeProyecto + '\'' +
-                ", nombreDeProyecto='" + nombreDeProyecto + '\'' +
                 ", cliente='" + cliente + '\'' +
                 ", numHorasAsignadas=" + numHorasAsignadas +
                 ", numHorasEjecutadas=" + numHorasEjecutadas +

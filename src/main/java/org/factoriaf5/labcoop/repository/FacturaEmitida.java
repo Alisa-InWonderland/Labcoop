@@ -67,7 +67,6 @@ public class FacturaEmitida {
         this.fecha = fecha;
     }
 
-
     public int getImporte() {
         return importe;
     }
