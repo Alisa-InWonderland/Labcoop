@@ -19,19 +19,47 @@ public class SampleDataLoader {
 
     @PostConstruct
     private void cargarDatosDePrueba() {
+
+        FacturaEmitida facturaProyecto1 = new FacturaEmitida(33, "feb2022", 3, 3, 3, true);
+        FacturaEmitida facturaProyecto2 = new FacturaEmitida(22, "ene22", 2, 2, 2, true);
+        FacturaEmitida facturaProyecto3 = new FacturaEmitida(5544, "ene22", 100, 2, 1000, true);
+
+        FacturaRecibida facturaRProyecto4 = new FacturaRecibida("HoresLab", "2404", "2/DEC", "Laburoo", 350, 70, 40, 420, true);
+        FacturaRecibida facturaR1Proyecto4 = new FacturaRecibida("HoresLab", "2405", "2/FEB", "Laburoo", 350, 70, 40, 420, true);
+
+         /*FacturaRecibida facturaRecibidaProyecto2 = new FacturaRecibida(" ", " ", "Març22", " ", 280, 10, 7, 1800, true);
+       Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
+        project2.setFacturaRecibida(facturaRecibidaProyecto2);*/
+
+        // TODO: Builder pattern
+        Project project1 = new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", "");
+        project1.setFacturaEmitida(facturaProyecto1);
+        Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
+        project2.setFacturaEmitida(facturaProyecto2);
+        Project project3 = new Project("21F008", "Formació Socis", "Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", "");
+        project3.setFacturaEmitida(facturaProyecto3);
+
+        Project project4 = new Project("21F012", "Tallers Viertuals", "Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", "");
+        project4.setFacturasRecibidas(List.of(facturaRProyecto4, facturaR1Proyecto4));
+
+        /* Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
+        project2.setFacturaRecibida List of factura facturaRecibidaProyecto2 (facturaRecibidaProyecto2);*/
+
+
         projectsRepository.saveAll(
                 List.of(
-                        new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", ""),
-                        new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", ""),
-                        new Project("21F008", "Formació Socis","Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", ""),
-                        new Project("21F012", "Tallers Viertuals","Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", ""),
-                        new Project("", "Singulars Cooperative Joves","Formació", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22", ""),
-                        new Project("", "Empendoria verda","P-Territori", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", "", ""),
-                        new Project("", "Formació y emprendimiento verde","P-Territori", "Fundación biodiversitat", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""),
-                        new Project("", "Juntes Emprenem amb","Formació", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21", ""),
-                        new Project("", "Escola popular d'economia feminista","Formació", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", ""),
-                        new Project("22F028", "Que salga de una vez", "formación",  "SonLux", " ", "Aprobat", "Contracte", "Mitjant", "Dones", "feb21",   "maz22", "" ))
-                );
+                        project1,
+                        project2,
+                        project3,
+                        project4,
+//                        new Project("21F012", "Tallers Viertuals", "Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", ""),
+                        new Project("", "Singulars Cooperative Joves", "Formació", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22", ""),
+                        new Project("", "Empendoria verda", "P-Territori", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", "", ""),
+                        new Project("", "Formació y emprendimiento verde", "P-Territori", "Fundación biodiversitat", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""),
+                        new Project("", "Juntes Emprenem amb", "Formació", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21", ""),
+                        new Project("", "Escola popular d'economia feminista", "Formació", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", ""),
+                        new Project("22F028", "Que salga de una vez", "formación", "SonLux", " ", "Aprobat", "Contracte", "Mitjant", "Dones", "feb21", "maz22", ""))
+        );
     }
 
 }

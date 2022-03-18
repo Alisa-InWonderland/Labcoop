@@ -3,10 +3,10 @@ package org.factoriaf5.labcoop.controllers;
 import org.factoriaf5.labcoop.repository.Project;
 import org.factoriaf5.labcoop.ProjectNotFoundException;
 import org.factoriaf5.labcoop.repository.ProjectsRepository;
+import org.factoriaf5.labcoop.repository.FacturasRecibidasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @CrossOrigin
@@ -14,10 +14,12 @@ import java.util.List;
 public class ProjectController {
 
     private final ProjectsRepository projectsRepository;
+    private final FacturasRecibidasRepository facturasRecibidasRepository;
 
     @Autowired
-    public ProjectController(ProjectsRepository projectsRepository) {
+    public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository) {
         this.projectsRepository = projectsRepository;
+        this.facturasRecibidasRepository = facturasRecibidasRepository;
     }
 
     @GetMapping("/projects")
@@ -25,32 +27,37 @@ public class ProjectController {
         return projectsRepository.findAll();
     }
 
-    @GetMapping("/projects/{id}")
-    public Project findProject(@PathVariable Long id) {
+    @GetMapping("/facturas-emitidas")
+    public List<Project> allProjectFacturasE() {
+        return projectsRepository.findAll();
+    }
+
+    @GetMapping("/facturas-emitidas/{id}")
+ public Project findFacturaE(@PathVariable Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
 
     }
+
+    @GetMapping("/facturas-recibidas")
+    public List<Project> allInvoicesProject() {
+        return projectsRepository.findAll();
+    }
+
+    @GetMapping("/facturas-recibidas/{id}")
+    public Project findFacturaR(@PathVariable("id") Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    }
+
+    @GetMapping("/projects/{id}")
+    public Project findProject(@PathVariable Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    }
+
+
     @PostMapping("/projects")
         public Project createNewProject(@RequestBody Project project) {
             return projectsRepository.save(project);
         }
-
-    // provisional
-   /* @PostConstruct
-    private void cargarDatosDePrueba() {
-        projectsRepository.saveAll(
-                List.of(
-                        new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", ""),
-                        new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", ""),
-                        new Project("21F008", "Formació Socis","Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", ""),
-                        new Project("21F012", "Tallers Viertuals","Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", ""),
-                        new Project("", "Singulars Cooperative Joves","Formació", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22", ""),
-                        new Project("", "Empendoria verda","P-Territori", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", "", ""),
-                        new Project("", "Formació y emprendimiento verde","P-Territori", "Fundación biodiversitat", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", ""),
-                        new Project("", "Juntes Emprenem amb","Formació", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21", ""),
-                        new Project("", "Escola popular d'economia feminista","Formació", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", "")
-                ));
-    }*/
 
     @DeleteMapping("/projects/delete/{id}")
     public Project deleteProjectById(@PathVariable Long id) {

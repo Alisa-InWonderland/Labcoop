@@ -1,7 +1,17 @@
 package org.factoriaf5.labcoop.repository;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="facturasRecibidas")
 public class FacturaRecibida {
 
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id", nullable = false)
+        private Long id;
         private String expenseType;
         private String numInvoices;
         private String date;
@@ -22,6 +32,18 @@ public class FacturaRecibida {
         this.irpf = irpf;
         this.total = total;
         this.paidOut = paidOut;
+    }
+
+    public FacturaRecibida() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getExpenseType() {
@@ -99,7 +121,8 @@ public class FacturaRecibida {
     @Override
     public String toString() {
         return "FacturaRecibida{" +
-                "expenseType='" + expenseType + '\'' +
+                "id=" + id +
+                ", expenseType='" + expenseType + '\'' +
                 ", numInvoices='" + numInvoices + '\'' +
                 ", date='" + date + '\'' +
                 ", supplier='" + supplier + '\'' +
@@ -111,3 +134,4 @@ public class FacturaRecibida {
                 '}';
     }
 }
+
