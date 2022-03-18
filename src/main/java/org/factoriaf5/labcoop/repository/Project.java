@@ -3,11 +3,7 @@ package org.factoriaf5.labcoop.repository;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 5bba774503008844194c8a4f54fe449f411a17d9
 
 @Entity
 @Table(name = "projects")
@@ -30,14 +26,11 @@ public class Project implements Serializable {
     @Lob
     private String comments;
 
-<<<<<<< HEAD
-    @OneToMany(targetEntity = FacturaEmitida.class)
-    private List <FacturaEmitida> facturaEmitida;
-=======
+
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
->>>>>>> 5bba774503008844194c8a4f54fe449f411a17d9
+
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<FacturaRecibida> facturasRecibidas;

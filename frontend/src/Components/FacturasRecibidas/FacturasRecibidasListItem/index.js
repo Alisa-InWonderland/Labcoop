@@ -6,9 +6,6 @@ import "./style.css"
 export function FacturasRecibidasListItem({project}) {
 
     const {code, name, facturasRecibidas} = project;
-    //const {  } = facturaRecibida;
-    //const facturasRecibidasList = project.facturasRecibidas;
-
 
     return (
         facturasRecibidas.map(factura =>

@@ -18,23 +18,6 @@ public class FacturaEmitida {
     private int total;
     private boolean cobrado;
 
-<<<<<<< HEAD
-    @OneToOne()
-    @JoinTable(name = "projects",
-            joinColumns = @JoinColumn(name = "factura_emitida_id"),
-            inverseJoinColumns = @JoinColumn(name = "project_code"))
-    private Project project;
-
-    public Project getProject() {
-        return project;
-    }
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
-=======
->>>>>>> 5bba774503008844194c8a4f54fe449f411a17d9
 
     public FacturaEmitida(int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
         this.numFactura = numFactura;
@@ -56,10 +39,7 @@ public class FacturaEmitida {
     public void setId(Long id) {
         this.id = id;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5bba774503008844194c8a4f54fe449f411a17d9
     public int getNumFactura() {
         return numFactura;
     }
@@ -119,7 +99,6 @@ public class FacturaEmitida {
                 ", iva=" + iva +
                 ", total=" + total +
                 ", cobrado=" + cobrado +
-                ", project=" + project +
                 '}';
     }
 }
