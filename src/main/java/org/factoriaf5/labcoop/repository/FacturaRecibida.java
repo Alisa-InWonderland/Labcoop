@@ -12,6 +12,7 @@ public class FacturaRecibida {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id", nullable = false)
         private Long id;
+        private String nameProject;
         private String expenseType;
         private String numInvoices;
         private String date;
@@ -22,7 +23,8 @@ public class FacturaRecibida {
         private int total;
         private boolean paidOut;
 
-    public FacturaRecibida(String expenseType, String numInvoices, String date, String supplier, int cost, int iva, double irpf, int total, boolean paidOut) {
+    public FacturaRecibida(String nameProject, String expenseType, String numInvoices, String date, String supplier, int cost, int iva, double irpf, int total, boolean paidOut) {
+        this.nameProject = nameProject;
         this.expenseType = expenseType;
         this.numInvoices = numInvoices;
         this.date = date;
@@ -44,6 +46,14 @@ public class FacturaRecibida {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNameProject() {
+        return nameProject;
+    }
+
+    public void setNameProject(String nameProject) {
+        this.nameProject = nameProject;
     }
 
     public String getExpenseType() {
@@ -122,6 +132,7 @@ public class FacturaRecibida {
     public String toString() {
         return "FacturaRecibida{" +
                 "id=" + id +
+                ", nameProject='" + nameProject + '\'' +
                 ", expenseType='" + expenseType + '\'' +
                 ", numInvoices='" + numInvoices + '\'' +
                 ", date='" + date + '\'' +
