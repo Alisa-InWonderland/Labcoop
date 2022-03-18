@@ -31,8 +31,8 @@ public class Project implements Serializable {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
 
-    @OneToMany
-    private List<FacturaRecibida> facturaRecibida;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<FacturaRecibida> facturasRecibidas;
 
 
     public Project() {
@@ -171,12 +171,12 @@ public class Project implements Serializable {
         return facturaEmitida;
     }
 
-    public List<FacturaRecibida> getFacturaRecibida() {
-        return facturaRecibida;
+    public List<FacturaRecibida> getFacturasRecibidas() {
+        return facturasRecibidas;
     }
 
-    public void setFacturaRecibida(List<FacturaRecibida> facturaRecibida) {
-        this.facturaRecibida = facturaRecibida;
+    public void setFacturasRecibidas(List<FacturaRecibida> facturasRecibidas) {
+        this.facturasRecibidas = facturasRecibidas;
     }
 
     @Override
