@@ -14,12 +14,12 @@ import java.util.List;
 public class ProjectController {
 
     private final ProjectsRepository projectsRepository;
-    private final FacturasRecibidasRepository FacturasRecibidasRepository;
+    private final FacturasRecibidasRepository facturasRecibidasRepository;
 
     @Autowired
     public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository) {
         this.projectsRepository = projectsRepository;
-        this.FacturasRecibidasRepository = facturasRecibidasRepository;
+        this.facturasRecibidasRepository = facturasRecibidasRepository;
     }
 
     @GetMapping("/projects")
@@ -42,9 +42,10 @@ public class ProjectController {
     public List<Project> allInvoicesProject() {
         return projectsRepository.findAll();
     }
+
     @GetMapping("/facturas-recibidas/{id}")
-    public List<Project> findFacturaR(@PathVariable("id") Long id) {
-        return FacturasRecibidasRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    public Project findFacturaR(@PathVariable("id") Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 
     @GetMapping("/projects/{id}")
