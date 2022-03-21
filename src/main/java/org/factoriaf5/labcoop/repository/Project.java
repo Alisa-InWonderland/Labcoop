@@ -180,6 +180,8 @@ public class Project implements Serializable {
         this.facturasRecibidas = facturasRecibidas;
     }
 
+
+
     @Override
     public String toString() {
         return "Project{" +

@@ -51,7 +51,6 @@ public class ProjectController {
         return project;
     }
 
-
     @GetMapping("/facturas-emitidas")
     public List<Project> allProjectFacturasE() {
         return projectsRepository.findAll();
@@ -66,7 +65,6 @@ public class ProjectController {
     public FacturaEmitida createNewFacturaE(@RequestBody FacturaEmitida facturaEmitida) {
         return facturasEmitidasRepository.save(facturaEmitida);
     }
-
 
     @GetMapping("/facturas-recibidas")
     public List<Project> allInvoicesProject() {
