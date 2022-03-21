@@ -18,6 +18,7 @@ public class FacturaEmitida {
     private int total;
     private boolean cobrado;
 
+<<<<<<< HEAD
     @OneToOne()
     @JoinTable(name = "projects",
             joinColumns = @JoinColumn(name = "factura_emitida_id"),
@@ -32,6 +33,8 @@ public class FacturaEmitida {
         this.project = project;
     }
 
+=======
+>>>>>>> 817581b479bfe89d74b901e6d32d007974d48008
 
     public FacturaEmitida(int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
         this.numFactura = numFactura;
@@ -53,6 +56,10 @@ public class FacturaEmitida {
     public void setId(Long id) {
         this.id = id;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 817581b479bfe89d74b901e6d32d007974d48008
     public int getNumFactura() {
         return numFactura;
     }
@@ -112,7 +119,6 @@ public class FacturaEmitida {
                 ", iva=" + iva +
                 ", total=" + total +
                 ", cobrado=" + cobrado +
-                ", project=" + project +
                 '}';
     }
 }

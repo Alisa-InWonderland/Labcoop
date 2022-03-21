@@ -33,7 +33,7 @@ public class ProjectController {
     }
 
     @GetMapping("/facturas-emitidas/{id}")
- public Project findFacturaE(@PathVariable Long id) {
+    public Project findFacturaE(@PathVariable Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
 
     }
