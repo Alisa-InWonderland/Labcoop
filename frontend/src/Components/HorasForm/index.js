@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import "./style.css"
+import Typography from "@mui/material/Typography";
 
 
 export const HorasForm = ({addProject, deleteProject}) => {
@@ -42,8 +43,9 @@ export const HorasForm = ({addProject, deleteProject}) => {
         <div className='section-form-experience'>
             <section className="experience-form-section">
                 <div className="experience-form-wrapper">
-
-                    <h1>{data ? 'Horas' : 'Nuevo proyecto'}</h1>
+                    <Typography variant="h1" component="h2">
+                        <h1>{data ? 'Horas' : 'Nuevo proyecto'}</h1>
+                    </Typography>;
                     <div className="experience-form-container">
                         <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 
