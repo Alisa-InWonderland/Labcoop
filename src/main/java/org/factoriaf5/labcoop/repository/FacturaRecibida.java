@@ -1,12 +1,9 @@
-
 package org.factoriaf5.labcoop.repository;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "facturaRecibida")
+@Table (name="facturasRecibidas")
 public class FacturaRecibida {
-
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id", nullable = false)

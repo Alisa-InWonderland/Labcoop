@@ -14,10 +14,22 @@ export function FacturasEmitidasList({projects}) {
         setState({filter: val.target.value.toLowerCase()});
     }
 
+
+    function checkFacturaEmitida(projects) {
+
+            //project.hasOwnProperty('facturaEmitida');
+
+        const facturaEmitidaExist = projects.find(item => item.facturaEmitida !== null);
+        return facturaEmitidaExist === undefined;
+
+     }
+
+
+
     return (
         <div className="table-container">
             <section className='reservesList'>
-                <h1 className="reservesList-title">Proyectos</h1>
+                <h1 className="reservesList-title">Facturas Emitidas</h1>
 
                 <div className="barra-de-busqueda-container">
                     <input
@@ -29,7 +41,7 @@ export function FacturasEmitidasList({projects}) {
                     />
 
                         <button className="btn-orange">
-                            <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>
+                            <Link className="btn-orange-link" to='/projects/new'>Nueva factura emitida</Link>
                         </button>
 
 
@@ -37,31 +49,50 @@ export function FacturasEmitidasList({projects}) {
 
                 <div className='tablelist'>
 
-                    <table className="reserva-table">
+                    <table className="factura-emitida-table">
 
-                        <tr className='reserva-table-title'>
-                            <th className='reserva-th'>Código</th>
-                            <th className='reserva-th'>Nombre Proyecto</th>
-                            <th className='reserva-th'>Nº Factura</th>
-                            <th className='reserva-th'>Fecha</th>
-                            <th className='reserva-th'>Cliente</th>
-                            <th className='reserva-th'>Importe</th>
-                            <th className='reserva-th'>IVA</th>
-                            <th className='reserva-th'>TOTAL</th>
-                            <th className='reserva-th'>Cobrado</th>
+                        <tr className='factura-emitida-table-title'>
+                            <th className='factura-emitida-th'>Código</th>
+                            <th className='factura-emitida-th'>Nombre Proyecto</th>
+                            <th className='factura-emitida-th'>Nº Factura</th>
+                            <th className='factura-emitida-th'>Fecha</th>
+                            <th className='factura-emitida-th'>Cliente</th>
+                            <th className='factura-emitida-th'>Importe</th>
+                            <th className='factura-emitida-th'>IVA</th>
+                            <th className='factura-emitida-th'>TOTAL</th>
+                            <th className='factura-emitida-th'>Cobrado</th>
                         </tr>
 
-                        {projects.map((project) => {
+                        {checkFacturaEmitida(projects) ? <tr><td colSpan="9">No hay facturas emitidas</td></tr>
+
+                        : projects.filter(project => project.facturaEmitida !== null).map((project) => {
 
                             if (
                                 project.code.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                                ) {
+                                return <FacturasEmitidasListItem key={project.id} project={project}/>;
+                                }
+
+                            if (
+                                project.name.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
                                 return <FacturasEmitidasListItem key={project.id} project={project}/>;
                             }
 
-                            return "";
-                        })}
+                            if (
+                                project.client.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <FacturasEmitidasListItem key={project.id} project={project}/>;
+                            }
+
+                                return "";
+
+                            })
+
+                        }
 
                     </table>
 

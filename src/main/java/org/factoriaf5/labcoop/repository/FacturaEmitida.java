@@ -11,12 +11,29 @@ public class FacturaEmitida {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     private int numFactura;
     private String fecha;
     private int importe;
     private int iva;
     private int total;
     private boolean cobrado;
+
+    @OneToOne()
+    @JoinTable(name = "projects",
+            joinColumns = @JoinColumn(name = "factura_emitida_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_code"))
+    private Project project;
+
+
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
 
     public FacturaEmitida(int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
@@ -39,6 +56,7 @@ public class FacturaEmitida {
     public void setId(Long id) {
         this.id = id;
     }
+
     public int getNumFactura() {
         return numFactura;
     }
