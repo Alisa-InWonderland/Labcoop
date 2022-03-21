@@ -20,19 +20,18 @@ public class SampleDataLoader {
     @PostConstruct
     private void cargarDatosDePrueba() {
 
-        FacturaEmitida facturaProyecto1 = new FacturaEmitida( 1, "1/1/2022", 10000, 2100, 12100, true);
-        FacturaEmitida facturaProyecto2 = new FacturaEmitida( 2, "1/1/2022", 10000, 2100, 12100, false);
-        FacturaEmitida facturaProyecto3 = new FacturaEmitida( 5544, "ene22", 100, 2, 1000, true);
 
-        FacturaRecibida facturaRProyecto2 = new FacturaRecibida( "Externo", "010-2022", "2/2/2022", "Looky", 2000, 420, 0, 2420, true);
+        FacturaEmitida facturaProyecto1 = new FacturaEmitida(1, "1/1/2022", 10000, 2100, 12100, true);
+        FacturaEmitida facturaProyecto2 = new FacturaEmitida( 2, "1/1/2022", 10000, 2100, 12100, false);
+        FacturaEmitida facturaProyecto3 = new FacturaEmitida(5544, "ene22", 100, 2, 1000, true);
+
+        FacturaRecibida facturaRProyecto2 = new FacturaRecibida("Externo", "010-2022", "2/2/2022", "Looky", 2000, 420, 0, 2420, true);
         FacturaRecibida facturaR1Proyecto2 = new FacturaRecibida("Socia", "2200156", "1/1/2022", "ETCS", 1000, 210, 0, 1210, false);
         FacturaRecibida facturaR2Proyecto2 = new FacturaRecibida("Transport", "2309", "16/1/2022", "LabDos", 50, 5, 10, 65, false);
         FacturaRecibida facturaRProyecto4 = new FacturaRecibida("HoresLab", "2404", "2/DEC", "Laburoo", 350, 70, 40, 420, true);
         FacturaRecibida facturaR1Proyecto4 = new FacturaRecibida( "HoresLab", "2405", "2/FEB", "Laburoo", 350, 70, 40, 420, true);
 
-         /*FacturaRecibida facturaRecibidaProyecto2 = new FacturaRecibida(" ", " ", "Març22", " ", 280, 10, 7, 1800, true);
-       Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
-        project2.setFacturaRecibida(facturaRecibidaProyecto2);*/
+
 
 
         // TODO: Builder pattern
@@ -46,8 +45,6 @@ public class SampleDataLoader {
         Project project4 = new Project("21F012", "Tallers Viertuals", "Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", "");
         project4.setFacturasRecibidas(List.of(facturaRProyecto4, facturaR1Proyecto4));
 
-        /* Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
-        project2.setFacturaRecibida List of factura facturaRecibidaProyecto2 (facturaRecibidaProyecto2);*/
 
 
         projectsRepository.saveAll(
@@ -64,10 +61,6 @@ public class SampleDataLoader {
                         new Project("", "Escola popular d'economia feminista", "Formació", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", "", ""),
                         new Project("22F028", "Que salga de una vez", "formación", "SonLux", " ", "Aprobat", "Contracte", "Mitjant", "Dones", "feb21", "maz22", ""))
         );
-
-       /* Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
-        project2.setFacturaRecibida(facturaRecibidaProyecto2);*/
-
 
     }
 

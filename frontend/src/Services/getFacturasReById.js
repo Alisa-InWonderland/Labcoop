@@ -1,4 +1,4 @@
-import {API_URL, API_URL_FACTURAS_R} from "./settings";
+import {API_URL_FACTURAS_R} from "./settings";
 
 export function getProjectsById(id) {
 
