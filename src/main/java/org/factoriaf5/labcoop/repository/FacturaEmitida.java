@@ -39,6 +39,7 @@ public class FacturaEmitida {
     public void setId(Long id) {
         this.id = id;
     }
+
     public int getNumFactura() {
         return numFactura;
     }

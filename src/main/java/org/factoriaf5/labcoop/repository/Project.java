@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.List;
 
 
-
 @Entity
 @Table(name = "projects")
 public class Project implements Serializable {
@@ -28,8 +27,10 @@ public class Project implements Serializable {
     private String comments;
 
 
+
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
+
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<FacturaRecibida> facturasRecibidas;

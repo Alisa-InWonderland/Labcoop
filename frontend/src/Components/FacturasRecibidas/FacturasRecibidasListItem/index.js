@@ -3,40 +3,38 @@ import {Link} from "react-router-dom";
 import "./style.css"
 
 
+export function FacturasRecibidasListItem({project}) {
 
-
-export function FacturasRecibidasListItem(props){project} {
-
-
-    const facturasRecibidasList = (props.id.expenseType.numInvoices.date.supplier.cost.iva.irpf.total.paidOut)
-   // const { code, name } = project;
- //   const { id, expenseType, numInvoices, date, supplier, cost, iva, irpf, total, paidOut } = project.facturaRecibida;
-
+    const {code, name, facturasRecibidas} = project;
 
     return (
-        <tr className='factura-recibida-table-row'>
+        facturasRecibidas.map(factura =>
+            <tr className='facturas-recibidas-table-row'>
 
-            <td className="factura-recibida">{code}</td>
-            <td className="factura-recibida">{name}</td>
-            <td className="reserva-td factura-recibida-num">
-                <Link
-                to={`/projects/${id}`}
-                state={{data: project}}
-                >
-                {numInvoices}
-                </Link>
-            </td>
-            <td className="factura-recibida">{expenseType}</td>
-            <td className="factura-recibida">{numInvoices}</td>
-            <td className="factura-recibida">{date}</td>
-            <td className="factura-recibida">{supplier}</td>
-            <td className="factura-recibida">{cost}</td>
-            <td className="factura-recibida">{iva}</td>
-            <td className="factura-recibida">{irpf}</td>
-            <td className="factura-recibida">{total}</td>
-            <td className="factura-recibida">{paidOut}</td>
+                <td className="facturas-recibidas-td">{code}</td>
+                <td className="facturas-recibidas-td">{name}</td>
+                <td className="facturas-recibidas-td">{factura.expenseType}</td>
+                <td className="facturas-recibidas-td num-facturaR">
 
-        </tr>
+                    <Link
+                    to={`/facturas-recibidas/${factura.id}`}
+                    state={{data: project}}
+                    >
+                        {factura.numInvoices}
+                    </Link>
+                </td>
+                <td className="facturas-recibidas-td">{factura.date}</td>
+
+                <td className="facturas-recibidas-td">{factura.supplier}</td>
+                <td className="facturas-recibidas-td">{factura.cost}</td>
+                <td className="facturas-recibidas-td">{factura.iva}</td>
+                <td className="facturas-recibidas-td">{factura.irpf}</td>
+                <td className="facturas-recibidas-td">{factura.total}</td>
+                <td className="facturas-recibidas-td">{factura.paidOut}</td>
+
+            </tr>
+        )
+
 
     );
 

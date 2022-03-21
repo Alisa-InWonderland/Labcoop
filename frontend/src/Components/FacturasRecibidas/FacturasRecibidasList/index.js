@@ -14,22 +14,16 @@ export function FacturasRecibidasList({projects}) {
         setState({filter: val.target.value.toLowerCase()});
     }
 
-
     function checkFacturaRecibida(projects) {
-
-        //project.hasOwnProperty('facturaEmitida');
-
-        const facturaRecibidaExist = projects.find(item => item.facturaRecibida !== null);
+        const facturaRecibidaExist = projects.find(item => item.facturasRecibidas.length === 0);
         return facturaRecibidaExist === undefined;
-
     }
-
 
 
     return (
         <div className="table-container">
-            <section className='reservesList'>
-                <h1 className="reservesList-title">Facturas Recibidas</h1>
+            <section className='facturas-recibidas-list'>
+                <h1 className="facturas-recibidas-list-title">Facturas Recibidas</h1>
 
                 <div className="barra-de-busqueda-container">
                     <input
@@ -52,20 +46,28 @@ export function FacturasRecibidasList({projects}) {
                     <table className="facturas-recibidas-table">
 
                         <tr className='facturas-recibidas-table-title'>
-                            <th className='facturas-recibidas-th'>Código</th>
+                            <th className='facturas-recibidas-th'>Codigo Proyecto
+                            </th>
                             <th className='facturas-recibidas-th'>Nombre Proyecto</th>
-                            <th className='facturas-recibidas'>Nº Factura</th>
-                            <th className='facturas-recibidas'>Fecha</th>
-                            <th className='facturas-recibidas'>Cliente</th>
-                            <th className='facturas-recibidas'>Importe</th>
-                            <th className='facturas-recibidas'>IVA</th>
-                            <th className='facturas-recibidas'>TOTAL</th>
-                            <th className='facturas-recibidas'>Cobrado</th>
+                            <th className='facturas-recibidas-th'>Tipo gasto
+                            </th>
+                            <th className='facturas-recibidas-th'>Nº Factura
+                            </th>
+                            <th className='facturas-recibidas-th'>Fecha</th>
+                            <th className='facturas-recibidas-th'>Proveedor
+                            </th>
+                            <th className='facturas-recibidas-th'>Importe</th>
+                            <th className='facturas-recibidas-th'>IVA</th>
+                            <th className='facturas-recibidas-th'>IRPF</th>
+                            <th className='facturas-recibidas-th'>TOTAL</th>
+                            <th className='facturas-recibidas-th'>Pagado
+                            </th>
                         </tr>
+
 
                         {checkFacturaRecibida(projects) ? <tr><td colSpan="9">No hay facturas recibidas</td></tr>
 
-                            : projects.filter(project => project.facturaRecibida !== null).map((project) => {
+                            : projects.filter(project => project.facturasRecibidas.length !== 0).map((project) => {
 
                                 if (
                                     project.code.toLowerCase().indexOf(state.filter) >= 0 ||
