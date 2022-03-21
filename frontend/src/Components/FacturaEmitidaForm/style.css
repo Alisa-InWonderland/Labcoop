@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Rubik+Beastly&family=Volkhov:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 h1, h3{
     color:#ffffff;
 }
@@ -28,6 +27,7 @@ h1, h3{
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 
 }
+
 
 
 .factura-emitida-form-section h1 {
@@ -63,6 +63,7 @@ h1, h3{
     margin: auto;
 }
 
+
 .factura-emitida-form-group input {
     width: 65%;
     font-family: 'Poppins', sans-serif;
@@ -84,6 +85,7 @@ h1, h3{
     border-width: 2px;
     border-color: #AB005A;
 }
+
 
 
 textarea:hover {
@@ -108,7 +110,6 @@ textarea:hover {
 
 .btn-edit {
     background-color: #ffffff;
-    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     min-width: 130px;
     height: 40px;
