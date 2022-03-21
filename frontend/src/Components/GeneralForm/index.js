@@ -43,15 +43,15 @@ export const GeneralForm = ({addProject, deleteProject}) => {
 
 
     return (
-        <div className='section-form-experience'>
-            <section className="experience-form-section">
-                <div className="experience-form-wrapper">
+        <div className='section-form-general'>
+            <section className="general-form-section">
+                <div className="general-form-wrapper">
 
                     <h1>{data ? 'General' : 'Nuevo proyecto'}</h1>
                     <div className="experience-form-container">
                         <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 
-                            <div className="proyecto-container">
+                            <div className="general-proyecto-container">
 
                                 <div className="datos-proyecto">
 
@@ -180,7 +180,9 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                     </div>
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">Observaciones Administración
+                                        <label htmlFor="">
+                                            Observaciones<br/>
+                                            Administración
                                         </label>
                                         <textarea type="text"
                                                   value={datos.comments}

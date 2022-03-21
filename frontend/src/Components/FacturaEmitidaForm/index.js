@@ -39,81 +39,79 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
 
 
     return (
-        <div className='section-form-experience'>
-            <section className="experience-form-section">
-                <div className="experience-form-wrapper">
+        <div className='section-form-factura-emitida'>
+            <section className="factura-emitida-form-section">
+                <div className="factura-emitida-form-wrapper">
 
                     <h1>{data ? 'Factura emitida' : 'Nuevo proyecto'}</h1>
-                    <div className="experience-form-container">
-                        <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
+                    <div className="factura-emitida-form-container">
+                        <form  className="edit-factura-emitida-form" onSubmit={enviarDatos} action="">
 
                             <div className="proyecto-container">
 
-                                <div className="datos-proyecto">
-
-                                    <div className="experience-form-group">
+                                    <div className="factura-emitida-form-group">
                                         <label htmlFor="">Nº Factura
                                         </label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="factura-emitida-form-control"
                                                onChange={handleInputChange}
-                                               name="code"
+                                               name="facturaEmitida.numFactura"
                                                value={datos.facturaEmitida.numFactura}
                                                />
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="factura-emitida-form-group">
                                         <label htmlFor="">Fecha
                                         </label>
                                         <input  type="text"
                                                 value={datos.facturaEmitida.fecha}
                                                 name="facturaEmitida.fecha"
-                                                className="experience-form-control"
+                                                className="factura-emitida-form-control"
                                                 onChange={handleInputChange}
                                                 required/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="factura-emitida-form-group">
                                         <label htmlFor="">Cliente</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="factura-emitida-form-control"
                                                onChange={handleInputChange}
                                                name="client"
                                                value={datos.client}
                                                required/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="factura-emitida-form-group">
                                         <label htmlFor="">Importe
                                         </label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="factura-emitida-form-control"
                                                onChange={handleInputChange}
                                                name="facturaEmitida.importe"
                                                value={datos.facturaEmitida.importe}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="factura-emitida-form-group">
                                         <label htmlFor="">IVA
                                         </label>
                                         <input type="text"
                                                value={datos.facturaEmitida.iva}
                                                name="facturaEmitida.iva"
-                                               className="experience-form-control"
+                                               className="factura-emitida-form-control"
                                                onChange={handleInputChange}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="factura-emitida-form-group">
                                         <label htmlFor="">Total
                                         </label>
                                         <input type="text"
                                                value={datos.facturaEmitida.total}
                                                name="facturaEmitida.total"
-                                               className="experience-form-control"
+                                               className="factura-emitida-form-control"
                                                onChange={handleInputChange}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="factura-emitida-form-group">
                                         <label htmlFor="">Cobrado
                                         </label>
                                         <input type="text"
@@ -123,7 +121,6 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
                                                onChange={handleInputChange}/>
                                     </div>
 
-                                </div>
                             </div>
 
                             <div className="btn-flexbox">
