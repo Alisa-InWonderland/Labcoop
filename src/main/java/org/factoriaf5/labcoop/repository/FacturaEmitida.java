@@ -11,7 +11,6 @@ public class FacturaEmitida {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String nombreProyecto;
     private int numFactura;
     private String fecha;
     private int importe;
@@ -22,7 +21,6 @@ public class FacturaEmitida {
 
 
     public FacturaEmitida(String nombreProyecto, int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
-        this.nombreProyecto = nombreProyecto;
         this.numFactura = numFactura;
         this.fecha = fecha;
         this.importe = importe;
@@ -41,14 +39,6 @@ public class FacturaEmitida {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getNombreProyecto() {
-        return nombreProyecto;
-    }
-
-    public void setNombreProyecto(String nombreProyecto) {
-        this.nombreProyecto = nombreProyecto;
     }
 
     public int getNumFactura() {
@@ -103,7 +93,6 @@ public class FacturaEmitida {
     public String toString() {
         return "FacturaEmitida{" +
                 "id=" + id +
-                ", nombreProyecto='" + nombreProyecto + '\'' +
                 ", numFactura=" + numFactura +
                 ", fecha='" + fecha + '\'' +
                 ", importe=" + importe +

@@ -65,4 +65,8 @@ public class HorasTrabajadoras {
                 ", precioHora=" + precioHora +
                 '}';
     }
+
+    //   public void calculoHorasPendientes(){
+    //    (int numHorasAsignadas - int numHorasEjecutadas = numHorasPendientes;
+    //}
 }

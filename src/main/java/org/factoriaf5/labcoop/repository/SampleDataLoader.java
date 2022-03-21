@@ -69,10 +69,6 @@ public class SampleDataLoader {
                         new Project("22F028", "Que salga de una vez", "formación", "SonLux", " ", "Aprobat", "Contracte", "Mitjant", "Dones", "feb21", "maz22", ""))
         );
 
-       /* Project projectrecibida1 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", "");
-        project2.setFacturaRecibida(facturaRecibidaProyecto2);*/
-
-
-    }
+      }
 
 }
