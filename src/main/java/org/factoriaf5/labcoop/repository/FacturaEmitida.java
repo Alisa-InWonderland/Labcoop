@@ -36,7 +36,9 @@ public class FacturaEmitida {
     }
 
 
+
     public FacturaEmitida(int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
+
         this.numFactura = numFactura;
         this.fecha = fecha;
         this.importe = importe;
@@ -57,6 +59,7 @@ public class FacturaEmitida {
         this.id = id;
     }
 
+
     public int getNumFactura() {
         return numFactura;
     }
@@ -72,7 +75,6 @@ public class FacturaEmitida {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-
 
     public int getImporte() {
         return importe;
@@ -116,6 +118,7 @@ public class FacturaEmitida {
                 ", iva=" + iva +
                 ", total=" + total +
                 ", cobrado=" + cobrado +
+                ", project=" + project +
                 '}';
     }
 }

@@ -14,12 +14,10 @@ import java.util.List;
 public class ProjectController {
 
     private final ProjectsRepository projectsRepository;
-    private final FacturasRecibidasRepository facturasRecibidasRepository;
 
     @Autowired
     public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository) {
         this.projectsRepository = projectsRepository;
-        this.facturasRecibidasRepository = facturasRecibidasRepository;
     }
 
     @GetMapping("/projects")
@@ -41,7 +39,6 @@ public class ProjectController {
     @GetMapping("/facturas-emitidas/{id}")
     public Project findFacturaE(@PathVariable Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
-
     }
 
     @GetMapping("/facturas-recibidas")
@@ -50,7 +47,9 @@ public class ProjectController {
     }
 
     @GetMapping("/facturas-recibidas/{id}")
+
     public Project findFacturaR(@PathVariable("id") Long id) {
+
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 >>>>>>> ecb85fbc52fae80fd0bff335c40df98aedcfdd45
@@ -62,15 +61,16 @@ public class ProjectController {
 
 
     @PostMapping("/projects")
-        public Project createNewProject(@RequestBody Project project) {
-            return projectsRepository.save(project);
-        }
+    public Project createNewProject (@RequestBody Project project){
+        return projectsRepository.save(project);
+    }
 
     @DeleteMapping("/projects/delete/{id}")
-    public Project deleteProjectById(@PathVariable Long id) {
+    public Project deleteProjectById (@PathVariable Long id){
         Project project = projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
         projectsRepository.deleteById(id);
         return project;
     }
+
 
 }
