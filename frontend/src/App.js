@@ -8,7 +8,7 @@ import {ProjectList} from "./Components/Projects/ProjectList/index";
 import {GeneralForm} from "./Components/GeneralForm/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
 // import {Menu} from "./Components/Menu/index"
-// import {Navbar} from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar/index";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 import {FacturaEmitidaForm} from "./Components/FacturaEmitidaForm/index";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
@@ -82,10 +82,13 @@ function App() {
 
 
   return (
-      <div className="App">
+      <div className="App" id="grid">
 
-        <main className="main">
+       <Sidebar/>
+
+        <main className="main" id= "areaB">
           <Routes>
+
             <Route path="/projects" element={<ProjectList projects={projects} />}/>
             <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
             <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>

@@ -19,12 +19,14 @@ public class ProjectController {
     private final FacturasRecibidasRepository facturasRecibidasRepository;
     private final FacturasEmitidasRepository facturasEmitidasRepository;
 
+
     @Autowired
     public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository, FacturasEmitidasRepository facturasEmitidasRepository) {
         this.projectsRepository = projectsRepository;
         this.facturasRecibidasRepository = facturasRecibidasRepository;
         this.facturasEmitidasRepository = facturasEmitidasRepository;
     }
+
 
     @GetMapping("/projects")
     public List<Project> allProjects() {
@@ -49,6 +51,7 @@ public class ProjectController {
         return project;
     }
 
+
     @GetMapping("/facturas-emitidas")
     public List<Project> allProjectFacturasE() {
         return projectsRepository.findAll();
@@ -64,16 +67,16 @@ public class ProjectController {
         return facturasEmitidasRepository.save(facturaEmitida);
     }
 
+
     @GetMapping("/facturas-recibidas")
     public List<Project> allInvoicesProject() {
         return projectsRepository.findAll();
     }
 
     @GetMapping("/facturas-recibidas/{id}")
-    public Project findFacturaR(@PathVariable("id") Long id) {
+    public Project findFacturaR (@PathVariable("id") Long id){
+
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
-
-
 
 }
