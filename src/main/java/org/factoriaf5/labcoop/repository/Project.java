@@ -23,6 +23,16 @@ public class Project implements Serializable {
     private String target;
     private String startdate;
     private String enddate;
+    private int previousBudget;
+
+
+    private int previousCoCost;
+    private int previousExtExpenses;
+    private int workersExpenses;
+    private int managePercent;
+    private int otherExpenses;
+    private int margin;
+
     @Lob
     private String comments;
 
@@ -49,9 +59,7 @@ public class Project implements Serializable {
         this.id = id;
     }
 
-
-    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, String comments) {
-
+    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas) {
         this.code = code;
         this.name = name;
         this.area = area;
@@ -63,10 +71,17 @@ public class Project implements Serializable {
         this.target = target;
         this.startdate = startdate;
         this.enddate = enddate;
+        this.previousBudget = previousBudget;
+        this.previousCoCost = previousCoCost;
+        this.previousExtExpenses = previousExtExpenses;
+        this.workersExpenses = workersExpenses;
+        this.managePercent = managePercent;
+        this.otherExpenses = otherExpenses;
+        this.margin = margin;
         this.comments = comments;
-
+        this.facturaEmitida = facturaEmitida;
+        this.facturasRecibidas = facturasRecibidas;
     }
-
 
     public String getName() {
         return name;
@@ -164,6 +179,64 @@ public class Project implements Serializable {
         this.comments = comments;
     }
 
+
+    public int getPreviousBudget() {
+        return previousBudget;
+    }
+
+    public void setPreviousBudget(int previousBudget) {
+        this.previousBudget = previousBudget;
+    }
+
+    public int getPreviousCoCost() {
+        return previousCoCost;
+    }
+
+    public void setPreviousCoCost(int previousCoCost) {
+        this.previousCoCost = previousCoCost;
+    }
+
+    public int getPreviousExtExpenses() {
+        return previousExtExpenses;
+    }
+
+    public void setPreviousExtExpenses(int previousExtExpenses) {
+        this.previousExtExpenses = previousExtExpenses;
+    }
+
+    public int getWorkersExpenses() {
+        return workersExpenses;
+    }
+
+    public void setWorkersExpenses(int workersExpenses) {
+        this.workersExpenses = workersExpenses;
+    }
+
+    public int getManagePercent() {
+        return managePercent;
+    }
+
+    public void setManagePercent(int managePercent) {
+        this.managePercent = managePercent;
+    }
+
+    public int getOtherExpenses() {
+        return otherExpenses;
+    }
+
+    public void setOtherExpenses(int otherExpenses) {
+        this.otherExpenses = otherExpenses;
+    }
+
+    public int getMargin() {
+        return margin;
+    }
+
+    public void setMargin(int margin) {
+        this.margin = margin;
+    }
+
+
     public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
         this.facturaEmitida = facturaEmitida;
     }
@@ -195,7 +268,16 @@ public class Project implements Serializable {
                 ", target='" + target + '\'' +
                 ", startdate='" + startdate + '\'' +
                 ", enddate='" + enddate + '\'' +
+                ", previousBudget=" + previousBudget +
+                ", previousCoCost=" + previousCoCost +
+                ", previousExtExpenses=" + previousExtExpenses +
+                ", workersExpenses=" + workersExpenses +
+                ", managePercent=" + managePercent +
+                ", otherExpenses=" + otherExpenses +
+                ", margin=" + margin +
                 ", comments='" + comments + '\'' +
+                ", facturaEmitida=" + facturaEmitida +
+                ", facturasRecibidas=" + facturasRecibidas +
                 '}';
     }
 }
