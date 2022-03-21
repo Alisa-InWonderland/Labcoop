@@ -19,20 +19,18 @@ export default function Sidebar() {
                 <MenuItem>
                     <ListItemText inset><Link to="/projects">Projects</Link></ListItemText>
                 </MenuItem>
+
                 <MenuItem>
-                    <ListItemIcon>
-                        <Check />
-                    </ListItemIcon>
-                    Facturas
+                    <ListItemText inset><Link to="/horas">Horas trabajadas</Link></ListItemText>
                 </MenuItem>
-                <Divider />
+
                 <MenuItem>
                     <ListItemText><Link to="/facturas-emitidas">Facturas emitidas</Link></ListItemText>
                 </MenuItem>
                 <MenuItem>
                     <ListItemText><Link to="/facturas-recibidas">Facturas recibidas</Link></ListItemText>
                 </MenuItem>
-                <Divider />
+
 
             </MenuList>
         </Paper>
