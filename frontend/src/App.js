@@ -1,19 +1,23 @@
 import './App.css';
-/*import  { Menu } from './Components/Menu/index'*/
+
 import {useEffect, useState} from "react";
 import {Route, Routes} from "react-router-dom";
 import {getProjects} from "./Services/getProjects";
 import {API_URL} from "./Services/settings";
-import {ProjectList} from "./Components/ProjectList/index";
+import {ProjectList} from "./Components/Projects/ProjectList/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
-import {Navbar} from "./Components/Navbar";
-
+// import {Menu} from "./Components/Menu/index"
+// import {Navbar} from "./Components/Navbar";
+import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
+// import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
+// import {HorasList} from "./Components/Hours/HoursList";
+// import {getFacturasR} from "./Services/getFacturasR";
+import {getFacturasE} from "./Services/getFacturasE";
 
 function App() {
 
   const [projects, setProjects] = useState([]);
   const [requiresUpdate, setRequiresUpdate] = useState(true);
-  /*const [loggedIn, setLoggedIn] = useState(false)*/
 
 
   useEffect(() => {
@@ -23,6 +27,22 @@ function App() {
           .then(_ => setRequiresUpdate(false));
     }
   }, [requiresUpdate])
+
+    useEffect(() => {
+        if (requiresUpdate) {
+            getFacturasE()
+                .then(setProjects)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
+    //
+    // useEffect(() => {
+    //     if (requiresUpdate) {
+    //         getFacturasR()
+    //             .then(setFacturasR)
+    //             .then(_ => setRequiresUpdate(false));
+    //     }
+    // }, [requiresUpdate])
 
 
   const addProject = (project) => {
@@ -46,16 +66,22 @@ function App() {
   }
 
 
+
   return (
       <div className="App">
+
         <main className="main">
-            <Navbar/>
           <Routes>
             <Route path="/projects" element={<ProjectList projects={projects} />}/>
+            {/*<Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects} facturasR={facturasR}/>}/>*/}
+              <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
+            {/*<Route path="/horas" element={<HorasList projects={projects} horas={horas}/>}/>*/}
             <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+            {/*<Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addFacturaE={addFacturaE} deleteFacturaE={deleteFacturaE}/>}/>*/}
             <Route path="/projects/new" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
           </Routes>
         </main>
+
       </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css"
-import {ProjectListItem} from "../ProjectListItem/index";
+import {ProjectListItem} from "../HoursListItem";
 import {Link} from "react-router-dom";
 
 
 
-export function ProjectList({projects}) {
+export function HorasList({projects}) {
 
 
     const [state, setState] = React.useState({filter: ""});
