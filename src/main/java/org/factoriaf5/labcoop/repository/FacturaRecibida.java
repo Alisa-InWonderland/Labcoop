@@ -46,6 +46,7 @@ public class FacturaRecibida {
         this.id = id;
     }
 
+
     public String getExpenseType() {
         return expenseType;
     }

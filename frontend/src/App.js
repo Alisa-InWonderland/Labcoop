@@ -7,7 +7,7 @@ import {API_URL} from "./Services/settings";
 import {ProjectList} from "./Components/Projects/ProjectList/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
 // import {Menu} from "./Components/Menu/index"
-// import {Navbar} from "./Components/Navbar";
+import {Index} from "./Components/Sidebar";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
 // import {HorasList} from "./Components/Hours/HoursList";
@@ -69,12 +69,13 @@ function App() {
 
   return (
       <div className="App">
-
+       <Index/>
         <main className="main">
           <Routes>
+
             <Route path="/projects" element={<ProjectList projects={projects} />}/>
             <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
-              <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
+            <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
             {/*<Route path="/horas" element={<HorasList projects={projects} horas={horas}/>}/>*/}
             <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
             {/*<Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addFacturaE={addFacturaE} deleteFacturaE={deleteFacturaE}/>}/>*/}
