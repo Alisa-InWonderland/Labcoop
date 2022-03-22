@@ -44,38 +44,18 @@ public class ApplicationTest {
 
         mockMvc.perform(get("/projects"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[*]", hasSize(9)))
+                .andExpect(jsonPath("$[*]", hasSize(10)))
                 .andExpect(jsonPath("$[0].name", equalTo("Emprendoria i Génere 2022")))
                 .andExpect(jsonPath("$[0].code", equalTo("21F010")));
     }
-
-
-    private void addSampleProjects(){
-
-    /*private void addSampleProjects(){
-
-        List<Project> projects = List.of(
-                new Project("21F010", "Emprendoria i Génere 2022", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22"),
-                new Project("21F011", "Formació en cures", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22"),
-                new Project("21F008", "Formació Socis", "Som Energía", "", "Aprobada", "Contracte", "petit", "ess", "Set22", "Gen22"),
-                new Project("", "Singulars Cooperative Joves", "LabCoop", "", "Aprovada", "Subvensio", "Gran", "joves", "Nov21", "Septembre-22"),
-                new Project("", "Empendoria verda", "Espai ambiental", "", "Pendent", "Contracte", "Mini", "ess", "", ""),
-                new Project("", "Formació y emprendimiento verde", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21"),
-                new Project("", "Juntes Emprenem amb", "LabCoop", "", "Pendent", "Subvenció", "Mitjant", "dones", "Oct21", "Des21"),
-                new Project("", "Escola popular d'economia feminista", "Cooperació", "", "Pendent", "Contracte", "petit", "dones", "", ""));*/ }
-
-
-
-
-
-
 
     @Disabled
     @Test
     void findProjectsById() throws Exception {
         mockMvc.perform(get("/projects/3"))
-                .andExpect(jsonPath("$.name", equalTo("Formació Socis")))
-                .andExpect(jsonPath("$.code", equalTo("21F008")));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is("Formació Socis")))
+                .andExpect(jsonPath("$.code", is("21F008")));
     }
 
     @Test
