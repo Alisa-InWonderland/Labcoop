@@ -32,6 +32,8 @@ export const GeneralForm = ({addProject, deleteProject}) => {
         otherExpenses: '',
         margin: '',
         comments: '',
+        observationsA: '',
+        observationsC: '',
 
     })
 
@@ -123,7 +125,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                         <label htmlFor="">Tipo</label>
                                         <input type="text"
                                                value={datos.type}
-                                               name="type" id="" cols="50" rows="5"
+                                               name="type"
                                                className="form-control"
                                                onChange={handleInputChange}/>
                                     </div>
@@ -180,8 +182,8 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                             Coordinación
                                         </label>
                                         <textarea type="text"
-                                                  value={datos.comments}
-                                                  name="comments" cols="50" rows="3"
+                                                  value={datos.observationsC}
+                                                  name="observationsC" cols="50" rows="3"
                                                   className="experience-form-control"
                                                   onChange={handleInputChange}/>
                                     </div>
@@ -192,8 +194,8 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                             Administración
                                         </label>
                                         <textarea type="text"
-                                                  value={datos.comments}
-                                                  name="comments" cols="50" rows="3"
+                                                  value={datos.observationsA}
+                                                  name="observationsA" cols="50" rows="3"
                                                   className="experience-form-control"
                                                   onChange={handleInputChange}/>
                                     </div>
@@ -266,7 +268,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                             <label htmlFor="">Margen</label>
                                             <input type="text"
                                                    value={datos.margin}
-                                                   name="margin" id="" cols="50" rows="5"
+                                                   name="margin"
                                                    className="form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
@@ -339,7 +341,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                             </label>
                                             <input type="text"
                                                    value={datos.type}
-                                                   name="type" id="" cols="50" rows="5"
+                                                   name="type"
                                                    className="form-control"
                                                    onChange={handleInputChange}/>
                                         </div>

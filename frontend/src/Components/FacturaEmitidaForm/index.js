@@ -43,7 +43,7 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
             <section className="factura-emitida-form-section">
                 <div className="factura-emitida-form-wrapper">
 
-                    <h1>{data ? 'Factura emitida' : 'Nuevo proyecto'}</h1>
+                    <h1>{data ? 'Factura emitida' : 'Nueva factura'}</h1>
                     <div className="factura-emitida-form-container">
                         <form  className="edit-factura-emitida-form" onSubmit={enviarDatos} action="">
 

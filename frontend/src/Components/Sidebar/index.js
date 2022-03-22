@@ -21,21 +21,21 @@ export default function Sidebar() {
             </ImageListItem>
             <MenuList className="sidebar" dense>
                 <MenuItem className="text" >
-                    <ListItemText ><Link to="/">HOME</Link></ListItemText>
+                    <ListItemText ><Link to="/projects">Home</Link></ListItemText>
                 </MenuItem>
                 <MenuItem>
-                    <ListItemText><Link to="/projects">PROJECTS</Link></ListItemText>
-                </MenuItem>
-
-                <MenuItem>
-                    <ListItemText><Link to="/horas">HORAS TRABAJADAS</Link></ListItemText>
+                    <ListItemText><Link to="/projects">Proyectos</Link></ListItemText>
                 </MenuItem>
 
                 <MenuItem>
-                    <ListItemText><Link to="/facturas-emitidas">FACTURAS RECIBIDAS</Link></ListItemText>
+                    <ListItemText><Link to="/horas">Horas trabajadas</Link></ListItemText>
+                </MenuItem>
+
+                <MenuItem>
+                    <ListItemText><Link to="/facturas-emitidas">Facturas emitidas</Link></ListItemText>
                 </MenuItem>
                 <MenuItem>
-                    <ListItemText><Link to="/facturas-recibidas">FACTURAS RECIBIDAS</Link></ListItemText>
+                    <ListItemText><Link to="/facturas-recibidas">Facturas recibidas</Link></ListItemText>
                 </MenuItem>
             </MenuList>
         </Paper>
