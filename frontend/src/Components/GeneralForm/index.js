@@ -24,6 +24,13 @@ export const GeneralForm = ({addProject, deleteProject}) => {
         target: '',
         startdate: '',
         enddate: '',
+        previousBudget: '',
+        previousCoCost: '',
+        previousExtExpenses: '',
+        workersExpenses: '',
+        managePercent: '',
+        otherExpenses: '',
+        margin: '',
         comments: '',
 
     })
@@ -203,16 +210,16 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                             <input type="text"
                                                    className="experience-form-control"
                                                    onChange={handleInputChange}
-                                                   name="code"
-                                                   value={datos.code}
+                                                   name="previousBudget"
+                                                   value={datos.previousBudget}
                                             />
                                         </div>
 
                                         <div className="experience-form-group">
                                             <label htmlFor="">Gastos Socias previstos</label>
                                             <input  type="text"
-                                                    value={datos.name}
-                                                    name="name"
+                                                    value={datos.previousCoCost}
+                                                    name="previousCoCost"
                                                     className="experience-form-control"
                                                     onChange={handleInputChange}
                                                     required/>
@@ -223,8 +230,8 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                             <input type="text"
                                                    className="experience-form-control"
                                                    onChange={handleInputChange}
-                                                   name="client"
-                                                   value={datos.client}
+                                                   name="previousExtExpenses"
+                                                   value={datos.previousExtExpenses}
                                                    required/>
                                         </div>
 
@@ -233,15 +240,15 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                             <input type="text"
                                                    className="experience-form-control"
                                                    onChange={handleInputChange}
-                                                   name="manager"
-                                                   value={datos.manager}/>
+                                                   name="workersExpenses"
+                                                   value={datos.workersExpenses}/>
                                         </div>
 
                                         <div className="experience-form-group">
                                             <label htmlFor="">% Gestión</label>
                                             <input type="text"
-                                                   value={datos.status}
-                                                   name="status"
+                                                   value={datos.managePercent}
+                                                   name="managePercent"
                                                    className="experience-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
@@ -249,8 +256,8 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                         <div className="experience-form-group">
                                             <label htmlFor="">Otros gastos previstos</label>
                                             <input type="text"
-                                                   value={datos.area}
-                                                   name="area"
+                                                   value={datos.otherExpenses}
+                                                   name="otherExpenses"
                                                    className="experience-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
@@ -258,8 +265,8 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                         <div className="experience-form-group">
                                             <label htmlFor="">Margen</label>
                                             <input type="text"
-                                                   value={datos.type}
-                                                   name="type" id="" cols="50" rows="5"
+                                                   value={datos.margin}
+                                                   name="margin" id="" cols="50" rows="5"
                                                    className="form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
