@@ -1,37 +1,26 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "./style.css"
+import "./style.css";
 
 
 
 
-export function HorasList({project},{horasTrabajadoras}) {
+export function HoursListItem({project}) {
 
-    const { id, code, name, client } = project;
-    const { trabajador, socias, numHorasAsignadas, numHorasEjecutadas, numHorasPendientes, precioHora, donePrice } = horasTrabajadoras;
+    const { id, code, name, client, horasTrabajadoras } = project;
 
     return (
-        horasTrabajadoras.map( horas =>
+        horasTrabajadoras.map( hora =>
         <tr className='reserva-table-row'>
-
             <td className="reserva-td">{code}</td>
-            <td className="reserva-td name">
-                <Link
-                to={`/projects/${id}`} {`/horasTrabajadoras/${id}`}
-                state={{data: project}}
-                >   {name || 'no name'}
-                    {horas.horasTrabajadoras}
-                </Link>
-            </td>
-
+            <td className="reserva-td">{name}</td>
             <td className="reserva-td">{client}</td>
-            <td className="reserva-td">{trabajador}</td>
-            <td className="reserva-td">{socias}</td>
-            <td className="reserva-td">{numHorasAsignadas}</td>
-            <td className="reserva-td">{numHorasEjecutadas}</td>
-            <td className="reserva-td">{numHorasPendientes}</td>
-            <td className="reserva-td">{precioHora}</td>
-            <td className="reserva-td">{donePrice}</td>
+            <td className="reserva-td">{hora.trabajador}</td>
+            <td className="reserva-td">{hora.numHorasAsignadas}</td>
+            <td className="reserva-td">{hora.numHorasEjecutadas}</td>
+            <td className="reserva-td">{hora.numHorasPendientes}</td>
+            <td className="reserva-td">{hora.precioHora}</td>
+            <td className="reserva-td">{hora.donePrice}</td>
         </tr>
 
         ));

@@ -280,6 +280,7 @@ public class Project implements Serializable {
         this.facturasRecibidas = facturasRecibidas;
     }
 
+
     public List<HorasTrabajadoras> getHorasTrabajadoras() {
         return horasTrabajadoras;
     }
@@ -287,6 +288,7 @@ public class Project implements Serializable {
     public void setHorasTrabajadoras(List<HorasTrabajadoras> horasTrabajadoras) {
         this.horasTrabajadoras = horasTrabajadoras;
     }
+
 
     @Override
     public String toString() {

@@ -42,7 +42,7 @@ export function ProjectForm({addProject}) {
                     </TabPanel>
 
                     <TabPanel value="4">
-                        <HorasForm addProject={addProject} value="3" />
+                        <HorasForm addProject={addProject} value="4" />
                     </TabPanel>
 
             </TabContext>

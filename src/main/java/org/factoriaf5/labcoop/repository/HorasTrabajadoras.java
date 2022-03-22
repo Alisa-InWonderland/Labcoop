@@ -23,7 +23,6 @@ public class HorasTrabajadoras {
         this.id = id;
         this.cliente = cliente;
         this.trabajador = trabajador;
-        this.socias = socias;
         this.numHorasAsignadas = numHorasAsignadas;
         this.numHorasEjecutadas = numHorasEjecutadas;
         this.numHorasPendientes = numHorasPendientes;

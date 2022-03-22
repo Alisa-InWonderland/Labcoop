@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css"
-import {HoursListItem} from "../Hours";
+import {HoursListItem} from "../HoursListItem";
 import {Link} from "react-router-dom";
 
 
 
-export function HoursListItem({projects},{horasTrabajadoras}) {
+export function HoursList({projects}) {
 
 
     const [state, setState] = React.useState({filter: ""});
@@ -14,10 +14,10 @@ export function HoursListItem({projects},{horasTrabajadoras}) {
         setState({filter: val.target.value.toLowerCase()});
     }
 
-    function checkHorasTrabajadoras(horasTrabajadoras){
-        const projectHours = projects.find(item => item.horasTrabajadoras.length === 0);
-        const horasTrabajadorasExist = horasTrabajadoras.find(item => item.horasTrabajadoras.length === 0);
-        return horasTrabajadorasExist + projectHours === undefined;
+    function checkHorasTrabajadoras(projects){
+
+        const horasTrabajadorasExist = projects.find(item => item.horasTrabajadoras.length === 0);
+        return horasTrabajadorasExist === undefined;
     }
 
     return (
@@ -49,7 +49,6 @@ export function HoursListItem({projects},{horasTrabajadoras}) {
                             <th className='reserva-th'>CODI</th>
                             <th className='reserva-th'>NOM</th>
                             <th className='reserva-th'>TRABAJADORAS</th>
-                            <th className='reserva-th'>SOCIAS</th>
                             <th className='reserva-th'>ASIGNADAS</th>
                             <th className='reserva-th'>EJECUTADAS</th>
                             <th className='reserva-th'>PENDIENTES</th>
@@ -59,72 +58,24 @@ export function HoursListItem({projects},{horasTrabajadoras}) {
 
                         </tr>
 
-                        {checkHorasTrabajadoras(horasTrabajadoras) ? <tr><td colSpan="9">No hay horas trabajadas</td></tr>
+                        {checkHorasTrabajadoras(projects) ? <tr><td colSpan="9">No hay horas trabajadas</td></tr>
 
-                            : projects.filter(horasTrabajadoras => horasTrabajadoras.numHorasEjecutadas.length !== 0).map((horasTrabajadoras) => {
+                            : projects.filter(project => project.horasTrabajadoras.length !== 0).map((project) => {
                             if (
-                                horasTrabajadoras.trabajador.toLowerCase().indexOf(state.filter) >= 0 ||
+                                project.horasTrabajadoras.trabajador.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <HorasTrabajadorasListItem key={horasTrabajadoras.id} project={project}/>;
+                                return <HoursListItem key={project.id} project={project}/>;
                             }
                             if (
-                                horasTrabajadoras.client.toLowerCase().indexOf(state.filter) >= 0 ||
+                                project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <HorasTrabajadorasListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                horasTrabajadoras.numHorasEjecutadas.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <HorasTrabajadorasListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                horasTrabajadoras.numHorasPendientes.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <PHorasTrabajadorasListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                horasTrabajadoras.numHorasAsignadas.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <HorasTrabajadorasListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                horasTrabajadoras.precioHora.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <HorasTrabajadorasListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                project.name.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                project.status.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                project.comments.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
-                            }
-                            if (
-                                project.area.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
+                                return <HoursListItem key={project.id} project={project}/>;
                             }
 
                             return "";
-                        })}}
+                        })}
 
                     </table>
 

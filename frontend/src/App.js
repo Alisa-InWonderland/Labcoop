@@ -12,7 +12,7 @@ import Sidebar from "./Components/Sidebar/index";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 import {FacturaEmitidaForm} from "./Components/FacturaEmitidaForm/index";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
-// import {HorasList} from "./Components/Hours/HoursList";
+import {HorasList, HoursList} from "./Components/Hours/HoursList";
 import {getFacturasR} from "./Services/getFacturasR";
 import {getFacturasE} from "./Services/getFacturasE";
 
@@ -92,7 +92,7 @@ function App() {
             <Route path="/projects" element={<ProjectList projects={projects} />}/>
             <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
             <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
-            <Route path="/horas" element={<HorasList projects={projects} horas={horas}/>}/>
+            <Route path="/horas" element={<HoursList projects={projects}/>}/>
             <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
             {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
             {/*<Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>*/}

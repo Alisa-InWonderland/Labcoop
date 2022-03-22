@@ -16,7 +16,6 @@ export const HorasForm = ({addProject, deleteProject}) => {
     const [datos, setDatos] = useState(data || {
         client: '',
         trabajador: '',
-        socias: '',
         numHorasAsignadas: '',
         numHorasEjecutadas: '',
         numHorasPendientes: '',

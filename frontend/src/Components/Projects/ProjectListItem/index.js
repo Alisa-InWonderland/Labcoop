@@ -7,7 +7,7 @@ import "./style.css"
 
 export function ProjectListItem({project}) {
 
-    const { id, code, name, client, manager, status, type, size, target, previousBudget, previousCoCost, previousExtExpenses, workersExpenses, managePercent, otherExpenses, margin } = project;
+    const { id, code, name, client, manager, status, type, size, target, previousBudget, previousCoCost, previousExtExpenses, workersExpenses, managePercent, otherExpenses, margin, facturaEmitida } = project;
 
 
     return (

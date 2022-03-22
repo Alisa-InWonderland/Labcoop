@@ -48,7 +48,6 @@ public class ProjectController {
         return project;
     }
 
-
     @GetMapping("/facturas-emitidas")
     public List<Project> allProjectFacturasE() {
         return projectsRepository.findAll();
@@ -64,7 +63,6 @@ public class ProjectController {
         return facturasEmitidasRepository.save(facturaEmitida);
     }
 
-
     @GetMapping("/facturas-recibidas")
     public List<Project> allInvoicesProject() {
         return projectsRepository.findAll();
@@ -76,11 +74,13 @@ public class ProjectController {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 
-    @GetMapping("/horasTrabajadoras")
-    public List<HorasTrabajadoras> horasTrabajadoras(@PathVariable Long id) {
-        return horasTrabajadorasRepository.findAll();
+    /*@GetMapping("/horas/{id}")
+    public Project horasTrabajadoras() {
+        horasTrabajadorasRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    }*/
+
+    @GetMapping("/horas")
+    public List<Project> horasTrabajadas() {
+       return projectsRepository.findAll();
     }
-
-
-
 }
