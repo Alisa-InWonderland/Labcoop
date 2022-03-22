@@ -39,7 +39,7 @@ export function FacturasEmitidasList({projects}) {
                     />
 
                         <button className="btn-orange">
-                            <Link className="btn-orange-link" to='/projects/new'>Nueva factura</Link>
+                            <Link className="btn-orange-link" to='/facturas-emitidas/new'>Nueva factura</Link>
                         </button>
 
 
