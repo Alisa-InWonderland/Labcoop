@@ -47,6 +47,9 @@ public class Project implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private List<FacturaRecibida> facturasRecibidas;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<HorasTrabajadoras> horasTrabajadoras;
+
 
     public Project() {
 
@@ -63,7 +66,8 @@ public class Project implements Serializable {
 
 
 
-    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, String observationsA, String observationsC, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas) {
+
+    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, String observationsA, String observationsC, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas, List<HorasTrabajadoras> horasTrabajadoras) {
         this.code = code;
         this.name = name;
         this.area = area;
@@ -87,6 +91,7 @@ public class Project implements Serializable {
         this.observationsC = observationsC;
         this.facturaEmitida = facturaEmitida;
         this.facturasRecibidas = facturasRecibidas;
+        this.horasTrabajadoras = horasTrabajadoras;
     }
 
     public String getName() {
@@ -273,6 +278,14 @@ public class Project implements Serializable {
 
     public void setFacturasRecibidas(List<FacturaRecibida> facturasRecibidas) {
         this.facturasRecibidas = facturasRecibidas;
+    }
+
+    public List<HorasTrabajadoras> getHorasTrabajadoras() {
+        return horasTrabajadoras;
+    }
+
+    public void setHorasTrabajadoras(List<HorasTrabajadoras> horasTrabajadoras) {
+        this.horasTrabajadoras = horasTrabajadoras;
     }
 
     @Override

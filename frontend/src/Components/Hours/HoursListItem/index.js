@@ -5,36 +5,37 @@ import "./style.css"
 
 
 
-export function HorasList({project}) {
+export function HorasList({project},{horasTrabajadoras}) {
 
-    const { id, code, name, client, manager, status, area, type, size, target, startdate, enddate, comments } = project;
-
+    const { id, code, name, client } = project;
+    const { trabajador, socias, numHorasAsignadas, numHorasEjecutadas, numHorasPendientes, precioHora, donePrice } = horasTrabajadoras;
 
     return (
+        horasTrabajadoras.map( horas =>
         <tr className='reserva-table-row'>
 
             <td className="reserva-td">{code}</td>
             <td className="reserva-td name">
                 <Link
-                to={`/projects/${id}`}
+                to={`/projects/${id}`} {`/horasTrabajadoras/${id}`}
                 state={{data: project}}
-                >
-                {name || 'no name'}
+                >   {name || 'no name'}
+                    {horas.horasTrabajadoras}
                 </Link>
             </td>
+
             <td className="reserva-td">{client}</td>
-            <td className="reserva-td">{manager}</td>
-            <td className="reserva-td">{status}</td>
-            <td className="reserva-td">{area}</td>
-            <td className="reserva-td">{type}</td>
-            <td className="reserva-td">{size}</td>
-            <td className="reserva-td">{target}</td>
-            <td className="reserva-td">{startdate}</td>
-            <td className="reserva-td">{enddate}</td>
-            <td className="reserva-td">{comments}</td>
+            <td className="reserva-td">{trabajador}</td>
+            <td className="reserva-td">{socias}</td>
+            <td className="reserva-td">{numHorasAsignadas}</td>
+            <td className="reserva-td">{numHorasEjecutadas}</td>
+            <td className="reserva-td">{numHorasPendientes}</td>
+            <td className="reserva-td">{precioHora}</td>
+            <td className="reserva-td">{donePrice}</td>
         </tr>
 
-    );
+        ));
+
 
 }
 
