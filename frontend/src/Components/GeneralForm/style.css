@@ -75,8 +75,6 @@ h1, h3{
 }
 
 .experience-form-group input {
-
-    font-family: 'Poppins', sans-serif;
     height: 20px;
     border-radius: 5px;
     border: 1px solid #ccc7c7;
@@ -100,7 +98,6 @@ h1, h3{
     background-color: #ffffff;
     padding: 3px;
     margin-left: 20px;
-    font-family: 'Poppins', sans-serif;
     border-radius: 5px;
     width: 45%;
     overflow: hidden;
