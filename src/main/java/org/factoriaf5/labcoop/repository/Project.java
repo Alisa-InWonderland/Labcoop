@@ -241,6 +241,7 @@ public class Project implements Serializable {
     }
 
     public int getMargin() {
+        margin = previousBudget - previousCoCost - previousExtExpenses - workersExpenses - managePercent - otherExpenses;
         return margin;
     }
 

@@ -95,8 +95,8 @@ function App() {
             <Route path="/horas" element={<HoursList projects={projects}/>}/>
             <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
             {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
-            {/*<Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>*/}
-            {/*<Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>*/}
+            <Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>
+            <Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>
           </Routes>
         </main>
 

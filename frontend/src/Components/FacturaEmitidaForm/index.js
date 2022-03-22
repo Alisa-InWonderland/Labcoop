@@ -5,7 +5,7 @@ import "./style.css"
 
 export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
 
-    const params  = useParams();
+    const params = useParams();
 
     let navigate = useNavigate();
 

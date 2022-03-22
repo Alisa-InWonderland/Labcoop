@@ -17,8 +17,6 @@ export function FacturasEmitidasList({projects}) {
 
     function checkFacturaEmitida(projects) {
 
-            //project.hasOwnProperty('facturaEmitida');
-
         const facturaEmitidaExist = projects.find(item => item.facturaEmitida !== null);
         return facturaEmitidaExist === undefined;
 
