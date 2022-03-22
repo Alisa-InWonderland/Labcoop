@@ -22,8 +22,8 @@ export function ProjectForm({addProject}) {
 
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label="lab API tabs example">
-                        <Tab label="Genaral" value="1" />
-                        <Tab label="Factura emitida" value="2" />
+                        <Tab label="General" value="1" />
+                        <Tab label="Facturas emitidas" value="2" />
                         <Tab label="Facturas recibidas" value="3" />
                         <Tab label="Horas" value="4" />
                     </TabList>
@@ -42,7 +42,7 @@ export function ProjectForm({addProject}) {
                     </TabPanel>
 
                     <TabPanel value="4">
-                        <HorasForm addProject={addProject} value="3" />
+                        <HorasForm addProject={addProject} value="4" />
                     </TabPanel>
 
             </TabContext>
