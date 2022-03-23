@@ -23,8 +23,20 @@ public class Project implements Serializable {
     private String target;
     private String startdate;
     private String enddate;
+    private int previousBudget;
+    private int previousCoCost;
+    private int previousExtExpenses;
+    private int workersExpenses;
+    private int managePercent;
+    private int otherExpenses;
+    private int margin;
+
     @Lob
     private String comments;
+    @Lob
+    private String observationsA;
+    @Lob
+    private String observationsC;
 
 
 
@@ -34,6 +46,9 @@ public class Project implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<FacturaRecibida> facturasRecibidas;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<HorasTrabajadoras> horasTrabajadoras;
 
 
     public Project() {
@@ -50,8 +65,9 @@ public class Project implements Serializable {
     }
 
 
-    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, String comments) {
 
+
+    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, String observationsA, String observationsC, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas, List<HorasTrabajadoras> horasTrabajadoras) {
         this.code = code;
         this.name = name;
         this.area = area;
@@ -63,10 +79,21 @@ public class Project implements Serializable {
         this.target = target;
         this.startdate = startdate;
         this.enddate = enddate;
+        this.previousBudget = previousBudget;
+        this.previousCoCost = previousCoCost;
+        this.previousExtExpenses = previousExtExpenses;
+        this.workersExpenses = workersExpenses;
+        this.managePercent = managePercent;
+        this.otherExpenses = otherExpenses;
+        this.margin = margin;
         this.comments = comments;
+        this.observationsA = observationsA;
+        this.observationsC = observationsC;
+        this.facturaEmitida = facturaEmitida;
+        this.facturasRecibidas = facturasRecibidas;
+        this.horasTrabajadoras = horasTrabajadoras;
 
     }
-
 
     public String getName() {
         return name;
@@ -164,6 +191,81 @@ public class Project implements Serializable {
         this.comments = comments;
     }
 
+
+
+    public int getPreviousBudget() {
+        return previousBudget;
+    }
+
+    public void setPreviousBudget(int previousBudget) {
+        this.previousBudget = previousBudget;
+    }
+
+    public int getPreviousCoCost() {
+        return previousCoCost;
+    }
+
+    public void setPreviousCoCost(int previousCoCost) {
+        this.previousCoCost = previousCoCost;
+    }
+
+    public int getPreviousExtExpenses() {
+        return previousExtExpenses;
+    }
+
+    public void setPreviousExtExpenses(int previousExtExpenses) {
+        this.previousExtExpenses = previousExtExpenses;
+    }
+
+    public int getWorkersExpenses() {
+        return workersExpenses;
+    }
+
+    public void setWorkersExpenses(int workersExpenses) {
+        this.workersExpenses = workersExpenses;
+    }
+
+    public int getManagePercent() {
+        return managePercent;
+    }
+
+    public void setManagePercent(int managePercent) {
+        this.managePercent = managePercent;
+    }
+
+    public int getOtherExpenses() {
+        return otherExpenses;
+    }
+
+    public void setOtherExpenses(int otherExpenses) {
+        this.otherExpenses = otherExpenses;
+    }
+
+    public int getMargin() {
+        margin = previousBudget - previousCoCost - previousExtExpenses - workersExpenses - managePercent - otherExpenses;
+        return margin;
+    }
+
+    public void setMargin(int margin) {
+        this.margin = margin;
+    }
+
+    public String getObservationsA() {
+        return observationsA;
+    }
+
+    public void setObservationsA(String observationsA) {
+        this.observationsA = observationsA;
+    }
+
+    public String getObservationsC() {
+        return observationsC;
+    }
+
+    public void setObservationsC(String observationsC) {
+        this.observationsC = observationsC;
+    }
+
     public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
         this.facturaEmitida = facturaEmitida;
     }
@@ -176,9 +278,23 @@ public class Project implements Serializable {
         return facturasRecibidas;
     }
 
+
     public void setFacturasRecibidas(List<FacturaRecibida> facturasRecibidas) {
         this.facturasRecibidas = facturasRecibidas;
     }
+
+
+    public List<HorasTrabajadoras> getHorasTrabajadoras() {
+        return horasTrabajadoras;
+    }
+
+    public void setHorasTrabajadoras(List<HorasTrabajadoras> horasTrabajadoras) {
+        this.horasTrabajadoras = horasTrabajadoras;
+    }
+
+
+
+
 
     @Override
     public String toString() {
@@ -195,7 +311,18 @@ public class Project implements Serializable {
                 ", target='" + target + '\'' +
                 ", startdate='" + startdate + '\'' +
                 ", enddate='" + enddate + '\'' +
+                ", previousBudget=" + previousBudget +
+                ", previousCoCost=" + previousCoCost +
+                ", previousExtExpenses=" + previousExtExpenses +
+                ", workersExpenses=" + workersExpenses +
+                ", managePercent=" + managePercent +
+                ", otherExpenses=" + otherExpenses +
+                ", margin=" + margin +
                 ", comments='" + comments + '\'' +
+                ", observationsA='" + observationsA + '\'' +
+                ", observationsC='" + observationsC + '\'' +
+                ", facturaEmitida=" + facturaEmitida +
+                ", facturasRecibidas=" + facturasRecibidas +
                 '}';
     }
 }

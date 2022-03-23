@@ -1,13 +1,9 @@
 package org.factoriaf5.labcoop.repository;
-
-
 import javax.persistence.*;
 
 @Entity
 @Table (name="facturasRecibidas")
 public class FacturaRecibida {
-
-
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id", nullable = false)
@@ -22,7 +18,7 @@ public class FacturaRecibida {
         private int total;
         private boolean paidOut;
 
-    public FacturaRecibida(String nameProject, String expenseType, String numInvoices, String date, String supplier, int cost, int iva, double irpf, int total, boolean paidOut) {
+    public FacturaRecibida(String expenseType, String numInvoices, String date, String supplier, int cost, int iva, double irpf, int total, boolean paidOut) {
         this.expenseType = expenseType;
         this.numInvoices = numInvoices;
         this.date = date;
