@@ -19,8 +19,7 @@ public class HorasTrabajadoras {
     private int precioHora;
     private int donePrice;
 
-    public HorasTrabajadoras(Long id, String cliente, String trabajador, String socias, int numHorasAsignadas, int numHorasEjecutadas, int numHorasPendientes, int precioHora, int donePrice) {
-        this.id = id;
+    public HorasTrabajadoras(String cliente, String trabajador, String socias, int numHorasAsignadas, int numHorasEjecutadas, int numHorasPendientes, int precioHora, int donePrice) {
         this.cliente = cliente;
         this.trabajador = trabajador;
         this.socias = socias;
@@ -108,6 +107,7 @@ public class HorasTrabajadoras {
     @Override
     public String toString() {
         return "HorasTrabajadoras{" +
+                "id=" + id +
                 "cliente='" + cliente + '\'' +
                 ", trabajador='" + trabajador + '\'' +
                 ", socias='" + socias + '\'' +
