@@ -74,10 +74,10 @@ public class ProjectController {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 
-    /*@GetMapping("/horas/{id}")
-    public Project horasTrabajadoras() {
-        horasTrabajadorasRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
-    }*/
+    @GetMapping("/horas/{id}")
+    public Project horasTrabajadoras(@PathVariable("id") Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    }
 
     @GetMapping("/horas")
     public List<Project> horasTrabajadas() {

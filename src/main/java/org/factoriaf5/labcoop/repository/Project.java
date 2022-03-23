@@ -92,6 +92,7 @@ public class Project implements Serializable {
         this.facturaEmitida = facturaEmitida;
         this.facturasRecibidas = facturasRecibidas;
         this.horasTrabajadoras = horasTrabajadoras;
+
     }
 
     public String getName() {
@@ -289,6 +290,9 @@ public class Project implements Serializable {
     public void setHorasTrabajadoras(List<HorasTrabajadoras> horasTrabajadoras) {
         this.horasTrabajadoras = horasTrabajadoras;
     }
+
+
+
 
 
     @Override

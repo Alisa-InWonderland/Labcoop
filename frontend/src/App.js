@@ -15,6 +15,7 @@ import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasReci
 import {HorasList, HoursList} from "./Components/Hours/HoursList";
 import {getFacturasR} from "./Services/getFacturasR";
 import {getFacturasE} from "./Services/getFacturasE";
+import {getHours} from "./Services/getHours";
 
 function App() {
 
@@ -46,6 +47,14 @@ function App() {
                  .then(_ => setRequiresUpdate(false));
         }
      }, [requiresUpdate])
+
+    useEffect(() => {
+        if (requiresUpdate) {
+            getHours()
+                .then(setProjects)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
 
 
   const addProject = (project) => {
