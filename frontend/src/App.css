@@ -7,7 +7,7 @@
 }
 
 body {
-  margin: 0 10px 5px;
+  margin: 0px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 15px;
@@ -17,18 +17,16 @@ body {
 }
 
 .App {
-  max-width: 1200px;
+  width: 100%;
   margin: auto;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  overflow: hidden;
+
 }
 
 @media (max-width: 1300px) {
   .App {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
@@ -47,11 +45,13 @@ a {
 
 main {
   margin-top: 70px;
-  flex-grow: 1;
-  z-index: 1;
 }
 
-
+#grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 4fr;
+}
 
 
 
