@@ -24,8 +24,6 @@ public class Project implements Serializable {
     private String startdate;
     private String enddate;
     private int previousBudget;
-
-
     private int previousCoCost;
     private int previousExtExpenses;
     private int workersExpenses;
@@ -35,6 +33,10 @@ public class Project implements Serializable {
 
     @Lob
     private String comments;
+    @Lob
+    private String observationsA;
+    @Lob
+    private String observationsC;
 
 
 
@@ -59,7 +61,9 @@ public class Project implements Serializable {
         this.id = id;
     }
 
-    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas) {
+
+
+    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, String observationsA, String observationsC, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas) {
         this.code = code;
         this.name = name;
         this.area = area;
@@ -79,6 +83,8 @@ public class Project implements Serializable {
         this.otherExpenses = otherExpenses;
         this.margin = margin;
         this.comments = comments;
+        this.observationsA = observationsA;
+        this.observationsC = observationsC;
         this.facturaEmitida = facturaEmitida;
         this.facturasRecibidas = facturasRecibidas;
     }
@@ -180,6 +186,7 @@ public class Project implements Serializable {
     }
 
 
+
     public int getPreviousBudget() {
         return previousBudget;
     }
@@ -236,6 +243,21 @@ public class Project implements Serializable {
         this.margin = margin;
     }
 
+    public String getObservationsA() {
+        return observationsA;
+    }
+
+    public void setObservationsA(String observationsA) {
+        this.observationsA = observationsA;
+    }
+
+    public String getObservationsC() {
+        return observationsC;
+    }
+
+    public void setObservationsC(String observationsC) {
+        this.observationsC = observationsC;
+    }
 
     public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
         this.facturaEmitida = facturaEmitida;
@@ -278,6 +300,8 @@ public class Project implements Serializable {
                 ", otherExpenses=" + otherExpenses +
                 ", margin=" + margin +
                 ", comments='" + comments + '\'' +
+                ", observationsA='" + observationsA + '\'' +
+                ", observationsC='" + observationsC + '\'' +
                 ", facturaEmitida=" + facturaEmitida +
                 ", facturasRecibidas=" + facturasRecibidas +
                 '}';
