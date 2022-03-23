@@ -322,6 +322,7 @@ public class Project implements Serializable {
                 ", observationsC='" + observationsC + '\'' +
                 ", facturaEmitida=" + facturaEmitida +
                 ", facturasRecibidas=" + facturasRecibidas +
+                ", horasTrabajadoras=" + horasTrabajadoras +
                 '}';
     }
 }

@@ -1,0 +1,27 @@
+.factura-emitida-table-row {
+    height: auto;
+}
+
+.factura-emitida-th {
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    background: #AB005A;
+    border-top: 4px solid #AB005A;
+    border-bottom: 1px solid #fff;
+    color: #ffffff; }
+
+.factura-emitida-td {
+    padding: 8px;
+    background: #ffffff;
+    border-bottom: 1px solid #fff;
+    color: #000000;
+    border-top: 1px solid transparent; }
+
+
+
+.num-factura:hover {
+    background: #AB005A;
+    color: #AB005A;
+    cursor: pointer;
+}

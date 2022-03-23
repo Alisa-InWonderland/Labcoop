@@ -57,12 +57,12 @@ export function ProjectList({projects}) {
 
                         {projects.map((project) => {
 
-                            if (
-                                project.name.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
-                            }
+                            // if (
+                            //     project.name.toLowerCase().indexOf(state.filter) >= 0 ||
+                            //     state.filter.length === 0
+                            // ) {
+                            //     return <ProjectListItem key={project.id} project={project}/>;
+                            // }
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
@@ -97,7 +97,8 @@ export function ProjectList({projects}) {
                             }
 
                             return "";
-                        })}
+                        }
+                        )}
 
                     </table>
 
