@@ -5,18 +5,22 @@ import {Route, Routes} from "react-router-dom";
 import {getProjects} from "./Services/getProjects";
 import {API_URL} from "./Services/settings";
 import {ProjectList} from "./Components/Projects/ProjectList/index";
+import {GeneralForm} from "./Components/GeneralForm/index";
 import {ProjectForm} from "./Components/ProjectForm/index";
 // import {Menu} from "./Components/Menu/index"
-import {Index} from "./Components/Sidebar";
+import Sidebar from "./Components/Sidebar/index";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
+import {FacturaEmitidaForm} from "./Components/FacturaEmitidaForm/index";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
-// import {HorasList} from "./Components/Hours/HoursList";
+import {HorasList, HoursList} from "./Components/Hours/HoursList";
 import {getFacturasR} from "./Services/getFacturasR";
 import {getFacturasE} from "./Services/getFacturasE";
+import {getHours} from "./Services/getHours";
 
 function App() {
 
   const [projects, setProjects] = useState([]);
+  const [facturaE, setFacturaE] = useState([]);
   const [requiresUpdate, setRequiresUpdate] = useState(true);
 
 
@@ -44,6 +48,14 @@ function App() {
         }
      }, [requiresUpdate])
 
+    useEffect(() => {
+        if (requiresUpdate) {
+            getHours()
+                .then(setProjects)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
+
 
   const addProject = (project) => {
     return fetch(API_URL,
@@ -55,6 +67,17 @@ function App() {
     ).then(_ => setRequiresUpdate(true))
 
   }
+
+    // const addFacturaE = (project) => {
+    //     return fetch(API_URL,
+    //         {
+    //             method: 'POST',
+    //             headers: {'Content-Type': 'application/json'},
+    //             body: JSON.stringify(project)
+    //         }
+    //     ).then(_ => setRequiresUpdate(true))
+    //
+    // }
 
   const deleteProject = (id) => {
     fetch(`${API_URL}/delete/${id}`,
@@ -68,18 +91,21 @@ function App() {
 
 
   return (
-      <div className="App">
-       <Index/>
-        <main className="main">
+      <div className="App" id="grid">
+
+       <Sidebar/>
+
+        <main className="main" id= "areaB">
           <Routes>
 
             <Route path="/projects" element={<ProjectList projects={projects} />}/>
             <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
             <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
-            {/*<Route path="/horas" element={<HorasList projects={projects} horas={horas}/>}/>*/}
+            <Route path="/horas" element={<HoursList projects={projects}/>}/>
             <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
-            {/*<Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addFacturaE={addFacturaE} deleteFacturaE={deleteFacturaE}/>}/>*/}
-            <Route path="/projects/new" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+            {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
+            <Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>
+            <Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>
           </Routes>
         </main>
 

@@ -16,11 +16,10 @@ export function FacturasEmitidasListItem({project}) {
 
             <td className="factura-emitida-td">{code}</td>
             <td className="factura-emitida-td">{name}</td>
-
             <td className="factura-emitida-td num-factura">
                 <Link
-                    to={`/facturas-emitidas/${id}`}
-                    state={{data: project}}>
+                to={`/facturas-emitidas/${id}`}
+                state={{data: project}}>
                 {numFactura}
                 </Link>
             </td>
