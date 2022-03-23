@@ -17,12 +17,12 @@ export function ProjectForm({addProject}) {
         setValue(newValue);
     };
 
-    export function HoursList({showTable}) {
+   /* export function HoursList({showTable}) {
         const [value, setValue] = React.useState('1');
 
         const handleChange = (event, newValue) => {
             setValue(newValue);
-        };
+        };*/
 
 
         return (
@@ -57,5 +57,5 @@ export function ProjectForm({addProject}) {
                 </TabContext>
             </Box>
         );
-    }
+
 }
