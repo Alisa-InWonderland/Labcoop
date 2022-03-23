@@ -8,7 +8,6 @@ public class FacturaRecibida {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id", nullable = false)
         private Long id;
-
         private String expenseType;
         private String numInvoices;
         private String date;
@@ -42,7 +41,6 @@ public class FacturaRecibida {
     public void setId(Long id) {
         this.id = id;
     }
-
 
     public String getExpenseType() {
         return expenseType;

@@ -15,14 +15,13 @@ export const HorasForm = ({addProject, deleteProject}) => {
 
     const [datos, setDatos] = useState(data || {
         client: '',
-        facturaEmitida: {
-        numFactura: '',
-        fecha: '',
-        importe: '',
-        iva: '',
-        total: '',
-        cobrado: ''
-        }
+        trabajador: '',
+        numHorasAsignadas: '',
+        numHorasEjecutadas: '',
+        numHorasPendientes: '',
+        precioHora: '',
+        donePrice: '',
+
     })
 
     const handleInputChange = (event) => {
@@ -35,7 +34,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
     const enviarDatos = (event) => {
         event.preventDefault()
         addProject(datos)
-            .then(() => navigate("/projects"))
+            .then(() => navigate("/horasTrabajadoras"))
     }
 
 
