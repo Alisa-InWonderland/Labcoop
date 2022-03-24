@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css"
-import {FacturasEmitidasListItem} from "../FacturasEmitidasListItem/index";
-import {Link} from "react-router-dom";
+import {FacturasEmitidasOfProjectListItem} from "../FacturasEmitidasOfProjectListItem/index";
+import {Link, useLocation} from "react-router-dom";
 
 
 
-export function FacturasEmitidasList({projects}) {
+export function FacturasEmitidasOfProjectList() {
 
 
     const [state, setState] = React.useState({filter: ""});
@@ -14,10 +14,12 @@ export function FacturasEmitidasList({projects}) {
         setState({filter: val.target.value.toLowerCase()});
     }
 
+    const location = useLocation();
+    const data =  location.state.data;
 
-    function checkFacturaEmitida(projects) {
+    function checkFacturaEmitida(data) {
 
-        const facturaEmitidaExist = projects.find(item => item.facturaEmitida !== null);
+        const facturaEmitidaExist = data.facturaEmitida !== null;
         return facturaEmitidaExist === undefined;
 
      }
@@ -61,29 +63,29 @@ export function FacturasEmitidasList({projects}) {
                             <th className='factura-emitida-th'>Cobrado</th>
                         </tr>
 
-                        {checkFacturaEmitida(projects) ? <tr><td colSpan="9">No hay facturas emitidas</td></tr>
+                        {checkFacturaEmitida(data) ? <tr><td colSpan="9">No hay facturas emitidas</td></tr>
 
-                        : projects.filter(project => project.facturaEmitida !== null).map((project) => {
+                        : data.map((project) => {
 
                             if (
                                 project.code.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                                 ) {
-                                return <FacturasEmitidasListItem key={project.id} project={project}/>;
+                                return <FacturasEmitidasOfProjectListItem key={project.id} project={project}/>;
                                 }
 
                             if (
                                 project.name.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <FacturasEmitidasListItem key={project.id} project={project}/>;
+                                return <FacturasEmitidasOfProjectListItem key={project.id} project={project}/>;
                             }
 
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
-                                return <FacturasEmitidasListItem key={project.id} project={project}/>;
+                                return <FacturasEmitidasOfProjectListItem key={project.id} project={project}/>;
                             }
 
                                 return "";

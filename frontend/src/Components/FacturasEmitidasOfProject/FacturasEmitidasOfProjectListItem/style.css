@@ -1,8 +1,8 @@
-.facturas-recibidas-table-row {
+.factura-emitida-table-row {
     height: auto;
 }
 
-.facturas-recibidas-th {
+.factura-emitida-th {
     font-size: 13px;
     font-weight: normal;
     padding: 8px;
@@ -11,7 +11,7 @@
     border-bottom: 1px solid #fff;
     color: #ffffff; }
 
-.facturas-recibidas-td {
+.factura-emitida-td {
     padding: 8px;
     background: #ffffff;
     border-bottom: 1px solid #fff;
@@ -20,7 +20,7 @@
 
 
 
-.num-facturaR:hover {
+.num-factura:hover {
     background: #AB005A;
     color: #AB005A;
     cursor: pointer;
