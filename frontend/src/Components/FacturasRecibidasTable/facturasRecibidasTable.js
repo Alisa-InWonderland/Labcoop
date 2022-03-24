@@ -25,6 +25,7 @@ export function FacturasRecibidasTable({project}) {
         </thead>
         <tbody>
         {project.facturasRecibidas.map( factura => <tr>
+
             <td className='facturas-recibidas-td'>{project.code}
             </td>
             <td className='facturas-recibidas-td'>{project.name}</td>
@@ -47,7 +48,32 @@ export function FacturasRecibidasTable({project}) {
             <td className='facturas-recibidas-td'>{factura.total}</td>
             <td className='facturas-recibidas-td'>{factura.paidOut}
             </td>
-        </tr>
+
+
+                <td className='facturas-recibidas-td'>{project.code}
+                </td>
+                <td className='facturas-recibidas-td'>{project.name}</td>
+                <td className='facturas-recibidas-td'>{factura.expenseType} </td>
+                <td className='facturas-recibidas-td'>
+
+                    <Link
+                        to={`/facturas-recibidas/${factura.id}`}
+                        state={{data: project}}
+                    >
+                        {factura.numInvoices}
+                    </Link>
+                </td>
+                <td className='facturas-recibidas-td'>{factura.date}</td>
+                <td className='facturas-recibidas-td'>{factura.supplier}
+                </td>
+                <td className='facturas-recibidas-td'>{factura.cost}</td>
+                <td className='facturas-recibidas-td'>{factura.iva}</td>
+                <td className='facturas-recibidas-td'>{factura.irpf}</td>
+                <td className='facturas-recibidas-td'>{factura.total}</td>
+                <td className='facturas-recibidas-td'>{factura.paidOut}
+                </td>
+            </tr>
+
         )
         }
         </tbody>

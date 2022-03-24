@@ -47,6 +47,7 @@ public class Project implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private List<FacturaRecibida> facturasRecibidas;
 
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<HorasTrabajadoras> horasTrabajadoras;
 
@@ -192,7 +193,6 @@ public class Project implements Serializable {
     }
 
 
-
     public int getPreviousBudget() {
         return previousBudget;
     }
@@ -264,6 +264,7 @@ public class Project implements Serializable {
 
     public void setObservationsC(String observationsC) {
         this.observationsC = observationsC;
+
     }
 
     public void setFacturaEmitida(FacturaEmitida facturaEmitida) {

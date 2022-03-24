@@ -37,3 +37,12 @@ export function FacturasRecibidasView({addProject}) {
     return showTable() ? <FacturasRecibidasTable project={project} /> :
         <FacturaRecibidaForm addProject={addProject} value="3"/>
 }
+
+
+
+
+
+
+
+
+
