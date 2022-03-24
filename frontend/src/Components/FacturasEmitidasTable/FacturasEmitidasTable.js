@@ -19,7 +19,7 @@ export function FacturasEmitidasTable({project}){
             </table>
         </thead>
         <tbody>
-        {project.facturasRecibidas.map( factura => <tr className='factura-emitida-table-row'>
+        {project.facturaEmitida.map( factura => <tr className='factura-emitida-table-row'>
 
                 <td className="factura-emitida-td">{project.code}</td>
                 <td className="factura-emitida-td">{project.name}</td>
