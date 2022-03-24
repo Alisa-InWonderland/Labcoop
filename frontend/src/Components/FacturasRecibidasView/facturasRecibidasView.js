@@ -4,8 +4,9 @@ import {useState} from "react";
 import {useLocation} from "react-router-dom";
 import * as PropTypes from "prop-types";
 import {FacturasRecibidasTable} from "../FacturasRecibidasTable/facturasRecibidasTable";
+import {FacturaRecibidaForm} from "../FacturaRecibidaForm";
 
-FacturasRecibidasTable.propTypes = {projec: PropTypes.any};
+FacturasRecibidasTable.propTypes = {project: PropTypes.any};
 
 export function FacturasRecibidasView({addProject}) {
 
@@ -15,14 +16,18 @@ export function FacturasRecibidasView({addProject}) {
     const data = location.state ? location.state.data : null;
 
     const [project, setProject] = useState(data || {
-        client: '',
-        facturaEmitida: {
-            numFactura: '',
-            fecha: '',
-            importe: '',
+        code: '',
+        name: '',
+        facturasRecibidas: {
+            expenseType: '',
+            numInvoices: '',
+            date: '',
+            supplier: '',
+            cost: '',
             iva: '',
+            irpf: '',
             total: '',
-            cobrado: ''
+            paidOut: ''
         }
     })
 

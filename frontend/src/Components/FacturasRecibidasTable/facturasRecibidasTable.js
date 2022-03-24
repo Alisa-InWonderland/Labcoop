@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export function FacturasRecibidasTable({project}) {
     return <table>
@@ -28,18 +29,27 @@ export function FacturasRecibidasTable({project}) {
             </td>
             <td className='facturas-recibidas-td'>{project.name}</td>
             <td className='facturas-recibidas-td'>{factura.expenseType} </td>
-            {/*<td className='facturas-recibidas-td'>Nº Factura*/}
-            {/*</td>*/}
-            {/*<td className='facturas-recibidas-td'>Fecha</td>*/}
-            {/*<td className='facturas-recibidas-td'>Proveedor*/}
-            {/*</td>*/}
-            {/*<td className='facturas-recibidas-td'>Importe</td>*/}
-            {/*<td className='facturas-recibidas-td'>IVA</td>*/}
-            {/*<td className='facturas-recibidas-td'>IRPF</td>*/}
-            {/*<td className='facturas-recibidas-td'>TOTAL</td>*/}
-            {/*<td className='facturas-recibidas-td'>Pagado*/}
-            {/*</td>*/}
-        </tr>)}
+            <td className='facturas-recibidas-td'>{factura.numInvoices}
+                <Link
+                    to={`/facturas-recibidas/${id}`}
+                    state={{data: project}}
+                >
+                    {factura.numInvoices}
+                </Link>
+
+            </td>
+            <td className='facturas-recibidas-td'>{factura.date}</td>
+            <td className='facturas-recibidas-td'>{factura.supplier}
+            </td>
+            <td className='facturas-recibidas-td'>{factura.cost}</td>
+            <td className='facturas-recibidas-td'>{factura.iva}</td>
+            <td className='facturas-recibidas-td'>{factura.irpf}</td>
+            <td className='facturas-recibidas-td'>{factura.total}</td>
+            <td className='facturas-recibidas-td'>{factura.paidOut}
+            </td>
+        </tr>
+        )
+        }
         </tbody>
 
     </table>;
