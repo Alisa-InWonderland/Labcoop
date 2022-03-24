@@ -30,7 +30,7 @@ export function FacturasRecibidasTable({project}) {
             </td>
             <td className='facturas-recibidas-td'>{project.name}</td>
             <td className='facturas-recibidas-td'>{factura.expenseType} </td>
-            <td className='facturas-recibidas-td'>{factura.numInvoices}
+            <td className='facturas-recibidas-td'>
                 <Link
                     to={`/facturas-recibidas/${factura.id}`}
                     state={{data: project}}>
