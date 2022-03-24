@@ -109,6 +109,7 @@ public class HorasTrabajadoras {
     @Override
     public String toString() {
         return "HorasTrabajadoras{" +
+                "id=" + id +
                 "cliente='" + cliente + '\'' +
                 ", trabajador='" + trabajador + '\'' +
                 ", socias='" + socias + '\'' +

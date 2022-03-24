@@ -23,7 +23,7 @@ export function HoursList({projects}) {
     return (
         <div className="table-container">
             <section className='reservesList'>
-                <h1 className="reservesList-title">Proyectos</h1>
+                <h1 className="reservesList-title">Horas trabajadas</h1>
 
                 <div className="barra-de-busqueda-container">
                     <input
@@ -54,28 +54,27 @@ export function HoursList({projects}) {
                             <th className='reserva-th'>PENDIENTES</th>
                             <th className='reserva-th'>PRECIO/HORA</th>
                             <th className='reserva-th'>TOTAL</th>
-
-
                         </tr>
 
                         {checkHorasTrabajadoras(projects) ? <tr><td colSpan="9">No hay horas trabajadas</td></tr>
 
                             : projects.filter(project => project.horasTrabajadoras.length !== 0).map((project) => {
                             if (
-                                project.horasTrabajadoras.trabajador.toLowerCase().indexOf(state.filter) >= 0 ||
+                                project.name.trabajador.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
                                 return <HoursListItem key={project.id} project={project}/>;
                             }
                             if (
-                                project.client.toLowerCase().indexOf(state.filter) >= 0 ||
+                                project.code.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
                                 return <HoursListItem key={project.id} project={project}/>;
                             }
 
                             return "";
-                        })}
+                        })
+                        }
 
                     </table>
 

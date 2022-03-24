@@ -5,10 +5,19 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import {GeneralForm} from "../GeneralForm/index";
+<<<<<<< HEAD
 import {FacturaEmitidaForm} from "../FacturaEmitidaForm";
 import {FacturaRecibidaForm} from "../FacturaRecibidaForm";
 import {HorasForm} from "../HorasForm";
 import {HoursList} from "../Hours/HoursList";
+=======
+import {FacturaEmitidaForm} from "../FacturaEmitidaForm/index";
+import {HorasForm} from "../HorasForm";
+import * as PropTypes from "prop-types";
+import {FacturasRecibidasView} from "../FacturasRecibidasView/facturasRecibidasView";
+
+FacturasRecibidasView.propTypes = {value: PropTypes.string};
+>>>>>>> 79dbc15d884f75052cbee5f24794770c506eee37
 
 export function ProjectForm({addProject}) {
     const [value, setValue] = React.useState('1');
@@ -17,12 +26,27 @@ export function ProjectForm({addProject}) {
         setValue(newValue);
     };
 
+<<<<<<< HEAD
+=======
+
+   /* export function HoursList({showTable}) {
+        const [value, setValue] = React.useState('1');
+
+        const handleChange = (event, newValue) => {
+            setValue(newValue);
+        };*/
+
+>>>>>>> 79dbc15d884f75052cbee5f24794770c506eee37
     // export function HoursList({showTable}) {
     //     const [value, setValue] = React.useState('1');
     //
     //     const handleChange = (event, newValue) => {
     //         setValue(newValue);
+<<<<<<< HEAD
     //     };
+=======
+    //     }
+>>>>>>> 79dbc15d884f75052cbee5f24794770c506eee37
 
 
         return (
@@ -47,15 +71,19 @@ export function ProjectForm({addProject}) {
                     </TabPanel>
 
                     <TabPanel value="3">
-                        <FacturaRecibidaForm addProject={addProject} value="3"/>
+                        <FacturasRecibidasView  addProject={addProject} value="3"/>
                     </TabPanel>
 
                     <TabPanel value="4">
-                        <HorasForm path="/horas"  /*addProject={addProject} value="4"*/ />
+                        <HorasForm path="/horas"  addProject={addProject} value="4" />
                     </TabPanel>
 
                 </TabContext>
             </Box>
         );
+<<<<<<< HEAD
    // }
+=======
+
+>>>>>>> 79dbc15d884f75052cbee5f24794770c506eee37
 }
