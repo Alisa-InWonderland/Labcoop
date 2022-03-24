@@ -25,13 +25,14 @@ export function FacturasRecibidasTable({project}) {
         </thead>
         <tbody>
         {project.facturasRecibidas.map( factura => <tr>
+
             <td className='facturas-recibidas-td'>{project.code}
             </td>
             <td className='facturas-recibidas-td'>{project.name}</td>
             <td className='facturas-recibidas-td'>{factura.expenseType} </td>
             <td className='facturas-recibidas-td'>{factura.numInvoices}
                 <Link
-                    to={`/facturas-recibidas/${id}`}
+                    to={`/facturas-recibidas/${factura.id}`}
                     state={{data: project}}>
                     {factura.numInvoices}
                 </Link>

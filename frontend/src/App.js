@@ -11,6 +11,7 @@ import {ProjectForm} from "./Components/ProjectForm/index";
 import Sidebar from "./Components/Sidebar/index";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 import {FacturaEmitidaForm} from "./Components/FacturaEmitidaForm/index";
+import {FacturaRecibidaForm} from "./Components/FacturaRecibidaForm/index";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
 import {HorasList, HoursList} from "./Components/Hours/HoursList";
 import {getFacturasR} from "./Services/getFacturasR";
@@ -106,6 +107,8 @@ function App() {
             {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
             <Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>
             <Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>
+              <Route path="/facturas-recibidas/:id" element={<FacturaRecibidaForm addProject={addProject} projects={projects}/>}/>
+              <Route path="/facturas-recibidas/new" element={<FacturaRecibidaForm addProject={addProject} />}/>
           </Routes>
         </main>
 
