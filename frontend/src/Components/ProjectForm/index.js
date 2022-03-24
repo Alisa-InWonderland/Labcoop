@@ -7,7 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import {GeneralForm} from "../GeneralForm/index";
 import {FacturaEmitidaForm} from "../FacturaEmitidaForm";
 import {FacturaRecibidaForm} from "../FacturaRecibidaForm";
-{/*import {HorasForm} from "../HorasForm";*/}
+import {HorasForm} from "../HorasForm";
 import {HoursList} from "../Hours/HoursList";
 
 export function ProjectForm({addProject}) {
@@ -17,12 +17,12 @@ export function ProjectForm({addProject}) {
         setValue(newValue);
     };
 
-    export function HoursList({showTable}) {
-        const [value, setValue] = React.useState('1');
-
-        const handleChange = (event, newValue) => {
-            setValue(newValue);
-        };
+    // export function HoursList({showTable}) {
+    //     const [value, setValue] = React.useState('1');
+    //
+    //     const handleChange = (event, newValue) => {
+    //         setValue(newValue);
+    //     };
 
 
         return (
@@ -57,5 +57,5 @@ export function ProjectForm({addProject}) {
                 </TabContext>
             </Box>
         );
-    }
+   // }
 }

@@ -68,10 +68,10 @@ public class ProjectController {
         return facturasEmitidasRepository.save(facturaEmitida);
     }
 
-    @GetMapping("/facturas-recibidas")
+    /*@GetMapping("/facturas-recibidas")
     public List<Project> allInvoicesProject() {
         return projectsRepository.findAll();
-    }
+    }*/
 
     @GetMapping("/facturas-recibidas/{id}")
 
