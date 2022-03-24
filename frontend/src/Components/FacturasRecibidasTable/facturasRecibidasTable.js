@@ -32,15 +32,12 @@ export function FacturasRecibidasTable({project}) {
             <td className='facturas-recibidas-td'>{factura.numInvoices}
                 <Link
                     to={`/facturas-recibidas/${id}`}
-                    state={{data: project}}
-                >
+                    state={{data: project}}>
                     {factura.numInvoices}
                 </Link>
-
             </td>
             <td className='facturas-recibidas-td'>{factura.date}</td>
-            <td className='facturas-recibidas-td'>{factura.supplier}
-            </td>
+            <td className='facturas-recibidas-td'>{factura.supplier}</td>
             <td className='facturas-recibidas-td'>{factura.cost}</td>
             <td className='facturas-recibidas-td'>{factura.iva}</td>
             <td className='facturas-recibidas-td'>{factura.irpf}</td>
@@ -51,6 +48,5 @@ export function FacturasRecibidasTable({project}) {
         )
         }
         </tbody>
-
     </table>;
 }

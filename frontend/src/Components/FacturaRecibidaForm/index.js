@@ -13,14 +13,18 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
     const data = location.state ? location.state.data : null;
 
     const [datos, setDatos] = useState(data || {
-        client: '',
-        facturaEmitida: {
-        numFactura: '',
-        fecha: '',
-        importe: '',
-        iva: '',
-        total: '',
-        cobrado: ''
+        code: '',
+        name: '',
+        facturasRecibidas: {
+            expenseType: '',
+            numInvoices: '',
+            date: '',
+            supplier: '',
+            cost: '',
+            iva: '',
+            irpf: '',
+            total: '',
+            paidOut: ''
         }
     })
 
@@ -44,12 +48,23 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                 <div className="experience-form-wrapper">
 
                     <h1>{data ? 'Factura recibida' : 'Nuevo proyecto'}</h1>
-                    <div className="experience-form-container">
-                        <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
+                    <div className="factura-recibida-form-container">
+                        <form  className="edit-factura-recibida-form" onSubmit={enviarDatos} action="">
 
                             <div className="proyecto-container">
 
                                 <div className="datos-proyecto">
+
+                                    <div className="experience-form-group">
+                                        <label htmlFor="">Tipo de gasto
+                                        </label>
+                                        <input type="text"
+                                               className="experience-form-control"
+                                               onChange={handleInputChange}
+                                               name="code"
+                                               value={datos.facturasRecibidas.expenseType}
+                                        />
+                                    </div>
 
                                     <div className="experience-form-group">
                                         <label htmlFor="">Nº Factura
@@ -57,8 +72,8 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="code"
-                                               value={datos.facturaEmitida.numFactura}
+                                               name="facturaRecibida.num"
+                                               value={datos.facturasRecibidas.numInvoices}
                                                />
                                     </div>
 
@@ -66,10 +81,10 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <label htmlFor="">Fecha
                                         </label>
                                         <input  type="text"
-                                                value={datos.facturaEmitida.fecha}
-                                                name="facturaEmitida.fecha"
                                                 className="experience-form-control"
                                                 onChange={handleInputChange}
+                                                name="facturaRecibida.fecha"
+                                                value={datos.facturasRecibidas.date}
                                                 required/>
                                     </div>
 
@@ -78,8 +93,8 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="client"
-                                               value={datos.client}
+                                               name="supplier"
+                                               value={datos.facturasRecibidas.supplier}
                                                required/>
                                     </div>
 

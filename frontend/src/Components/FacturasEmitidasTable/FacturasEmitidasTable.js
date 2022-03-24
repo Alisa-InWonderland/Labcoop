@@ -39,8 +39,6 @@ export function FacturasEmitidasTable({project}){
             </tr>
             )
             }
-
         </tbody>
     </table>;
-
 }
