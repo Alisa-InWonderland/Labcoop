@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import "./style.css"
+import {getProjects} from "../../Services/getProjects";
+import {getFacturasR} from "../../Services/getFacturasR";
 
 
 export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
@@ -78,12 +80,12 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                     </div>
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">Cliente</label>
+                                        <label htmlFor="">Nombre proyecto</label>
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="client"
-                                               value={project.client}
+                                               name="name"
+                                               value={project.name}
                                                required/>
                                     </div>
 

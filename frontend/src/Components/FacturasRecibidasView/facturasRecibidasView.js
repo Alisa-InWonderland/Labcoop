@@ -31,11 +31,11 @@ export function FacturasRecibidasView({addProject}) {
     })
 
     function showTable() {
-        return !editMode && project.facturasRecibidas;
+        return !editMode && project.facturasRecibidas.length !== 0;
     }
 
     return showTable() ? <FacturasRecibidasTable project={project} /> :
-        <FacturaRecibidaForm addProject={addProject} value="3"/>
+        <FacturaRecibidaForm addProject={addProject} project={project} value="3"/>
 }
 
 
