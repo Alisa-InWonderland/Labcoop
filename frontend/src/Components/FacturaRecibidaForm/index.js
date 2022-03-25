@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import "./style.css"
+import {getProjects} from "../../Services/getProjects";
+import {getFacturasR} from "../../Services/getFacturasR";
 
 
 export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
@@ -12,28 +14,32 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
     const location = useLocation();
     const data = location.state ? location.state.data : null;
 
-    const [datos, setDatos] = useState(data || {
-        client: '',
-        facturaEmitida: {
-        numFactura: '',
-        fecha: '',
-        importe: '',
-        iva: '',
-        total: '',
-        cobrado: ''
+    const [project, setProject] = useState(data || {
+        code: '',
+        name: '',
+        facturasRecibidas: {
+            expenseType: '',
+            numInvoices: '',
+            date: '',
+            supplier: '',
+            cost: '',
+            iva: '',
+            irpf: '',
+            total: '',
+            paidOut: ''
         }
     })
 
     const handleInputChange = (event) => {
-        setDatos({
-            ...datos,
+        setProject({
+            ...data,
             [event.target.name]: event.target.value
         })
     }
 
     const enviarDatos = (event) => {
         event.preventDefault()
-        addProject(datos)
+        addProject(project)
             .then(() => navigate("/projects"))
     }
 
@@ -57,8 +63,8 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="code"
-                                               value={datos.facturaEmitida.numFactura}
+                                               name="facturasRecibidas.numInvoices"
+                                               value={project.facturasRecibidas.numInvoices}
                                                />
                                     </div>
 
@@ -66,62 +72,62 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <label htmlFor="">Fecha
                                         </label>
                                         <input  type="text"
-                                                value={datos.facturaEmitida.fecha}
-                                                name="facturaEmitida.fecha"
+                                                value={project.facturasRecibidas.date}
+                                                name="facturasRecibidas.date"
                                                 className="experience-form-control"
                                                 onChange={handleInputChange}
                                                 required/>
                                     </div>
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">Cliente</label>
+                                        <label htmlFor="">Nombre proyecto</label>
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="client"
-                                               value={datos.client}
+                                               name="name"
+                                               value={project.name}
                                                required/>
                                     </div>
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">Importe
+                                        <label htmlFor="">Código
                                         </label>
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="facturaEmitida.importe"
-                                               value={datos.facturaEmitida.importe}/>
+                                               name="code"
+                                               value={project.code}/>
                                     </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">IVA
-                                        </label>
-                                        <input type="text"
-                                               value={datos.facturaEmitida.iva}
-                                               name="facturaEmitida.iva"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
+                                    {/*<div className="experience-form-group">*/}
+                                    {/*    <label htmlFor="">IVA*/}
+                                    {/*    </label>*/}
+                                    {/*    <input type="text"*/}
+                                    {/*           value={project.facturaEmitida.iva}*/}
+                                    {/*           name="facturaEmitida.iva"*/}
+                                    {/*           className="experience-form-control"*/}
+                                    {/*           onChange={handleInputChange}/>*/}
+                                    {/*</div>*/}
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Total
-                                        </label>
-                                        <input type="text"
-                                               value={datos.facturaEmitida.total}
-                                               name="facturaEmitida.total"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
+                                    {/*<div className="experience-form-group">*/}
+                                    {/*    <label htmlFor="">Total*/}
+                                    {/*    </label>*/}
+                                    {/*    <input type="text"*/}
+                                    {/*           value={project.facturaEmitida.total}*/}
+                                    {/*           name="facturaEmitida.total"*/}
+                                    {/*           className="experience-form-control"*/}
+                                    {/*           onChange={handleInputChange}/>*/}
+                                    {/*</div>*/}
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Cobrado
-                                        </label>
-                                        <input type="text"
-                                               value={datos.facturaEmitida.cobrado}
-                                               name="facturaEmitida.cobrado"
-                                               className="form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
+                                    {/*<div className="experience-form-group">*/}
+                                    {/*    <label htmlFor="">Cobrado*/}
+                                    {/*    </label>*/}
+                                    {/*    <input type="text"*/}
+                                    {/*           value={project.facturaEmitida.cobrado}*/}
+                                    {/*           name="facturaEmitida.cobrado"*/}
+                                    {/*           className="form-control"*/}
+                                    {/*           onChange={handleInputChange}/>*/}
+                                    {/*</div>*/}
 
                                 </div>
                             </div>
