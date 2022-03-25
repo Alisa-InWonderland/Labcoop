@@ -44,7 +44,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
                 <div className="experience-form-wrapper">
                     <Typography variant="h1" component="h2">
                         <h1>{data ? 'Horas' : 'Nuevo proyecto'}</h1>
-                    </Typography>;
+                    </Typography>
                     <div className="experience-form-container">
                         <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 

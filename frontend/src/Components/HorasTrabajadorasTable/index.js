@@ -24,16 +24,16 @@ export function HorasTrabajadorasTable({project}) {
                 <td className='horas-trabajadoras-td'>{project.code}
                 </td>
                 <td className='horas-trabajadoras-td'>{project.cliente}</td>
-                <td className='horas-trabajadoras-td'>{project.socias} </td>
-                <td className='horas-trabajadoras-td'>{project.numHorasAsignadas}</td>
-                <td className='horas-trabajadoras-td'>{project.numHorasEjecutadas}</td>
-                <td className='horas-trabajadoras-td'>{project.numHorasPendientes}
-                <td className='horas-trabajadoras-td'>{project.precioHora}</td>
-                <td className='horas-trabajadoras-td'>{project.donePrice}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.socias} </td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.numHorasAsignadas}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.numHorasEjecutadas}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.numHorasPendientes}
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.precioHora}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.donePrice}</td>
 
                 </td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.cliente}</td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.trabajador}
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.cliente}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.trabajador}
                     <Link
                         to={`/horas-trabajadoras/${horasTrabajadoras.id}`}
                         state={{data: project}}
@@ -41,12 +41,12 @@ export function HorasTrabajadorasTable({project}) {
                         {horasTrabajadoras.trabajador}
                     </Link>
                 </td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.socias}</td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.numHorasAsignadas}</td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.numHorasEjecutadas}</td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.numHorasPendientes}</td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.precioHora}</td>
-                <td className='horas-trabajadoras-td'>{horasTrabajadoras.donePrice}
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.socias}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.numHorasAsignadas}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.numHorasEjecutadas}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.numHorasPendientes}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.precioHora}</td>
+                <td className='horas-trabajadoras-td'>{project.horasTrabajadoras.donePrice}
                 </td>
             </tr>
         )
