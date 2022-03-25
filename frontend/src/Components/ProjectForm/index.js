@@ -5,12 +5,13 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import {GeneralForm} from "../GeneralForm/index";
-import {FacturaEmitidaForm} from "../FacturaEmitidaForm/index";
+import {FacturaEmitidaForm} from "../FacturaEmitidaForm";
+import {FacturasRecibidasView} from "../FacturasRecibidasView/facturasRecibidasView";
 import {HorasForm} from "../HorasForm";
 import * as PropTypes from "prop-types";
-import {FacturasRecibidasView} from "../FacturasRecibidasView/facturasRecibidasView";
 
 FacturasRecibidasView.propTypes = {value: PropTypes.string};
+
 
 export function ProjectForm({addProject}) {
     const [value, setValue] = React.useState('1');
@@ -20,6 +21,7 @@ export function ProjectForm({addProject}) {
     };
 
 
+
    /* export function HoursList({showTable}) {
         const [value, setValue] = React.useState('1');
 
@@ -27,12 +29,13 @@ export function ProjectForm({addProject}) {
             setValue(newValue);
         };*/
 
+
     // export function HoursList({showTable}) {
     //     const [value, setValue] = React.useState('1');
     //
     //     const handleChange = (event, newValue) => {
     //         setValue(newValue);
-    //     }
+
 
 
         return (
@@ -67,5 +70,4 @@ export function ProjectForm({addProject}) {
                 </TabContext>
             </Box>
         );
-
 }

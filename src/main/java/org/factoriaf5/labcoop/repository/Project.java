@@ -279,6 +279,7 @@ public class Project implements Serializable {
         return facturasRecibidas;
     }
 
+
     public void setFacturasRecibidas(List<FacturaRecibida> facturasRecibidas) {
         this.facturasRecibidas = facturasRecibidas;
     }

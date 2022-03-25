@@ -6,11 +6,12 @@ import javax.persistence.*;
 @Table (name="horasTrabajadoras")
 public class HorasTrabajadoras {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String cliente;
+
     private String trabajador;
     private String socias;
     private int numHorasAsignadas;
@@ -19,8 +20,8 @@ public class HorasTrabajadoras {
     private int precioHora;
     private int donePrice;
 
-    public HorasTrabajadoras(String cliente, String trabajador, String socias, int numHorasAsignadas, int numHorasEjecutadas, int numHorasPendientes, int precioHora, int donePrice) {
-        this.cliente = cliente;
+    public HorasTrabajadoras(String trabajador, String socias, int numHorasAsignadas, int numHorasEjecutadas, int numHorasPendientes, int precioHora, int donePrice) {
+
         this.trabajador = trabajador;
         this.socias = socias;
         this.numHorasAsignadas = numHorasAsignadas;
@@ -41,13 +42,6 @@ public class HorasTrabajadoras {
         this.id = id;
     }
 
-    public String getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
-    }
 
     public String getTrabajador() {
         return trabajador;
@@ -56,6 +50,7 @@ public class HorasTrabajadoras {
     public void setTrabajador(String trabajador) {
         this.trabajador = trabajador;
     }
+
     public String getSocias() {
         return socias;
     }
@@ -108,7 +103,6 @@ public class HorasTrabajadoras {
     public String toString() {
         return "HorasTrabajadoras{" +
                 "id=" + id +
-                "cliente='" + cliente + '\'' +
                 ", trabajador='" + trabajador + '\'' +
                 ", socias='" + socias + '\'' +
                 ", numHorasAsignadas=" + numHorasAsignadas +
@@ -118,4 +112,5 @@ public class HorasTrabajadoras {
                 ", donePrice=" + donePrice +
                 '}';
     }
+
 }

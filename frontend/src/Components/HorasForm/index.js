@@ -44,7 +44,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
                 <div className="experience-form-wrapper">
                     <Typography variant="h1" component="h2">
                         <h1>{data ? 'Horas' : 'Nuevo proyecto'}</h1>
-                    </Typography>;
+                    </Typography>
                     <div className="experience-form-container">
                         <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 
@@ -53,22 +53,22 @@ export const HorasForm = ({addProject, deleteProject}) => {
                                 <div className="datos-proyecto">
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">Nº Factura
+                                        <label htmlFor="">Trabajador/a
                                         </label>
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
                                                name="code"
-                                               value={datos.facturaEmitida.numFactura}
+                                               value={datos.horasTrabajadoras.trabajador}
                                                />
                                     </div>
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">Fecha
+                                        <label htmlFor="">Socias
                                         </label>
                                         <input  type="text"
-                                                value={datos.facturaEmitida.fecha}
-                                                name="facturaEmitida.fecha"
+                                                value={datos.horasTrabajadoras.socias}
+                                                name="horasTrabajadoras.socias"
                                                 className="experience-form-control"
                                                 onChange={handleInputChange}
                                                 required/>
@@ -80,27 +80,47 @@ export const HorasForm = ({addProject, deleteProject}) => {
                                                className="experience-form-control"
                                                onChange={handleInputChange}
                                                name="client"
-                                               value={datos.client}
+                                               value={datos.client} //Aquí no sé que clase y que variable pasarle
                                                required/>
                                     </div>
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">Importe
+                                        <label htmlFor="">Horas Asignadas
                                         </label>
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="facturaEmitida.importe"
-                                               value={datos.facturaEmitida.importe}/>
+                                               name="horasTrabajadoras.numHorasAsignadas"
+                                               value={datos.horasTrabajadoras.numHorasAsignadas}/>
                                     </div>
 
                                     <div className="experience-form-group">
-                                        <label htmlFor="">IVA
+                                        <label htmlFor="">Horas Ejecutadas
                                         </label>
                                         <input type="text"
-                                               value={datos.facturaEmitida.iva}
-                                               name="facturaEmitida.iva"
+                                               value={datos.horasTrabajadoras.numHorasEjecutadas}
+                                               name="horasTrabajadoras.numHorasEjecutadas"
                                                className="experience-form-control"
+                                               onChange={handleInputChange}/>
+                                    </div>
+
+                                    <div className="experience-form-group">
+                                        <label htmlFor="">Horas Pendientes
+                                        </label>
+                                        <input type="text"
+                                               value={datos.horasTrabajadoras.numHorasPendientes}
+                                               name="horasTrabajadoras.numHorasPendientes"
+                                               className="experience-form-control"
+                                               onChange={handleInputChange}/>
+                                    </div>
+
+                                    <div className="experience-form-group">
+                                        <label htmlFor="">Precio Hora
+                                        </label>
+                                        <input type="text"
+                                               value={datos.horasTrabajadoras.precioHora}
+                                               name="horasTrabajadoras.precioHora"
+                                               className="form-control"
                                                onChange={handleInputChange}/>
                                     </div>
 
@@ -108,18 +128,8 @@ export const HorasForm = ({addProject, deleteProject}) => {
                                         <label htmlFor="">Total
                                         </label>
                                         <input type="text"
-                                               value={datos.facturaEmitida.total}
-                                               name="facturaEmitida.total"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
-
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Cobrado
-                                        </label>
-                                        <input type="text"
-                                               value={datos.facturaEmitida.cobrado}
-                                               name="facturaEmitida.cobrado"
+                                               value={datos.horasTrabajadoras.donePrice}
+                                               name="horasTrabajadoras.donePrice"
                                                className="form-control"
                                                onChange={handleInputChange}/>
                                     </div>
