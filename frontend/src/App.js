@@ -99,14 +99,16 @@ function App() {
         <main className="main" id= "areaB">
           <Routes>
 
-            <Route path="/projects" element={<ProjectList projects={projects} />}/>
-            <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
-            <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
-            <Route path="/horas" element={<HoursList projects={projects}/>}/>
-            <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
-            {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
-            <Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>
-            <Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>
+              <Route path="/projects" element={<ProjectList projects={projects} />}/>
+              <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
+              <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
+              <Route path="/horas" element={<HoursList projects={projects}/>}/>
+              {/*<Route path="/horas" element={<HoursForm projects={projects}/>}/>*/}
+              <Route path="/horasTrabajadoras" element={<HorasTrabajodorasView projects={projects}/>}/>
+              <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+              {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
+              <Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>
+              <Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>
               <Route path="/facturas-recibidas/:id" element={<FacturaRecibidaForm addProject={addProject} projects={projects}/>}/>
               <Route path="/facturas-recibidas/new" element={<FacturaRecibidaForm addProject={addProject} />}/>
           </Routes>

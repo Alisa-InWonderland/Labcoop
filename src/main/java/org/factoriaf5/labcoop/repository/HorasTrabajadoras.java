@@ -58,6 +58,7 @@ public class HorasTrabajadoras {
     public void setTrabajador(String trabajador) {
         this.trabajador = trabajador;
     }
+
     public String getSocias() {
         return socias;
     }
