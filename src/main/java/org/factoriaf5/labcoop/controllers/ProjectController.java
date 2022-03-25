@@ -80,6 +80,11 @@ public class ProjectController {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 
+    @PostMapping("project/{id}/facturas-recibidas/")
+    public FacturaRecibida CreateNewFacturaR (@RequestBody FacturaRecibida facturaRecibida){
+        return facturasRecibidasRepository.save(facturaRecibida);
+    }
+
     @GetMapping("/horas/{id}")
     public Project horasTrabajadoras(@PathVariable("id") Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
@@ -90,7 +95,13 @@ public class ProjectController {
        return projectsRepository.findAll();
     }
 
-    @PostMapping("/projects/{id}/facturas-recibidas")
+
+
+
+
+
+
+/*    @PostMapping("/projects/{id}/facturas-recibidas")
     public FacturaRecibida CreateNewFacturaR (@RequestBody FacturaRecibida facturaRecibida){
         return facturasRecibidasRepository.save(facturaRecibida);
     }
@@ -99,8 +110,9 @@ public class ProjectController {
     public Project saveFacturaRofProject(@PathVariable Long id) {
         Project project = projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
         project.setFacturasRecibidas(List<FacturaRecibida> facturasRecibidas);
-        return facturasRecibidasRepository.save(facturaRecibida);
+        return facturasRecibidasRepository.save(facturaRecibida);*/
 
     }
 
-}
+
+

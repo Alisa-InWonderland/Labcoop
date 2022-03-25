@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 
 export function FacturasRecibidasTable({project}) {
 
+
+
     return <>
         <button className="btn-orange-link">
             <Link
@@ -64,4 +66,5 @@ export function FacturasRecibidasTable({project}) {
 
         </table>
     </>
+
 }
