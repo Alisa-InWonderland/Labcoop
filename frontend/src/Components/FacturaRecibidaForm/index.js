@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import "./style.css"
+import {getProjects} from "../../Services/getProjects";
+import {getFacturasR} from "../../Services/getFacturasR";
 
 
 export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
@@ -114,6 +116,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                     </div>
 
                                     <div className="experience-form-group">
+
                                         <label htmlFor="">Proveedor
                                         </label>
                                         <input  type="text"
@@ -135,10 +138,13 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                 <div className="experience-form-group">
                                         <label htmlFor="">IVA
                                         </label>
+
+                                        <label htmlFor="">Nombre proyecto</label>
+
                                         <input type="text"
                                                value={project.facturasRecibidas.iva}
                                                name="facturaRecibida.iva"
-                                               className="experience-form-control"
+
                                                onChange={handleInputChange}/>
                                 </div>
                                 <div className="experience-form-group">
@@ -150,6 +156,14 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                            className="experience-form-control"
                                            onChange={handleInputChange}/>
                                 </div>
+
+                                               onChange={handleInputChange}
+                                               name="name"
+                                               value={project.name}
+                                               required/>
+                                    </div>
+
+
                                     <div className="experience-form-group">
                                         <label htmlFor="">Cobrado
                                         </label>
@@ -171,13 +185,11 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                 <button className="btn-edit" onClick={() => deleteProject(params.id)}>Eliminar</button>
                               </div>
                             </div>
-                                </div></div>
-                        </form>
-                    </div>
-
-
-            </section>
-        </div>
+                        </div>
+                    </form>
+            </div>
+        </section>
+    </div>
     );
 
 }
