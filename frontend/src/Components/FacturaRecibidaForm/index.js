@@ -87,7 +87,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <input type="text"
                                                className="experience-form-control"
                                                onChange={handleInputChange}
-                                               name="code"
+                                               name="expenseType"
                                                value={project.facturasRecibidas.expenseType}
                                         />
                                     </div>
@@ -100,8 +100,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                                onChange={handleInputChange}
                                                name="facturasRecibidas.numInvoices"
                                                value={project.facturasRecibidas.numInvoices}
-
-                                        />
+                                               required/>
                                     </div>
 
                                     <div className="experience-form-group">
@@ -110,22 +109,22 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <input  type="text"
                                                 className="experience-form-control"
                                                 onChange={handleInputChange}
-                                                name="facturaRecibida.fecha"
+                                                name="facturasRecibidas.date"
                                                 value={project.facturasRecibidas.date}
                                                 required/>
                                     </div>
 
                                     <div className="experience-form-group">
-
                                         <label htmlFor="">Proveedor
                                         </label>
                                         <input  type="text"
                                                 className="experience-form-control"
                                                 onChange={handleInputChange}
-                                                name="supplier"
+                                                name="facturasRecibidas.supplier"
                                                 value={project.facturasRecibidas.supplier}
                                                 required/>
                                     </div>
+
                                 <div className="experience-form-group">
                                     <label htmlFor="">Total
                                     </label>
@@ -135,47 +134,35 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                            className="experience-form-control"
                                            onChange={handleInputChange}/>
                                 </div>
+
                                 <div className="experience-form-group">
                                         <label htmlFor="">IVA
                                         </label>
-
-                                        <label htmlFor="">Nombre proyecto</label>
-
                                         <input type="text"
                                                value={project.facturasRecibidas.iva}
-                                               name="facturaRecibida.iva"
-
+                                               name="facturasRecibidas.iva"
                                                onChange={handleInputChange}/>
                                 </div>
+
                                 <div className="experience-form-group">
                                     <label htmlFor="">IRPF
                                     </label>
                                     <input type="text"
                                            value={project.facturasRecibidas.irpf}
-                                           name="facturaEmitida.irpf"
+                                           name="facturasRecibidas.irpf"
                                            className="experience-form-control"
                                            onChange={handleInputChange}/>
                                 </div>
-
-                                               onChange={handleInputChange}
-                                               name="name"
-                                               value={project.name}
-                                               required/>
-                                    </div>
-
-
                                     <div className="experience-form-group">
                                         <label htmlFor="">Cobrado
                                         </label>
                                         <input type="text"
                                                value={project.facturasRecibidas.paidOut}
-                                               name="facturaEmitida.cobrado"
+                                               name="facturasRecibidas.paidOut"
                                                className="form-control"
                                                onChange={handleInputChange}/>
                                     </div>
-
-
-
+                                </div>
                             <div className="btn-flexbox">
                               <div className="btn-edit-container">
                                 <button type="submit" className="btn-edit">Guardar</button>
@@ -185,6 +172,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                 <button className="btn-edit" onClick={() => deleteProject(params.id)}>Eliminar</button>
                               </div>
                             </div>
+
                         </div>
                     </form>
             </div>
