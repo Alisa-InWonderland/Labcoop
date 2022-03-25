@@ -38,11 +38,6 @@ export function FacturasEmitidasList({projects}) {
                         placeholder="Busca un proyecto"
                     />
 
-                        <button className="btn-orange">
-                            <Link className="btn-orange-link" to='/facturas-emitidas/new'>Nueva factura</Link>
-                        </button>
-
-
                 </div>
 
                 <div className='tablelist'>

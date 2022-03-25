@@ -15,7 +15,8 @@ export function HoursList({projects}) {
     }
 
     function checkHorasTrabajadoras(projects){
-        return projects.find(item => item.horasTrabajadoras.length === 0);
+        const horasExists = projects.find(item => item.horasTrabajadoras.length === 0);
+        return horasExists === undefined;
     }
 
     return (
@@ -32,11 +33,6 @@ export function HoursList({projects}) {
                         placeholder="Busca un proyecto"
                     />
 
-                        <button className="btn-orange">
-                            <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>
-                        </button>
-
-
                 </div>
 
                 <div className='tablelist'>
@@ -44,21 +40,23 @@ export function HoursList({projects}) {
                     <table className="reserva-table">
 
                         <tr className='reserva-table-title'>
-                            <th className='reserva-th'>CODI</th>
-                            <th className='reserva-th'>NOM</th>
-                            <th className='reserva-th'>TRABAJADORAS</th>
-                            <th className='reserva-th'>ASIGNADAS</th>
-                            <th className='reserva-th'>EJECUTADAS</th>
-                            <th className='reserva-th'>PENDIENTES</th>
-                            <th className='reserva-th'>PRECIO/HORA</th>
-                            <th className='reserva-th'>TOTAL</th>
+                            <th className='reserva-th'>Código Proyecto</th>
+                            <th className='reserva-th'>Nombre Proyecto</th>
+                            <th className='reserva-th'>Cliente</th>
+                            <th className='reserva-th'>Trabajador</th>
+                            <th className='reserva-th'>Socia</th>
+                            <th className='reserva-th'>Horas asignadas</th>
+                            <th className='reserva-th'>Horas ejecutadas</th>
+                            <th className='reserva-th'>Horas pendientes</th>
+                            <th className='reserva-th'>Precio hora</th>
+                            <th className='reserva-th'>Total</th>
                         </tr>
 
                         {checkHorasTrabajadoras(projects) ? <tr><td colSpan="9">No hay horas trabajadas</td></tr>
 
                             : projects.filter(project => project.horasTrabajadoras.length !== 0).map((project) => {
                             if (
-                                project.name.trabajador.toLowerCase().indexOf(state.filter) >= 0 ||
+                                project.name.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
                                 return <HoursListItem key={project.id} project={project}/>;

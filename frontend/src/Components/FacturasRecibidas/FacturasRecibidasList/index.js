@@ -34,11 +34,6 @@ export function FacturasRecibidasList({projects}) {
                         placeholder="Busca un proyecto"
                     />
 
-                    <button className="btn-orange">
-                        <Link className="btn-orange-link" to='/projects/new'>Llegada de Factura</Link>
-                    </button>
-
-
                 </div>
 
                 <div className='tablelist'>
@@ -46,7 +41,7 @@ export function FacturasRecibidasList({projects}) {
                     <table className="facturas-recibidas-table">
 
                         <tr className='facturas-recibidas-table-title'>
-                            <th className='facturas-recibidas-th'>Codigo Proyecto
+                            <th className='facturas-recibidas-th'>Código Proyecto
                             </th>
                             <th className='facturas-recibidas-th'>Nombre Proyecto</th>
                             <th className='facturas-recibidas-th'>Tipo gasto
