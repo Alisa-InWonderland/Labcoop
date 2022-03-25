@@ -75,7 +75,7 @@ public class ApplicationTest {
 
     @Test
     void deleteProject() throws Exception{
-        Project project = projectsRepository.save(new Project("", "Formació y emprendimiento verde","P-Territori", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", 1, 1, 1, 1, 1, 1, 1, "", "","",null, null, null));
+        Project project = projectsRepository.save(new Project("", "Formació y emprendimiento verde","P-Territori", "Fundación biodiversidad", "", "Pendent", "Contracte", "Gran", "ess", "Sep21", "Des21", 1, 1, 1, 1, 1, 1, 1, "", "","", 1, 1, 1, 1, 1, 1, 1,null, null, null));
         mockMvc.perform(delete("/projects/delete/" + project.getId()))
                 .andExpect(status().is(200));
 

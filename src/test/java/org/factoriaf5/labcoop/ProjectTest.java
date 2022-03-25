@@ -28,12 +28,12 @@ class ProjectTest {
         HorasTrabajadoras horasTrabajadoras2Proyecto2 = new HorasTrabajadoras( "Guernica", "LabCoop", 100, 60, 40, 35,  2100);
         HorasTrabajadoras horasTrabajadoras3proyecto2 = new HorasTrabajadoras( "Nuria", "Apostrof", 250, 40, 40, 35,  1400);
 
-        Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", 1, 1, 2, 3, 1, 1, 1, "", "", "", null, null, null );
+        Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", 1, 1, 2, 3, 1, 1, 1, "", "", "", 1, 1, 1, 1, 1, 1, 1, null, null, null );
         project2.setFacturaEmitida(facturaProyecto2);
         project2.setHorasTrabajadoras(List.of(horasTrabajadorasProyecto2, horasTrabajadoras2Proyecto2, horasTrabajadoras3proyecto2));
         project2.setFacturasRecibidas(List.of(facturaRProyecto2, facturaR1Proyecto2, facturaR2Proyecto2));
 
-        assertThat(project2.getWorkersExpenses(), equalTo(9100));
+        assertThat(project2.getExecutedWorkersExpenses(), equalTo(9100));
 
     }
 
