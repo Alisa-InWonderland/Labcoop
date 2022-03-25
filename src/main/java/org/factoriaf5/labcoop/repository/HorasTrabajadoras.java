@@ -20,6 +20,8 @@ public class HorasTrabajadoras {
     private int precioHora;
     private int donePrice;
 
+
+
     public HorasTrabajadoras(String trabajador, String socias, int numHorasAsignadas, int numHorasEjecutadas, int numHorasPendientes, int precioHora, int donePrice) {
 
         this.trabajador = trabajador;
@@ -92,7 +94,7 @@ public class HorasTrabajadoras {
     }
 
     public int getDonePrice() {
-        return donePrice;
+        return precioHora*numHorasEjecutadas;
     }
 
     public void setDonePrice(int donePrice) {
