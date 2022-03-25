@@ -13,7 +13,7 @@ import * as PropTypes from "prop-types";
 FacturasRecibidasView.propTypes = {value: PropTypes.string};
 
 
-export function ProjectForm({addProject}) {
+export function ProjectForm({addProject, deleteProject}) {
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -52,19 +52,19 @@ export function ProjectForm({addProject}) {
                     </Box>
 
                     <TabPanel value="1">
-                        <GeneralForm addProject={addProject} value="1"/>
+                        <GeneralForm addProject={addProject} deleteProject={deleteProject} value="1"/>
                     </TabPanel>
 
                     <TabPanel value="2">
-                        <FacturaEmitidaForm addProject={addProject} value="2"/>
+                        <FacturaEmitidaForm addProject={addProject} deleteProject={deleteProject} value="2"/>
                     </TabPanel>
 
                     <TabPanel value="3">
-                        <FacturasRecibidasView  addProject={addProject} value="3"/>
+                        <FacturasRecibidasView  addProject={addProject} deleteProject={deleteProject} value="3"/>
                     </TabPanel>
 
                     <TabPanel value="4">
-                        <HorasForm path="/horas"  addProject={addProject} value="4" />
+                        <HorasForm path="/horas"  addProject={addProject} deleteProject={deleteProject} value="4" />
                     </TabPanel>
 
                 </TabContext>

@@ -16,6 +16,7 @@ public class ProjectController {
     private final FacturasEmitidasRepository facturasEmitidasRepository;
     private final HorasTrabajadorasRepository horasTrabajadorasRepository;
 
+
     @Autowired
     public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository, FacturasEmitidasRepository facturasEmitidasRepository, HorasTrabajadorasRepository horasTrabajadorasRepository) {
         this.projectsRepository = projectsRepository;
@@ -87,20 +88,19 @@ public class ProjectController {
 
     @GetMapping("/horas")
     public List<Project> horasTrabajadas() {
-       return projectsRepository.findAll();
-    }
-
-    @PostMapping("/projects/{id}/facturas-recibidas")
-    public FacturaRecibida CreateNewFacturaR (@RequestBody FacturaRecibida facturaRecibida){
-        return facturasRecibidasRepository.save(facturaRecibida);
-    }
-
-    @PostMapping("/projects/{id}/facturas-recibidas")
-    public Project saveFacturaRofProject(@PathVariable Long id) {
-        Project project = projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
-        project.setFacturasRecibidas(List<FacturaRecibida> facturasRecibidas);
-        return facturasRecibidasRepository.save(facturaRecibida);
-
+        return projectsRepository.findAll();
     }
 
 }
+
+//    @PutMapping("/employees/{id}")
+//    public ResponseEntity<Employee> updateEmployee(@PathVariable(value = "id") Long employeeId,
+//                                                   @Valid @RequestBody Employee employeeDetails) throws ResourceNotFoundException {
+//        Employee employee = employeeRepository.findById(employeeId)
+//                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+//
+//        employee.setEmailId(employeeDetails.getEmailId());
+//        employee.setLastName(employeeDetails.getLastName());
+//        employee.setFirstName(employeeDetails.getFirstName());
+//        final Employee updatedEmployee = employeeRepository.save(employee);
+//        return ResponseEntity.ok(updatedEmployee);
