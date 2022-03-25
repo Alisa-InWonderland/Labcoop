@@ -15,9 +15,7 @@ export function HoursList({projects}) {
     }
 
     function checkHorasTrabajadoras(projects){
-
-        const horasTrabajadorasExist = projects.find(item => item.horasTrabajadoras.length === 0);
-        return horasTrabajadorasExist === undefined;
+        return projects.find(item => item.horasTrabajadoras.length === 0);
     }
 
     return (

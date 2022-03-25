@@ -13,7 +13,7 @@ import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitid
 import {FacturaEmitidaForm} from "./Components/FacturaEmitidaForm/index";
 import {FacturaRecibidaForm} from "./Components/FacturaRecibidaForm/index";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
-import {HorasList, HoursList} from "./Components/Hours/HoursList";
+import {HoursList} from "./Components/Hours/HoursList";
 import {getFacturasR} from "./Services/getFacturasR";
 import {getFacturasE} from "./Services/getFacturasE";
 import {getHours} from "./Services/getHours";
@@ -22,6 +22,8 @@ function App() {
 
   const [projects, setProjects] = useState([]);
   const [facturaE, setFacturaE] = useState([]);
+  const [facturaR, setFacturaR] = useState([]);
+
   const [requiresUpdate, setRequiresUpdate] = useState(true);
 
 
@@ -32,6 +34,14 @@ function App() {
           .then(_ => setRequiresUpdate(false));
     }
   }, [requiresUpdate])
+
+    useEffect(() => {
+        if (requiresUpdate) {
+            getFacturasR()
+                .then(setFacturaR)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
 
     useEffect(() => {
         if (requiresUpdate) {
@@ -68,6 +78,8 @@ function App() {
     ).then(_ => setRequiresUpdate(true))
 
   }
+
+
 
     // const addFacturaE = (project) => {
     //     return fetch(API_URL,
