@@ -19,7 +19,7 @@ export function ProjectList({projects}) {
             <section className='reservesList'>
                 <h1 className="reservesList-title">Proyectos</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-project">
                     <input
                         className="barra-de-busqueda"
                         name="project"

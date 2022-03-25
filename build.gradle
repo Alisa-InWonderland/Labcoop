@@ -18,6 +18,7 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools:2.6.4'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.4'
     runtimeOnly 'com.h2database:h2:2.1.210'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
 }
 
 tasks.named('test') {
