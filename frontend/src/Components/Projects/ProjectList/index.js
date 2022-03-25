@@ -63,6 +63,7 @@ export function ProjectList({projects}) {
                             // ) {
                             //     return <ProjectListItem key={project.id} project={project}/>;
                             // }
+
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0

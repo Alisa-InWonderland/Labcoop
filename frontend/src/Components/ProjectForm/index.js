@@ -21,15 +21,6 @@ export function ProjectForm({addProject, deleteProject}) {
     };
 
 
-
-   /* export function HoursList({showTable}) {
-        const [value, setValue] = React.useState('1');
-
-        const handleChange = (event, newValue) => {
-            setValue(newValue);
-        };*/
-
-
     // export function HoursList({showTable}) {
     //     const [value, setValue] = React.useState('1');
     //

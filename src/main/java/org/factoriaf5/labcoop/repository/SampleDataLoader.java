@@ -32,15 +32,15 @@ public class SampleDataLoader {
         FacturaRecibida facturaRProyecto4 = new FacturaRecibida("HoresLab", "2404", "2/DEC", "Laburoo", 350, 70, 40, 420, true);
         FacturaRecibida facturaR1Proyecto4 = new FacturaRecibida( "HoresLab", "2405", "2/FEB", "Laburoo", 350, 70, 40, 420, true);
 
-        HorasTrabajadoras horasTrabajadorasProyecto2 = new HorasTrabajadoras( "Andres", "LabCoop", 200, 160, 40, 35,  5600);
-        HorasTrabajadoras horasTrabajadoras2Proyecto2 = new HorasTrabajadoras( "Guernica", "LabCoop", 100, 60, 40, 35,  2100);
-        HorasTrabajadoras horasTrabajadoras3proyecto2 = new HorasTrabajadoras( "Nuria", "Apostrof", 250, 40, 40, 35,  1400);
+        HorasTrabajadoras horasTrabajadorasProyecto2 = new HorasTrabajadoras( "Andres", "LabCoop", 200, 160, 40, 35,  0);
+        HorasTrabajadoras horasTrabajadoras2Proyecto2 = new HorasTrabajadoras( "Guernica", "LabCoop", 100, 60, 40, 35,  0);
+        HorasTrabajadoras horasTrabajadoras3proyecto2 = new HorasTrabajadoras( "Nuria", "Apostrof", 250, 40, 40, 35,  0);
 
 
         // TODO: Builder pattern
         Project project1 = new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", 1, 1, 1, 1, 1, 1, 0, "", "", "", 1, 1, 1, 1, 1, 1, 0,null,null, null);
         project1.setFacturaEmitida(facturaProyecto1);
-        Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", 20000, 2000, 1000, 1000, 3000, 500, 0, "", "", "",  20000, 2000, 4000, 0, 3000, 1000, 0, null, null, null );
+        Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", 20000, 2000, 1000, 1000, 3000, 500, 0, "", "", "",  26000, 2000, 4000, 0, 3000, 1000, 0, null, null, null );
         project2.setFacturaEmitida(facturaProyecto2);
         project2.setHorasTrabajadoras(List.of(horasTrabajadorasProyecto2, horasTrabajadoras2Proyecto2, horasTrabajadoras3proyecto2));
         project2.setFacturasRecibidas(List.of(facturaRProyecto2, facturaR1Proyecto2, facturaR2Proyecto2));

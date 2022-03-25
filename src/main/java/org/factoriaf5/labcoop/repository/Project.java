@@ -325,7 +325,7 @@ public class Project implements Serializable {
     }
 
     public int getExecutedMargin() {
-        executedMargin = executedBudget - executedCoCost - executedExtExpenses - executedWorkersExpenses - executedManagePercent - executedOtherExpenses;
+        executedMargin = executedBudget - executedCoCost - executedExtExpenses - getExecutedWorkersExpenses() - executedManagePercent - executedOtherExpenses;
         return executedMargin;
     }
 

@@ -80,19 +80,6 @@ function App() {
 
   }
 
-
-
-    // const addFacturaE = (project) => {
-    //     return fetch(API_URL,
-    //         {
-    //             method: 'POST',
-    //             headers: {'Content-Type': 'application/json'},
-    //             body: JSON.stringify(project)
-    //         }
-    //     ).then(_ => setRequiresUpdate(true))
-    //
-    // }
-
   const deleteProject = (id) => {
     fetch(`${API_URL}/delete/${id}`,
         {

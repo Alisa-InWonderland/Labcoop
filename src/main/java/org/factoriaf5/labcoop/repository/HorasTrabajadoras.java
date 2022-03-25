@@ -94,7 +94,8 @@ public class HorasTrabajadoras {
     }
 
     public int getDonePrice() {
-        return precioHora*numHorasEjecutadas;
+
+        return precioHora * numHorasEjecutadas;
     }
 
     public void setDonePrice(int donePrice) {
