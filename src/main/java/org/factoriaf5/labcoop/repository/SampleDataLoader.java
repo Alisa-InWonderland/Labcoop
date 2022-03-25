@@ -32,9 +32,9 @@ public class SampleDataLoader {
         FacturaRecibida facturaRProyecto4 = new FacturaRecibida("HoresLab", "2404", "2/DEC", "Laburoo", 350, 70, 40, 420, true);
         FacturaRecibida facturaR1Proyecto4 = new FacturaRecibida( "HoresLab", "2405", "2/FEB", "Laburoo", 350, 70, 40, 420, true);
 
-        HorasTrabajadoras horasTrabajadoras = new HorasTrabajadoras("AraCoop", "Andres", "LabCoop", 200, 160, 40, 35,  5600);
-        HorasTrabajadoras horasTrabajadoras2 = new HorasTrabajadoras("22F097", "AraCoop", "LabCoop", 200, 160, 40, 35,  5600);
-        HorasTrabajadoras horasTrabajadoras3 = new HorasTrabajadoras("22F097", "AraCoop", "LabCoop", 200, 160, 40, 35,  5600);
+        HorasTrabajadoras horasTrabajadorasProyecto2 = new HorasTrabajadoras( "Andres", "LabCoop", 200, 160, 40, 35,  5600);
+        HorasTrabajadoras horasTrabajadoras2Proyecto2 = new HorasTrabajadoras( "Guernica", "LabCoop", 100, 60, 40, 35,  2100);
+        HorasTrabajadoras horasTrabajadoras3proyecto2 = new HorasTrabajadoras( "Nuria", "Apostrof", 250, 40, 40, 35,  1400);
 
 
 
@@ -46,7 +46,7 @@ public class SampleDataLoader {
         project1.setFacturaEmitida(facturaProyecto1);
         Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", 1, 1, 2, 3, 1, 1, 1, "", "", "", null, null, null );
         project2.setFacturaEmitida(facturaProyecto2);
-        project2.setHorasTrabajadoras(List.of(horasTrabajadoras, horasTrabajadoras2, horasTrabajadoras3));
+        project2.setHorasTrabajadoras(List.of(horasTrabajadorasProyecto2, horasTrabajadoras2Proyecto2, horasTrabajadoras3proyecto2));
         project2.setFacturasRecibidas(List.of(facturaRProyecto2, facturaR1Proyecto2, facturaR2Proyecto2));
         Project project3 = new Project("21F008", "Formació Socis", "Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", 1, 1, 1, 2, 3, 4, 5, "", "", "", null, null, null);
         project3.setFacturaEmitida(facturaProyecto3);
