@@ -42,100 +42,96 @@ export const HorasForm = ({addProject, deleteProject}) => {
         <div className='section-form-experience'>
             <section className="experience-form-section">
                 <div className="experience-form-wrapper">
-                    <Typography variant="h1" component="h2">
+
                         <h1>{data ? 'Horas' : 'Nuevo proyecto'}</h1>
-                    </Typography>
-                    <div className="experience-form-container">
-                        <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
+                        <div className="experience-form-container">
+                            <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 
-                            <div className="proyecto-container">
+                                <div className="proyecto-container">
 
-                                <div className="datos-proyecto">
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Trabajador/a
+                                            </label>
+                                            <input type="text"
+                                                   className="experience-form-control"
+                                                   onChange={handleInputChange}
+                                                   name="code"
+                                                   value={datos.horasTrabajadoras.trabajador}
+                                                   />
+                                        </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Trabajador/a
-                                        </label>
-                                        <input type="text"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}
-                                               name="code"
-                                               value={datos.horasTrabajadoras.trabajador}
-                                               />
-                                    </div>
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Socias
+                                            </label>
+                                            <input  type="text"
+                                                    value={datos.horasTrabajadoras.socias}
+                                                    name="horasTrabajadoras.socias"
+                                                    className="experience-form-control"
+                                                    onChange={handleInputChange}
+                                                    required/>
+                                        </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Socias
-                                        </label>
-                                        <input  type="text"
-                                                value={datos.horasTrabajadoras.socias}
-                                                name="horasTrabajadoras.socias"
-                                                className="experience-form-control"
-                                                onChange={handleInputChange}
-                                                required/>
-                                    </div>
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Cliente</label>
+                                            <input type="text"
+                                                   className="experience-form-control"
+                                                   onChange={handleInputChange}
+                                                   name="client"
+                                                   value={datos.client} //Aquí no sé que clase y que variable pasarle
+                                                   required/>
+                                        </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Cliente</label>
-                                        <input type="text"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}
-                                               name="client"
-                                               value={datos.client} //Aquí no sé que clase y que variable pasarle
-                                               required/>
-                                    </div>
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Horas Asignadas
+                                            </label>
+                                            <input type="text"
+                                                   className="experience-form-control"
+                                                   onChange={handleInputChange}
+                                                   name="horasTrabajadoras.numHorasAsignadas"
+                                                   value={datos.horasTrabajadoras.numHorasAsignadas}/>
+                                        </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Horas Asignadas
-                                        </label>
-                                        <input type="text"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}
-                                               name="horasTrabajadoras.numHorasAsignadas"
-                                               value={datos.horasTrabajadoras.numHorasAsignadas}/>
-                                    </div>
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Horas Ejecutadas
+                                            </label>
+                                            <input type="text"
+                                                   value={datos.horasTrabajadoras.numHorasEjecutadas}
+                                                   name="horasTrabajadoras.numHorasEjecutadas"
+                                                   className="experience-form-control"
+                                                   onChange={handleInputChange}/>
+                                        </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Horas Ejecutadas
-                                        </label>
-                                        <input type="text"
-                                               value={datos.horasTrabajadoras.numHorasEjecutadas}
-                                               name="horasTrabajadoras.numHorasEjecutadas"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Horas Pendientes
+                                            </label>
+                                            <input type="text"
+                                                   value={datos.horasTrabajadoras.numHorasPendientes}
+                                                   name="horasTrabajadoras.numHorasPendientes"
+                                                   className="experience-form-control"
+                                                   onChange={handleInputChange}/>
+                                        </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Horas Pendientes
-                                        </label>
-                                        <input type="text"
-                                               value={datos.horasTrabajadoras.numHorasPendientes}
-                                               name="horasTrabajadoras.numHorasPendientes"
-                                               className="experience-form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Precio Hora
+                                            </label>
+                                            <input type="text"
+                                                   value={datos.horasTrabajadoras.precioHora}
+                                                   name="horasTrabajadoras.precioHora"
+                                                   className="form-control"
+                                                   onChange={handleInputChange}/>
+                                        </div>
 
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Precio Hora
-                                        </label>
-                                        <input type="text"
-                                               value={datos.horasTrabajadoras.precioHora}
-                                               name="horasTrabajadoras.precioHora"
-                                               className="form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
-
-                                    <div className="experience-form-group">
-                                        <label htmlFor="">Total
-                                        </label>
-                                        <input type="text"
-                                               value={datos.horasTrabajadoras.donePrice}
-                                               name="horasTrabajadoras.donePrice"
-                                               className="form-control"
-                                               onChange={handleInputChange}/>
-                                    </div>
+                                        <div className="experience-form-group">
+                                            <label htmlFor="">Total
+                                            </label>
+                                            <input type="text"
+                                                   value={datos.horasTrabajadoras.donePrice}
+                                                   name="horasTrabajadoras.donePrice"
+                                                   className="form-control"
+                                                   onChange={handleInputChange}/>
+                                        </div>
 
                                 </div>
-                            </div>
 
                             <div className="btn-flexbox">
                               <div className="btn-edit-container">

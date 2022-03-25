@@ -13,7 +13,6 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
     const location = useLocation();
     const data = location.state ? location.state.data : null;
 
-
     const [project, setProject] = useState(data || {
 
         code: '',
@@ -40,6 +39,10 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
 
     const enviarDatos = (event) => {
         event.preventDefault()
+        // esto no tiene sentido!!
+        // NO ENVIAR TODO EL PROYECTO
+        // enviar una factura a
+        // POST /projects/{projectId}/facturas-recibidas
         addProject(project)
             .then(() => navigate("/projects"))
     }
@@ -49,13 +52,11 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
         <div className='section-form-experience'>
             <section className="experience-form-section">
 
-                <h1>{data ? 'Factura recibida' : 'Nuevo proyecto'}</h1>
+                <h1>{data ? 'Factura recibida' : 'Nueva factura'}</h1>
                 <div className="factura-recibida-form-container">
                     <form  className="edit-factura-recibida-form" onSubmit={enviarDatos} action="">
 
                         <div className="proyecto-container">
-
-                            <div className="datos-proyecto">
 
                                 <div className="experience-form-group">
                                     <label htmlFor="">Code
@@ -171,7 +172,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                         <button className="btn-edit" onClick={() => deleteProject(params.id)}>Eliminar</button>
                                     </div>
                                 </div>
-                            </div></div>
+                            </div>
                     </form>
                 </div>
 

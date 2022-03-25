@@ -90,4 +90,17 @@ public class ProjectController {
        return projectsRepository.findAll();
     }
 
+    @PostMapping("/projects/{id}/facturas-recibidas")
+    public FacturaRecibida CreateNewFacturaR (@RequestBody FacturaRecibida facturaRecibida){
+        return facturasRecibidasRepository.save(facturaRecibida);
+    }
+
+    @PostMapping("/projects/{id}/facturas-recibidas")
+    public Project saveFacturaRofProject(@PathVariable Long id) {
+        Project project = projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+        project.setFacturasRecibidas(List<FacturaRecibida> facturasRecibidas);
+        return facturasRecibidasRepository.save(facturaRecibida);
+
+    }
+
 }

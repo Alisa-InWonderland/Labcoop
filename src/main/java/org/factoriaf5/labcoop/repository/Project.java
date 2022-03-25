@@ -218,7 +218,7 @@ public class Project implements Serializable {
     }
 
     public int getWorkersExpenses() {
-        return workersExpenses;
+        return horasTrabajadoras.stream().map(h -> h.getNumHorasEjecutadas() * h.getPrecioHora()).reduce(0,Integer::sum);
     }
 
     public void setWorkersExpenses(int workersExpenses) {
@@ -326,5 +326,8 @@ public class Project implements Serializable {
                 ", facturasRecibidas=" + facturasRecibidas +
                 ", horasTrabajadoras=" + horasTrabajadoras +
                 '}';
+    }
+
+    public void setFacturaRecibida() {
     }
 }
