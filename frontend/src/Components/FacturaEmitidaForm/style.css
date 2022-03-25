@@ -1,40 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Rubik+Beastly&family=Volkhov:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 h1, h3{
     color:#ffffff;
 }
 
-.experience-form-wrapper {
+.factura-emitida-form-wrapper {
     margin-bottom: 30px;
 }
 
-.section-form-experience {
-
+.section-form-factura-emitida {
+    width: 100%;
     display: flex;
-    justify-content: start;
-    align-content: center;
+    justify-content: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 20px;
     background-position: bottom;
-    margin-top: -40px;
+    margin: 20px;
 }
 
-.experience-form-section {
-    width: 100%;
+.factura-emitida-form-section {
+    width: 40%;
     background-color: #AB005A;
-    padding: 20px 20px 2px 20px;
+    padding: 20px;
     border-radius: 10px;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    margin-left: 30px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+
 }
 
 
-.experience-form-section h1 {
-    font-family: 'Volkhov', serif;
+
+.factura-emitida-form-section h1 {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -53,26 +49,22 @@ h1, h3{
 .proyecto-container {
     width: 100%;
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.totales {
-    width: 40%;
-    display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
-.experience-form-group {
-    margin-bottom: 15px;
+
+.factura-emitida-form-group {
+    width: 90%;
     display: flex;
     justify-content: space-between;
     text-align: left;
+    margin: auto;
 }
 
-.experience-form-group input {
-    width: 45%;
-    font-family: 'Poppins', sans-serif;
+
+.factura-emitida-form-group input {
+    width: 65%;
     height: 25px;
     border-radius: 5px;
     border: 1px solid #ccc7c7;
@@ -85,24 +77,14 @@ h1, h3{
     justify-content: space-between;
 }
 
-.experience-form-group input:hover {
+.factura-emitida-form-group input:hover {
     cursor: pointer;
     border-style: solid;
     border-width: 2px;
     border-color: #AB005A;
 }
 
-.experience-form-group textarea, select {
-    background-color: #ffffff;
-    padding: 3px;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 5px;
-    width: 45%;
-    overflow: hidden;
-    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    border: 1px solid #ffffff;
-}
+
 
 textarea:hover {
     cursor: pointer;
@@ -111,7 +93,7 @@ textarea:hover {
     border-color: #AB005A;
 }
 
-.add-experience-form {
+.add-factura-emitida-form {
     margin-bottom: 20px;
 }
 
@@ -126,7 +108,6 @@ textarea:hover {
 
 .btn-edit {
     background-color: #ffffff;
-    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     min-width: 130px;
     height: 40px;
@@ -179,16 +160,15 @@ label {
 }
 
 
-
 @media(max-width: 844px) {
-    .experience-form-section {
+    .factura-emitida-form-section {
         width: 100%;
     }
 }
 
 
 @media(min-width: 845px) and (max-width: 1180px) {
-    .section-form-experience {
+    .section-form-factura-emitida {
         background-position: right;
     }
 }

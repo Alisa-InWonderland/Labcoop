@@ -7,7 +7,17 @@
 
 .tablelist {
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
+
+.facturas-recibidas-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
 .reserva-table {
     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
 }
@@ -52,19 +62,19 @@
     }
 }
 
-.barra-de-busqueda-container {
+.barra-de-busqueda-container-project {
     width: 100%;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
     align-items: center;
     padding: 10px 20px;
 }
 
 
-.barra-de-busqueda-container input {
+.barra-de-busqueda-container-project input {
     width: 30vw;
-    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     height: 30px;
     border: 1px solid #ccc7c7;
@@ -75,13 +85,13 @@
 }
 
 @media (max-width: 1400px) {
-    .barra-de-busqueda-container input{
+    .barra-de-busqueda-container-project input{
         width: 40vw;
     }
 }
 
 @media (max-width: 950px) {
-    .barra-de-busqueda-container input{
+    .barra-de-busqueda-container-project input{
         width: 50vw;
     }
 }
@@ -89,7 +99,6 @@
 
 .btn-orange {
     background-color:#AB005A ;
-    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     min-width: 130px;
     height: 42px;

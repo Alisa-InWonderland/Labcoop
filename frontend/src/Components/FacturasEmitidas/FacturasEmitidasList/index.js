@@ -17,8 +17,6 @@ export function FacturasEmitidasList({projects}) {
 
     function checkFacturaEmitida(projects) {
 
-            //project.hasOwnProperty('facturaEmitida');
-
         const facturaEmitidaExist = projects.find(item => item.facturaEmitida !== null);
         return facturaEmitidaExist === undefined;
 
@@ -31,7 +29,7 @@ export function FacturasEmitidasList({projects}) {
             <section className='reservesList'>
                 <h1 className="reservesList-title">Facturas Emitidas</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-facturasE">
                     <input
                         className="barra-de-busqueda"
                         name="project"
@@ -39,11 +37,6 @@ export function FacturasEmitidasList({projects}) {
                         onChange={getData}
                         placeholder="Busca un proyecto"
                     />
-
-                        <button className="btn-orange">
-                            <Link className="btn-orange-link" to='/projects/new'>Nueva factura</Link>
-                        </button>
-
 
                 </div>
 

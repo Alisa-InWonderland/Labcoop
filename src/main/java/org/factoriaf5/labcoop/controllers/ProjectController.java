@@ -1,11 +1,7 @@
 package org.factoriaf5.labcoop.controllers;
 
-import org.factoriaf5.labcoop.repository.Project;
-import org.factoriaf5.labcoop.repository.FacturaEmitida;
+import org.factoriaf5.labcoop.repository.*;
 import org.factoriaf5.labcoop.ProjectNotFoundException;
-import org.factoriaf5.labcoop.repository.ProjectsRepository;
-import org.factoriaf5.labcoop.repository.FacturasRecibidasRepository;
-import org.factoriaf5.labcoop.repository.FacturasEmitidasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,15 +14,16 @@ public class ProjectController {
     private final ProjectsRepository projectsRepository;
     private final FacturasRecibidasRepository facturasRecibidasRepository;
     private final FacturasEmitidasRepository facturasEmitidasRepository;
+    private final HorasTrabajadorasRepository horasTrabajadorasRepository;
 
 
     @Autowired
-    public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository, FacturasEmitidasRepository facturasEmitidasRepository) {
+    public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository, FacturasEmitidasRepository facturasEmitidasRepository, HorasTrabajadorasRepository horasTrabajadorasRepository) {
         this.projectsRepository = projectsRepository;
         this.facturasRecibidasRepository = facturasRecibidasRepository;
         this.facturasEmitidasRepository = facturasEmitidasRepository;
+        this.horasTrabajadorasRepository = horasTrabajadorasRepository;
     }
-
 
     @GetMapping("/projects")
     public List<Project> allProjects() {
@@ -51,7 +48,6 @@ public class ProjectController {
         return project;
     }
 
-
     @GetMapping("/facturas-emitidas")
     public List<Project> allProjectFacturasE() {
         return projectsRepository.findAll();
@@ -67,15 +63,22 @@ public class ProjectController {
         return facturasEmitidasRepository.save(facturaEmitida);
     }
 
-
     @GetMapping("/facturas-recibidas")
-    public List<Project> allInvoicesProject() {
+    public List<Project> allProjectsFacturasRecibidas() {
         return projectsRepository.findAll();
     }
 
     @GetMapping("/facturas-recibidas/{id}")
-    public Project findFacturaR (@PathVariable("id") Long id){
+    public Project findFacturaR(@PathVariable("id") Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    }
 
+    @GetMapping("/horas")
+    public List<Project> horasTrabajadas() {
+        return projectsRepository.findAll();
+    }
+    @GetMapping("/horas/{id}")
+    public Project horasTrabajadoras(@PathVariable("id") Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 

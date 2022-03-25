@@ -11,15 +11,20 @@ import {ProjectForm} from "./Components/ProjectForm/index";
 import Sidebar from "./Components/Sidebar/index";
 import {FacturasEmitidasList} from "./Components/FacturasEmitidas/FacturasEmitidasList";
 import {FacturaEmitidaForm} from "./Components/FacturaEmitidaForm/index";
+import {FacturaRecibidaForm} from "./Components/FacturaRecibidaForm/index";
 import {FacturasRecibidasList} from "./Components/FacturasRecibidas/FacturasRecibidasList";
-// import {HorasList} from "./Components/Hours/HoursList";
+import {HoursList} from "./Components/Hours/HoursList";
 import {getFacturasR} from "./Services/getFacturasR";
 import {getFacturasE} from "./Services/getFacturasE";
+import {getHours} from "./Services/getHours";
+import {HorasTrabajadorasView} from "./Components/HorasTrabajadorasView";
 
 function App() {
 
   const [projects, setProjects] = useState([]);
   const [facturaE, setFacturaE] = useState([]);
+  const [facturaR, setFacturaR] = useState([]);
+
   const [requiresUpdate, setRequiresUpdate] = useState(true);
 
 
@@ -30,6 +35,14 @@ function App() {
           .then(_ => setRequiresUpdate(false));
     }
   }, [requiresUpdate])
+
+    useEffect(() => {
+        if (requiresUpdate) {
+            getFacturasR()
+                .then(setFacturaR)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
 
     useEffect(() => {
         if (requiresUpdate) {
@@ -47,6 +60,14 @@ function App() {
         }
      }, [requiresUpdate])
 
+    useEffect(() => {
+        if (requiresUpdate) {
+            getHours()
+                .then(setProjects)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
+
 
   const addProject = (project) => {
     return fetch(API_URL,
@@ -58,17 +79,6 @@ function App() {
     ).then(_ => setRequiresUpdate(true))
 
   }
-
-    // const addFacturaE = (project) => {
-    //     return fetch(API_URL,
-    //         {
-    //             method: 'POST',
-    //             headers: {'Content-Type': 'application/json'},
-    //             body: JSON.stringify(project)
-    //         }
-    //     ).then(_ => setRequiresUpdate(true))
-    //
-    // }
 
   const deleteProject = (id) => {
     fetch(`${API_URL}/delete/${id}`,
@@ -89,14 +99,18 @@ function App() {
         <main className="main" id= "areaB">
           <Routes>
 
-            <Route path="/projects" element={<ProjectList projects={projects} />}/>
-            <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
-            <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
-            {/*<Route path="/horas" element={<HorasList projects={projects} horas={horas}/>}/>*/}
-            <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
-            {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
-            {/*<Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>*/}
-            {/*<Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>*/}
+              <Route path="/projects" element={<ProjectList projects={projects} />}/>
+              <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
+              <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
+              <Route path="/horas" element={<HoursList projects={projects}/>}/>
+              {/*<Route path="/horas" element={<HoursForm projects={projects}/>}/>*/}
+              <Route path="/horasTrabajadoras" element={<HorasTrabajadorasView projects={projects}/>}/>
+              <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+              {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
+              <Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>
+              <Route path="/facturas-emitidas/new" element={<FacturaEmitidaForm addProject={addProject} />}/>
+              <Route path="/facturas-recibidas/:id" element={<FacturaRecibidaForm addProject={addProject} projects={projects}/>}/>
+              <Route path="/facturas-recibidas/new" element={<FacturaRecibidaForm addProject={addProject} />}/>
           </Routes>
         </main>
 

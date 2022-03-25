@@ -19,7 +19,7 @@ export function ProjectList({projects}) {
             <section className='reservesList'>
                 <h1 className="reservesList-title">Proyectos</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-project">
                     <input
                         className="barra-de-busqueda"
                         name="project"
@@ -40,18 +40,12 @@ export function ProjectList({projects}) {
                     <table className="reserva-table">
 
                         <tr className='reserva-table-title'>
-                            <th className='reserva-th'>CODI</th>
-                            <th className='reserva-th'>NOM</th>
-                            <th className='reserva-th'>CLIENT</th>
-                            {/*<th className='reserva-th'>COORDINA</th>*/}
-                            <th className='reserva-th'>ESTAT</th>
-                            {/*<th className='reserva-th'>AREA</th>*/}
-                            <th className='reserva-th'>TIPUS</th>
-                            {/*<th className='reserva-th'>MIDA</th>*/}
-                            <th className='reserva-th'>TARGET</th>
-                            {/*<th className='reserva-th'>INICI</th>*/}
-                            {/*<th className='reserva-th'>FI</th>*/}
-                            {/*<th className='reserva-th'>OBSERVACIONS</th>*/}
+                            <th className='reserva-th'>Código</th>
+                            <th className='reserva-th'>Nombre Proyecto</th>
+                            <th className='reserva-th'>Cliente</th>
+                            <th className='reserva-th'>Estado</th>
+                            <th className='reserva-th'>Tipo</th>
+                            <th className='reserva-th'>Target</th>
                             <th className='reserva-th'>Presupuesto prev.</th>
                             <th className='reserva-th'>Gastos socias prev.</th>
                             <th className='reserva-th'>Gastos ext. prev.</th>
@@ -62,36 +56,28 @@ export function ProjectList({projects}) {
                         </tr>
 
                         {projects.map((project) => {
-                            if (
-                                project.name.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
-                            }
+
+                            // if (
+                            //     project.name.toLowerCase().indexOf(state.filter) >= 0 ||
+                            //     state.filter.length === 0
+                            // ) {
+                            //     return <ProjectListItem key={project.id} project={project}/>;
+                            // }
+
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
                                 return <ProjectListItem key={project.id} project={project}/>;
                             }
-                            // if (
-                            //     project.size.toLowerCase().indexOf(state.filter) >= 0 ||
-                            //     state.filter.length === 0
-                            // ) {
-                            //     return <ProjectListItem key={project.id} project={project}/>;
-                            // }
+
                             if (
                                 project.code.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
                             ) {
                                 return <ProjectListItem key={project.id} project={project}/>;
                             }
-                            // if (
-                            //     project.manager.toLowerCase().indexOf(state.filter) >= 0 ||
-                            //     state.filter.length === 0
-                            // ) {
-                            //     return <ProjectListItem key={project.id} project={project}/>;
-                            // }
+
                             if (
                                 project.target.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0
@@ -110,21 +96,10 @@ export function ProjectList({projects}) {
                             ) {
                                 return <ProjectListItem key={project.id} project={project}/>;
                             }
-                            // if (
-                            //     project.comments.toLowerCase().indexOf(state.filter) >= 0 ||
-                            //     state.filter.length === 0
-                            // ) {
-                            //     return <ProjectListItem key={project.id} project={project}/>;
-                            // }
-                            // if (
-                            //     project.area.toLowerCase().indexOf(state.filter) >= 0 ||
-                            //     state.filter.length === 0
-                            // ) {
-                            //     return <ProjectListItem key={project.id} project={project}/>;
-                            // }
 
                             return "";
-                        })}
+                        }
+                        )}
 
                     </table>
 
