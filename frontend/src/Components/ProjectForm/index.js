@@ -9,16 +9,8 @@ import {FacturaEmitidaForm} from "../FacturaEmitidaForm";
 import {FacturasRecibidasView} from "../FacturasRecibidasView/facturasRecibidasView";
 import {HorasForm} from "../HorasForm";
 import * as PropTypes from "prop-types";
-<<<<<<< HEAD
-import {FacturasRecibidasView} from "../FacturasRecibidasView/facturasRecibidasView";
-{/*import {FacturasEmitidasView} from "../FacturasEmitidasView/FacturasEmitidasView";*/}
-
-=======
->>>>>>> 5ff79fc9631225301e6c80ae6b47a369beb5b2c0
 
 FacturasRecibidasView.propTypes = {value: PropTypes.string};
-{/*FacturasEmitidasView.propTypes = {value: PropTypes.string};*/}
-
 
 export function ProjectForm({addProject}) {
     const [value, setValue] = React.useState('1');
@@ -28,11 +20,6 @@ export function ProjectForm({addProject}) {
     };
 
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 5ff79fc9631225301e6c80ae6b47a369beb5b2c0
    /* export function HoursList({showTable}) {
         const [value, setValue] = React.useState('1');
 
