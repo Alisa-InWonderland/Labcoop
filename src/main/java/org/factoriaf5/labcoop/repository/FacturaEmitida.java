@@ -20,8 +20,8 @@ public class FacturaEmitida {
 
 
 
-
     public FacturaEmitida(int numFactura, String fecha, int importe, int iva, int total, boolean cobrado) {
+
         this.numFactura = numFactura;
         this.fecha = fecha;
         this.importe = importe;
