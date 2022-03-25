@@ -25,7 +25,7 @@ export function FacturasRecibidasList({projects}) {
             <section className='facturas-recibidas-list'>
                 <h1 className="facturas-recibidas-list-title">Facturas Recibidas</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-facturasR">
                     <input
                         className="barra-de-busqueda"
                         name="project"

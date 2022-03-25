@@ -29,7 +29,7 @@ export function FacturasEmitidasList({projects}) {
             <section className='reservesList'>
                 <h1 className="reservesList-title">Facturas Emitidas</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-facturasE">
                     <input
                         className="barra-de-busqueda"
                         name="project"

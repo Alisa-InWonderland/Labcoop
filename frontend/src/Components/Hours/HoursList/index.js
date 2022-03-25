@@ -23,7 +23,7 @@ export function HoursList({projects}) {
             <section className='reservesList'>
                 <h1 className="reservesList-title">Horas trabajadas</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-hours">
                     <input
                         className="barra-de-busqueda"
                         name="project"
