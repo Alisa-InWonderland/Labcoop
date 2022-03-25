@@ -21,7 +21,7 @@ h1, h3{
 }
 
 .general-form-section {
-    width: 80%;
+    width: 90%;
     background-color: #AB005A;
     padding: 20px 20px 2px 20px;
     border-radius: 10px;
@@ -39,7 +39,7 @@ h1, h3{
     text-align: center;
 }
 
-.total-previsto-title, .total-ejecutado-title {
+.total-previsto-title, .total-ejecutado-title .total-previsto {
     margin-bottom: 20px;
 }
 
@@ -57,6 +57,7 @@ h1, h3{
 
     display: flex;
     flex-direction: column;
+    padding: 10px 10px 10px 10px;
 }
 .totales {
     display: flex;

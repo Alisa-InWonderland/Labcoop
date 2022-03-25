@@ -9,18 +9,21 @@ h1, h3{
 }
 
 .section-form-experience {
-
+    width: 45%;
     display: flex;
-    justify-content: start;
-    align-content: center;
+    justify-content: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 20px;
     background-position: bottom;
+    margin: 320px;
+    align-content: center;
     margin-top: -40px;
 }
 
-.experience-form-section {
+.experience-form-section
+
+{
     width: 100%;
     background-color: #AB005A;
     padding: 20px 20px 2px 20px;
