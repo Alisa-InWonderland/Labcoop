@@ -51,7 +51,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
         addProject(datos)
             .then(() => navigate("/projects"))
     }
-
+    const isPagado = () => datos.facturasRecibidas.paidOut ? 'Sí' : 'No';
 
     return (
         <div className='section-form-experience'>
@@ -158,7 +158,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                                        onChange={handleInputChange}/>
                             </div>
                             <div className="experience-form-group">
-                                <label htmlFor="">Cobrado
+                                <label htmlFor="">Total
                                 </label>
                                 <input type="text"
                                        value={datos.facturasRecibidas.total}
@@ -168,10 +168,10 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
                             </div>
 
                             <div className="experience-form-group">
-                                <label htmlFor="">Cobrado
+                                <label htmlFor="">Pagado
                                 </label>
                                 <input type="text"
-                                       value={datos.facturasRecibidas.paidOut}
+                                       value={isPagado()}
                                        name="facturasRecibidas.paidOut"
                                        className="form-control"
                                        onChange={handleInputChange}/>

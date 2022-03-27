@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 import "./FacturasEmitidasTable.css"
 
 export function FacturasEmitidasTable({project}) {
+
+    const isCobrado = () => project.facturaEmitida.cobrado ? 'Sí' : 'No';
     return <>
         <div className="btn-facturaE-wrapper">
         <button className="btn-orange btn-facturaE">
@@ -46,7 +48,7 @@ export function FacturasEmitidasTable({project}) {
                 <td className="factura-emitida-td">{project.facturaEmitida.importe}</td>
                 <td className="factura-emitida-td">{project.facturaEmitida.iva}</td>
                 <td className="factura-emitida-td">{project.facturaEmitida.total}</td>
-                <td className="factura-emitida-td">{project.facturaEmitida.cobrado}</td>
+                <td className="factura-emitida-td">{isCobrado()}</td>
             </tr>
             </tbody>
         </table>

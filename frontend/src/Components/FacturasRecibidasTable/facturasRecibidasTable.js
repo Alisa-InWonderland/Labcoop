@@ -3,6 +3,7 @@ import {Link, useParams} from "react-router-dom";
 
 export function FacturasRecibidasTable({project}) {
 
+
     return <>
         <div className="btn-facturaE-wrapper">
         <button className="btn-orange btn-facturaE">
@@ -58,7 +59,7 @@ export function FacturasRecibidasTable({project}) {
                     <td className='facturas-recibidas-td'>{factura.iva}</td>
                     <td className='facturas-recibidas-td'>{factura.irpf}</td>
                     <td className='facturas-recibidas-td'>{factura.total}</td>
-                    <td className='facturas-recibidas-td'>{factura.paidOut}
+                    <td className='facturas-recibidas-td'>{factura.paidOut ? 'Sí' : 'No'}
                     </td>
                 </tr>
             )

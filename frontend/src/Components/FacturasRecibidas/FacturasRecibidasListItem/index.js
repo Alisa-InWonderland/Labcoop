@@ -30,7 +30,7 @@ export function FacturasRecibidasListItem({project}) {
                 <td className="facturas-recibidas-td">{factura.iva}</td>
                 <td className="facturas-recibidas-td">{factura.irpf}</td>
                 <td className="facturas-recibidas-td">{factura.total}</td>
-                <td className="facturas-recibidas-td">{factura.paidOut}</td>
+                <td className="facturas-recibidas-td">{factura.paidOut ? 'Sí' : 'No'}</td>
 
             </tr>
         )

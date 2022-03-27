@@ -35,12 +35,14 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
         })
     }
 
+
     const enviarDatos = (event) => {
         event.preventDefault()
         addProject(datos)
             .then(() => navigate("/projects"))
     }
 
+    const isCobrado = () => datos.facturaEmitida.cobrado ? 'Sí' : 'No';
 
     return (
         <div className='section-form-factura-emitida'>
@@ -119,7 +121,7 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
                                     <label htmlFor="">Cobrado
                                     </label>
                                     <input type="text"
-                                           value={datos.facturaEmitida.cobrado}
+                                           value={isCobrado()}
                                            name="facturaEmitida.cobrado"
                                            className="form-control"
                                            onChange={handleInputChange}/>
