@@ -64,6 +64,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                 <div className="general-form-wrapper">
 
                     <h1>{data ? 'General' : 'Nuevo proyecto'}</h1>
+                    <h3>Proyecto {datos.name}</h3>
                     <div className="experience-form-container">
                         <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 

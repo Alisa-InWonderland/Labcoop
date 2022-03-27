@@ -47,6 +47,7 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
                 <div className="factura-emitida-form-wrapper">
 
                     <h1>{data ? 'Factura emitida' : 'Nueva factura'}</h1>
+                    <h3>Proyecto {datos.name}</h3>
                     <div className="factura-emitida-form-container">
                         <form className="edit-factura-emitida-form" onSubmit={enviarDatos} action="">
 
