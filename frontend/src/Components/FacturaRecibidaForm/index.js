@@ -53,6 +53,7 @@ export const FacturaRecibidaForm = ({addProject, deleteProject}) => {
             <section className="experience-form-section">
 
                 <h1>{data ? 'Factura recibida' : 'Nueva factura'}</h1>
+                <h3>Proyecto {project.name}</h3>
                 <div className="factura-recibida-form-container">
                     <form  className="edit-factura-recibida-form" onSubmit={enviarDatos} action="">
 
