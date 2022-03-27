@@ -1,16 +1,19 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 export function FacturasRecibidasTable({project}) {
 
     return <>
-        <button className="btn-orange-link">
+        <div className="btn-facturaE-wrapper">
+        <button className="btn-orange btn-facturaE">
             <Link
+                className="btn-link-facturaE"
                 to={`/facturas-recibidas/new`}
                 state={{data: project}}>
                 Nueva factura
             </Link>
         </button>
+        </div>
 
         <table>
             <thead>
@@ -39,7 +42,7 @@ export function FacturasRecibidasTable({project}) {
                     </td>
                     <td className='facturas-recibidas-td'>{project.name}</td>
                     <td className='facturas-recibidas-td'>{factura.expenseType} </td>
-                    <td className='facturas-recibidas-td'>
+                    <td className='facturas-recibidas-td num-factura'>
 
                         <Link
                             to={`/facturas-recibidas/${factura.id}`}

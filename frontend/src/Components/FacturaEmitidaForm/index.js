@@ -6,19 +6,20 @@ import "./style.css"
 export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
 
     const params = useParams();
-
     let navigate = useNavigate();
-
     const location = useLocation();
     const data = location.state ? location.state.data : null;
 
-    let facturaEmitidaOVacia = data.facturaEmitida ||  {
+    let facturaEmitidaOVacia = data.facturaEmitida || {
+        client: '',
+        facturaEmitida: {
         numFactura: '',
         fecha: '',
         importe: '',
         iva: '',
         total: '',
         cobrado: ''
+        }
     };
 
     let initialState = {...data,
