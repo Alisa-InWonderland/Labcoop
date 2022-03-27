@@ -29,7 +29,7 @@ export function FacturasEmitidasView({addProject}) {
     })
 
     function showTable() {
-        return !editMode && Object.keys(project.facturaEmitida).length !== 0;
+        return !editMode && project.facturaEmitida !== null;
     }
 
     return showTable() ? <FacturasEmitidasTable project={project} /> :
