@@ -251,8 +251,7 @@ public class Project implements Serializable {
     }
 
     public int getMargin() {
-        margin = previousBudget - previousCoCost - previousExtExpenses - workersExpenses - managePercent - otherExpenses;
-        return margin;
+        return previousBudget - previousCoCost - previousExtExpenses - workersExpenses - managePercent - otherExpenses;
     }
 
     public void setMargin(int margin) {
@@ -285,7 +284,11 @@ public class Project implements Serializable {
     }
 
     public int getExecutedCoCost() {
-        return executedCoCost;
+
+        return facturasRecibidas.stream()
+                .filter(facturaR -> facturaR.getExpenseType().equalsIgnoreCase("socia"))
+                .map(facturaR -> facturaR.getTotal())
+                        .reduce(0,Integer::sum);
     }
 
     public void setExecutedCoCost(int executedPreviousCoCost) {
@@ -293,7 +296,11 @@ public class Project implements Serializable {
     }
 
     public int getExecutedExtExpenses() {
-        return executedExtExpenses;
+
+        return facturasRecibidas.stream()
+                .filter(facturaR -> facturaR.getExpenseType().equalsIgnoreCase("externo"))
+                .map(FacturaRecibida::getTotal)
+                .reduce(0,Integer::sum);
     }
 
     public void setExecutedExtExpenses(int executedPreviousExtExpenses) {
@@ -317,7 +324,12 @@ public class Project implements Serializable {
     }
 
     public int getExecutedOtherExpenses() {
-        return executedOtherExpenses;
+
+        return facturasRecibidas.stream()
+                .filter(facturaR -> facturaR.getExpenseType().equalsIgnoreCase("transport")
+                        || facturaR.getExpenseType().equalsIgnoreCase("horeslab"))
+                .map(FacturaRecibida::getTotal)
+                .reduce(0,Integer::sum);
     }
 
     public void setExecutedOtherExpenses(int executedOtherExpenses) {
@@ -325,8 +337,7 @@ public class Project implements Serializable {
     }
 
     public int getExecutedMargin() {
-        executedMargin = executedBudget - executedCoCost - executedExtExpenses - getExecutedWorkersExpenses() - executedManagePercent - executedOtherExpenses;
-        return executedMargin;
+        return executedBudget - getExecutedCoCost() - getExecutedExtExpenses() - getExecutedWorkersExpenses() - executedManagePercent - getExecutedOtherExpenses();
     }
 
     public void setExecutedMargin(int executedMargin) {

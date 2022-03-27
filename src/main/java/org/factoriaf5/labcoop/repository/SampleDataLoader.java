@@ -40,13 +40,13 @@ public class SampleDataLoader {
         // TODO: Builder pattern
         Project project1 = new Project("21F010", "Emprendoria i Génere 2022", "Formació", "AJ Montornés Del Vallés", "", "Aprobada", "Contrato", "Mitjant", "Dones", "abr22", "nov22", 1, 1, 1, 1, 1, 1, 0, "", "", "", 1, 1, 1, 1, 1, 1, 0,null,null, null);
         project1.setFacturaEmitida(facturaProyecto1);
-        Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", 20000, 2000, 1000, 1000, 3000, 500, 0, "", "", "",  26000, 2000, 4000, 0, 3000, 1000, 0, null, null, null );
+        Project project2 = new Project("21F011", "Formació en cures", "Formació", "Aj Terrassa", "", "Aprovada", "Contracte", "Petit", "cures", "gen22", "març22", 20000, 2000, 1000, 1000, 3000, 500, 0, "", "", "",  26000, 0, 0, 0, 3000, 0, 0, null, null, null );
         project2.setFacturaEmitida(facturaProyecto2);
         project2.setHorasTrabajadoras(List.of(horasTrabajadorasProyecto2, horasTrabajadoras2Proyecto2, horasTrabajadoras3proyecto2));
         project2.setFacturasRecibidas(List.of(facturaRProyecto2, facturaR1Proyecto2, facturaR2Proyecto2));
         Project project3 = new Project("21F008", "Formació Socis", "Formació", "Som Energía", "", "Aprovada", "Contracte", "petit", "ess", "Set22", "Gen22", 1, 1, 1, 2, 3, 4, 0, "", "", "", 1, 1, 1, 0, 1, 1, 0, null, null, null);
         project3.setFacturaEmitida(facturaProyecto3);
-        Project project4 = new Project("21F012", "Tallers Viertuals", "Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", 1, 1, 1, 1, 3, 4, 0, "", "","", 1, 1, 1, 0, 3, 4, 0, null, null, null );
+        Project project4 = new Project("21F012", "Tallers Viertuals", "Formació", "Aracoop", "", "Aprovada", "Subvenció", "Gran", "ess", "des21", "oct22", 15000, 1, 1, 1, 3, 4, 0, "", "","", 15000, 1000, 2000, 2000, 3000, 0, 0, null, null, null );
         project4.setFacturasRecibidas(List.of(facturaRProyecto4, facturaR1Proyecto4));
 
         projectsRepository.saveAll(
