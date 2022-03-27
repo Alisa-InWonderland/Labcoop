@@ -7,8 +7,10 @@ import TabPanel from '@mui/lab/TabPanel';
 import {GeneralForm} from "../GeneralForm/index";
 import {FacturaEmitidaForm} from "../FacturaEmitidaForm";
 import {FacturasRecibidasView} from "../FacturasRecibidasView/facturasRecibidasView";
+import {FacturasEmitidasView} from "../FacturasEmitidasView/FacturasEmitidasView";
 import {HorasForm} from "../HorasForm";
 import * as PropTypes from "prop-types";
+
 
 FacturasRecibidasView.propTypes = {value: PropTypes.string};
 
@@ -21,33 +23,25 @@ export function ProjectForm({addProject, deleteProject}) {
     };
 
 
-    // export function HoursList({showTable}) {
-    //     const [value, setValue] = React.useState('1');
-    //
-    //     const handleChange = (event, newValue) => {
-    //         setValue(newValue);
-
-
-
         return (
             <Box sx={{width: '100%', typography: 'body1'}}>
                 <TabContext value={value}>
 
                     <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example">
-                            <Tab label="General" value="1"/>
+                        <TabList  onChange={handleChange} aria-label="lab API tabs example">
+                            <Tab classes={{ label: 'id="mui-tab-list"' }} label="General" value="1"/>
                             <Tab label="Facturas emitidas" value="2"/>
                             <Tab label="Facturas recibidas" value="3"/>
                             <Tab label="Horas" value="4"/>
                         </TabList>
                     </Box>
 
-                    <TabPanel value="1">
+                    <TabPanel id="mui-tab-list" value="1">
                         <GeneralForm addProject={addProject} deleteProject={deleteProject} value="1"/>
                     </TabPanel>
 
                     <TabPanel value="2">
-                        <FacturaEmitidaForm addProject={addProject} deleteProject={deleteProject} value="2"/>
+                        <FacturasEmitidasView addProject={addProject} deleteProject={deleteProject} value="2"/>
                     </TabPanel>
 
                     <TabPanel value="3">

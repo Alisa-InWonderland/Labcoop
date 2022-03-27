@@ -6,19 +6,20 @@ import "./style.css"
 export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
 
     const params = useParams();
-
     let navigate = useNavigate();
-
     const location = useLocation();
     const data = location.state ? location.state.data : null;
 
-    let facturaEmitidaOVacia = data.facturaEmitida ||  {
+    let facturaEmitidaOVacia = data.facturaEmitida || {
+        client: '',
+        facturaEmitida: {
         numFactura: '',
         fecha: '',
         importe: '',
         iva: '',
         total: '',
         cobrado: ''
+        }
     };
 
     let initialState = {...data,
@@ -34,12 +35,14 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
         })
     }
 
+
     const enviarDatos = (event) => {
         event.preventDefault()
         addProject(datos)
             .then(() => navigate("/projects"))
     }
 
+    const isCobrado = () => datos.facturaEmitida.cobrado ? 'Sí' : 'No';
 
     return (
         <div className='section-form-factura-emitida'>
@@ -118,7 +121,7 @@ export const FacturaEmitidaForm = ({addProject, deleteProject}) => {
                                     <label htmlFor="">Cobrado
                                     </label>
                                     <input type="text"
-                                           value={datos.facturaEmitida.cobrado}
+                                           value={isCobrado()}
                                            name="facturaEmitida.cobrado"
                                            className="form-control"
                                            onChange={handleInputChange}/>

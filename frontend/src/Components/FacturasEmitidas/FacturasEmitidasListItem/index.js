@@ -9,7 +9,6 @@ export function FacturasEmitidasListItem({project}) {
     const { code, name, client} = project;
     const { id, numFactura, fecha, importe, iva, total, cobrado } = project.facturaEmitida;
 
-
     return (
         <tr className='factura-emitida-table-row'>
 
