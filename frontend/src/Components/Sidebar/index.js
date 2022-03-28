@@ -20,9 +20,6 @@ export default function Sidebar() {
 
             </ImageListItem>
             <MenuList className="sidebar" dense>
-                <MenuItem className="text" >
-                    <ListItemText ><Link to="/projects">Home</Link></ListItemText>
-                </MenuItem>
                 <MenuItem>
                     <ListItemText><Link to="/projects">Proyectos</Link></ListItemText>
                 </MenuItem>

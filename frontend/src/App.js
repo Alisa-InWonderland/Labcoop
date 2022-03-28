@@ -15,6 +15,7 @@ import {getFacturasE} from "./Services/getFacturasE";
 import {getHours} from "./Services/getHours";
 import {HorasForm} from "./Components/HorasForm";
 import {ProjectList} from "./Components/Projects/ProjectList";
+import {GeneralForm} from "./Components/GeneralForm";
 
 function App() {
 
@@ -89,6 +90,7 @@ function App() {
               <Routes>
                   <Route path="/projects" element={<ProjectList projects={projects} />}/>
                   <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
+                  <Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>
                   <Route path="/facturas-recibidas" element={<FacturasRecibidasList projects={projects}/>}/>
                   <Route path="/facturas-recibidas/:id" element={<FacturaRecibidaForm addProject={addProject} projects={projects}/>}/>
                   <Route path="/facturas-recibidas/new" element={<FacturaRecibidaForm addProject={addProject} />}/>
