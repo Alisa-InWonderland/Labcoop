@@ -3,7 +3,6 @@ import {Link, useParams} from "react-router-dom";
 
 export function FacturasRecibidasTable({project}) {
 
-
     return <>
         <div className="btn-facturaE-wrapper">
         <button className="btn-orange btn-facturaE">
@@ -18,19 +17,19 @@ export function FacturasRecibidasTable({project}) {
 
         <table>
             <thead>
-            <tr className='facturas-recibidas-table-title'>
-                <th className='facturas-recibidas-th'>Código Proyecto</th>
-                <th className='facturas-recibidas-th'>Nombre Proyecto</th>
-                <th className='facturas-recibidas-th'>Tipo gasto</th>
-                <th className='facturas-recibidas-th'>Nº Factura</th>
-                <th className='facturas-recibidas-th'>Fecha</th>
-                <th className='facturas-recibidas-th'>Proveedor</th>
-                <th className='facturas-recibidas-th'>Importe</th>
-                <th className='facturas-recibidas-th'>IVA</th>
-                <th className='facturas-recibidas-th'>IRPF</th>
-                <th className='facturas-recibidas-th'>TOTAL</th>
-                <th className='facturas-recibidas-th'>Pagado</th>
-            </tr>
+                <tr className='facturas-recibidas-table-title'>
+                    <th className='facturas-recibidas-th'>Código Proyecto</th>
+                    <th className='facturas-recibidas-th'>Nombre Proyecto</th>
+                    <th className='facturas-recibidas-th'>Tipo gasto</th>
+                    <th className='facturas-recibidas-th'>Nº Factura</th>
+                    <th className='facturas-recibidas-th'>Fecha</th>
+                    <th className='facturas-recibidas-th'>Proveedor</th>
+                    <th className='facturas-recibidas-th'>Importe</th>
+                    <th className='facturas-recibidas-th'>IVA</th>
+                    <th className='facturas-recibidas-th'>IRPF</th>
+                    <th className='facturas-recibidas-th'>TOTAL</th>
+                    <th className='facturas-recibidas-th'>Pagado</th>
+                </tr>
             </thead>
             <tbody>
             {project.facturasRecibidas.map(factura => <tr>

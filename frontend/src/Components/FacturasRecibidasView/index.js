@@ -3,7 +3,7 @@ import * as React from "react";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
 import * as PropTypes from "prop-types";
-import {FacturasRecibidasTable} from "../FacturasRecibidasTable/facturasRecibidasTable";
+import {FacturasRecibidasTable} from "../FacturasRecibidasTable";
 
 FacturasRecibidasTable.propTypes = {project: PropTypes.any};
 

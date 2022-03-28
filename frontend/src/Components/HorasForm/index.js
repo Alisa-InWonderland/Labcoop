@@ -46,7 +46,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
     const enviarDatos = (event) => {
         event.preventDefault()
         addProject(datos)
-            .then(() => navigate("/horasTrabajadoras"))
+            .then(() => navigate("/horas"))
     }
 
 
@@ -55,7 +55,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
             <section className="experience-form-section">
                 <div className="experience-form-wrapper">
 
-                        <h1>{data ? 'Horas' : 'Nuevo proyecto'}</h1>
+                        <h1>{data ? 'Horas' : 'Introducir horas'}</h1>
                         <h3>Proyecto {datos.name}</h3>
                         <div className="experience-form-container">
                             <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
@@ -101,7 +101,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
                                             <input type="text"
                                                    className="experience-form-control"
                                                    onChange={handleInputChange}
-                                                   name="code"
+                                                   name="horasTrabajadoras.trabajador"
                                                    value={datos.horasTrabajadoras.trabajador}
                                                    />
                                         </div>

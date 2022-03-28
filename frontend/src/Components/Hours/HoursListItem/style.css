@@ -1,8 +1,8 @@
-.reserva-table-row {
+.horas-trabajadoras-table-row {
     height: auto;
 }
 
-.reserva-th {
+.horas-trabajadoras-th {
     font-size: 13px;
     font-weight: normal;
     padding: 8px;
@@ -11,7 +11,7 @@
     border-bottom: 1px solid #fff;
     color: #ffffff; }
 
-.reserva-td {
+.horas-trabajadoras-td {
     padding: 8px;
     background: #ffffff;
     border-bottom: 1px solid #fff;

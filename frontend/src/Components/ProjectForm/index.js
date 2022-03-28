@@ -5,16 +5,10 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import {GeneralForm} from "../GeneralForm/index";
-import {FacturaEmitidaForm} from "../FacturaEmitidaForm";
-import {FacturasRecibidasView} from "../FacturasRecibidasView/facturasRecibidasView";
-import {FacturasEmitidasView} from "../FacturasEmitidasView/FacturasEmitidasView";
-import {HorasForm} from "../HorasForm";
+import {FacturasRecibidasView} from "../FacturasRecibidasView";
+import {FacturasEmitidasView} from "../FacturasEmitidasView";
 import * as PropTypes from "prop-types";
-
-{/*import {FacturasEmitidasView} from "../FacturasEmitidasView/FacturasEmitidasView";*/}
-
-
-
+import {HorasTrabajadorasView} from "../HorasTrabajadorasView";
 
 FacturasRecibidasView.propTypes = {value: PropTypes.string};
 
@@ -25,23 +19,6 @@ export function ProjectForm({addProject, deleteProject}) {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
-
-
-   /* export function HoursList({showTable}) {
-        const [value, setValue] = React.useState('1');
-
-        const handleChange = (event, newValue) => {
-            setValue(newValue);
-        };*/
-
-
-    // export function HoursList({showTable}) {
-    //     const [value, setValue] = React.useState('1');
-    //
-    //     const handleChange = (event, newValue) => {
-    //         setValue(newValue);
-
-
 
         return (
             <Box sx={{width: '100%', typography: 'body1'}}>
@@ -65,11 +42,11 @@ export function ProjectForm({addProject, deleteProject}) {
                     </TabPanel>
 
                     <TabPanel value="3">
-                        <FacturasRecibidasView  addProject={addProject} deleteProject={deleteProject} value="3"/>
+                        <FacturasRecibidasView addProject={addProject} deleteProject={deleteProject} value="3"/>
                     </TabPanel>
 
                     <TabPanel value="4">
-                        <HorasForm path="/horas"  addProject={addProject} deleteProject={deleteProject} value="4" />
+                        <HorasTrabajadorasView  addProject={addProject} deleteProject={deleteProject} value="4" />
                     </TabPanel>
 
                 </TabContext>
