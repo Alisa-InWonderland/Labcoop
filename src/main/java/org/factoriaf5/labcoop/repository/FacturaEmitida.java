@@ -94,6 +94,7 @@ public class FacturaEmitida {
     @Override
     public String toString() {
         return "FacturaEmitida{" +
+                "id=" + id +
                 ", numFactura=" + numFactura +
                 ", fecha='" + fecha + '\'' +
                 ", importe=" + importe +

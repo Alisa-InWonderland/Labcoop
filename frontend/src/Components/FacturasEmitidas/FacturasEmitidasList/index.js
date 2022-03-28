@@ -52,7 +52,7 @@ export function FacturasEmitidasList({projects}) {
                             <th className='factura-emitida-th'>Cliente</th>
                             <th className='factura-emitida-th'>Importe</th>
                             <th className='factura-emitida-th'>IVA</th>
-                            <th className='factura-emitida-th'>TOTAL</th>
+                            <th className='factura-emitida-th'>Total</th>
                             <th className='factura-emitida-th'>Cobrado</th>
                         </tr>
 

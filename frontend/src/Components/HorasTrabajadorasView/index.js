@@ -16,9 +16,11 @@ export function HorasTrabajadorasView({addProject}) {
     const data = location.state ? location.state.data : null;
 
     const [project, setProject] = useState(data || {
-        cliente: '',
-        trabajador: '',
+        code: '',
+        name: '',
+        client: '',
         horasTrabajadoras : {
+            trabajador: '',
             socias: '',
             numHorasAsignadas: '',
             numHorasEjecutadas: '',
@@ -29,11 +31,12 @@ export function HorasTrabajadorasView({addProject}) {
     })
 
     function showTable() {
-        return !editMode && project.horasTrabajadoras;
+        return !editMode && project.horasTrabajadoras.length !== 0;
     }
 
-    return showTable() ? <HorasTrabajadorasTable project={project} /> :
+    return showTable() ?   <HorasTrabajadorasTable project={project} /> :
         <HorasForm addProject={addProject} value="3"/>
+
 }
 
 

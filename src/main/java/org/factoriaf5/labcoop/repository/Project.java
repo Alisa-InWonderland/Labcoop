@@ -31,6 +31,7 @@ public class Project implements Serializable {
     private int otherExpenses;
     private int margin;
 
+
     @Lob
     private String comments;
     @Lob
@@ -38,7 +39,13 @@ public class Project implements Serializable {
     @Lob
     private String observationsC;
 
-
+    private int executedBudget;
+    private int executedCoCost;
+    private int executedExtExpenses;
+    private int executedWorkersExpenses;
+    private int executedManagePercent;
+    private int executedOtherExpenses;
+    private int executedMargin;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private FacturaEmitida facturaEmitida;
@@ -56,19 +63,7 @@ public class Project implements Serializable {
 
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
-
-
-    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, String observationsA, String observationsC, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas, List<HorasTrabajadoras> horasTrabajadoras) {
+    public Project(String code, String name, String area, String client, String manager, String status, String type, String size, String target, String startdate, String enddate, int previousBudget, int previousCoCost, int previousExtExpenses, int workersExpenses, int managePercent, int otherExpenses, int margin, String comments, String observationsA, String observationsC, int executedBudget, int executedCoCost, int executedExtExpenses, int executedWorkersExpenses, int executedManagePercent, int executedOtherExpenses, int executedMargin, FacturaEmitida facturaEmitida, List<FacturaRecibida> facturasRecibidas, List<HorasTrabajadoras> horasTrabajadoras) {
         this.code = code;
         this.name = name;
         this.area = area;
@@ -90,10 +85,24 @@ public class Project implements Serializable {
         this.comments = comments;
         this.observationsA = observationsA;
         this.observationsC = observationsC;
+        this.executedBudget = executedBudget;
+        this.executedCoCost = executedCoCost;
+        this.executedExtExpenses = executedExtExpenses;
+        this.executedWorkersExpenses = executedWorkersExpenses;
+        this.executedManagePercent = executedManagePercent;
+        this.executedOtherExpenses = executedOtherExpenses;
+        this.executedMargin = executedMargin;
         this.facturaEmitida = facturaEmitida;
         this.facturasRecibidas = facturasRecibidas;
         this.horasTrabajadoras = horasTrabajadoras;
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -218,7 +227,7 @@ public class Project implements Serializable {
     }
 
     public int getWorkersExpenses() {
-        return horasTrabajadoras.stream().map(h -> h.getNumHorasEjecutadas() * h.getPrecioHora()).reduce(0,Integer::sum);
+        return workersExpenses;
     }
 
     public void setWorkersExpenses(int workersExpenses) {
@@ -242,8 +251,7 @@ public class Project implements Serializable {
     }
 
     public int getMargin() {
-        margin = previousBudget - previousCoCost - previousExtExpenses - workersExpenses - managePercent - otherExpenses;
-        return margin;
+        return previousBudget - previousCoCost - previousExtExpenses - workersExpenses - managePercent - otherExpenses;
     }
 
     public void setMargin(int margin) {
@@ -265,6 +273,75 @@ public class Project implements Serializable {
     public void setObservationsC(String observationsC) {
         this.observationsC = observationsC;
 
+    }
+
+    public int getExecutedBudget() {
+        return executedBudget;
+    }
+
+    public void setExecutedBudget(int executedPreviousBudget) {
+        this.executedBudget = executedPreviousBudget;
+    }
+
+    public int getExecutedCoCost() {
+
+        return facturasRecibidas.stream()
+                .filter(facturaR -> facturaR.getExpenseType().equalsIgnoreCase("socia"))
+                .map(facturaR -> facturaR.getTotal())
+                        .reduce(0,Integer::sum);
+    }
+
+    public void setExecutedCoCost(int executedPreviousCoCost) {
+        this.executedCoCost = executedPreviousCoCost;
+    }
+
+    public int getExecutedExtExpenses() {
+
+        return facturasRecibidas.stream()
+                .filter(facturaR -> facturaR.getExpenseType().equalsIgnoreCase("externo"))
+                .map(FacturaRecibida::getTotal)
+                .reduce(0,Integer::sum);
+    }
+
+    public void setExecutedExtExpenses(int executedPreviousExtExpenses) {
+        this.executedExtExpenses = executedPreviousExtExpenses;
+    }
+
+    public int getExecutedWorkersExpenses() {
+        return horasTrabajadoras.stream().map(h -> h.getNumHorasEjecutadas() * h.getPrecioHora()).reduce(0,Integer::sum);
+    }
+
+    public void setExecutedWorkersExpenses(int executedWorkersExpenses) {
+        this.executedWorkersExpenses = executedWorkersExpenses;
+    }
+
+    public int getExecutedManagePercent() {
+        return executedManagePercent;
+    }
+
+    public void setExecutedManagePercent(int executedManagePercent) {
+        this.executedManagePercent = executedManagePercent;
+    }
+
+    public int getExecutedOtherExpenses() {
+
+        return facturasRecibidas.stream()
+                .filter(facturaR -> facturaR.getExpenseType().equalsIgnoreCase("transport")
+                        || facturaR.getExpenseType().equalsIgnoreCase("horeslab"))
+                .map(FacturaRecibida::getTotal)
+                .reduce(0,Integer::sum);
+    }
+
+    public void setExecutedOtherExpenses(int executedOtherExpenses) {
+        this.executedOtherExpenses = executedOtherExpenses;
+    }
+
+    public int getExecutedMargin() {
+        return executedBudget - getExecutedCoCost() - getExecutedExtExpenses() - getExecutedWorkersExpenses() - executedManagePercent - getExecutedOtherExpenses();
+    }
+
+    public void setExecutedMargin(int executedMargin) {
+        this.executedMargin = executedMargin;
     }
 
     public void setFacturaEmitida(FacturaEmitida facturaEmitida) {
@@ -293,10 +370,6 @@ public class Project implements Serializable {
         this.horasTrabajadoras = horasTrabajadoras;
     }
 
-
-
-
-
     @Override
     public String toString() {
         return "Project{" +
@@ -322,12 +395,17 @@ public class Project implements Serializable {
                 ", comments='" + comments + '\'' +
                 ", observationsA='" + observationsA + '\'' +
                 ", observationsC='" + observationsC + '\'' +
+                ", executedBudget=" + executedBudget +
+                ", executedCoCost=" + executedCoCost +
+                ", executedExtExpenses=" + executedExtExpenses +
+                ", executedWorkersExpenses=" + executedWorkersExpenses +
+                ", executedManagePercent=" + executedManagePercent +
+                ", executedOtherExpenses=" + executedOtherExpenses +
+                ", executedMargin=" + executedMargin +
                 ", facturaEmitida=" + facturaEmitida +
                 ", facturasRecibidas=" + facturasRecibidas +
                 ", horasTrabajadoras=" + horasTrabajadoras +
                 '}';
     }
 
-    public void setFacturaRecibida() {
-    }
 }

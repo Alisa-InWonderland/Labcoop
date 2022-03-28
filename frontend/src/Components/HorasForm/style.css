@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
-h1, h3{
+h1, h2, h3{
     color:#ffffff;
 }
 
@@ -27,17 +27,22 @@ h1, h3{
     border-radius: 10px;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    margin-left: 30px;
-    margin-top: 60px;
-    margin-bottom: 60px;
 }
 
 
 .experience-form-section h1 {
     font-size: 30px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-top: 10px;
+    text-align: center;
+}
+
+
+.experience-form-section h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 30px;
     text-align: center;
 }
 
