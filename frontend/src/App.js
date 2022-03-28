@@ -18,6 +18,7 @@ import {getFacturasR} from "./Services/getFacturasR";
 import {getFacturasE} from "./Services/getFacturasE";
 import {getHours} from "./Services/getHours";
 import {HorasTrabajadorasView} from "./Components/HorasTrabajadorasView";
+import {HorasForm} from "./Components/HorasForm";
 
 function App() {
 
@@ -104,7 +105,9 @@ function App() {
               <Route path="/facturas-emitidas" element={<FacturasEmitidasList projects={projects}/>}/>
               <Route path="/horas" element={<HoursList projects={projects}/>}/>
               {/*<Route path="/horas" element={<HoursForm projects={projects}/>}/>*/}
-              <Route path="/horasTrabajadoras" element={<HorasTrabajadorasView projects={projects}/>}/>
+              <Route path="/horas" element={<HorasTrabajadorasView projects={projects}/>}/>
+              <Route path="/horas/:id" element={<HorasForm addProject={addProject} />}/>
+              <Route path="/horas/new" element={<HorasForm addProject={addProject} />}/>
               <Route path="/projects/:id" element={<ProjectForm addProject={addProject} deleteProject={deleteProject}/>}/>
               {/*<Route path="/projects/new" element={<GeneralForm addProject={addProject} deleteProject={deleteProject}/>}/>*/}
               <Route path="/facturas-emitidas/:id" element={<FacturaEmitidaForm addProject={addProject} />}/>

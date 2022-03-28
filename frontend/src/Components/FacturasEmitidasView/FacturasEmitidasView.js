@@ -33,5 +33,7 @@ export function FacturasEmitidasView({addProject}) {
     }
 
     return showTable() ? <FacturasEmitidasTable project={project} /> :
+
         <FacturaEmitidaForm addProject={addProject} project={project} value="2"/>
+
 }

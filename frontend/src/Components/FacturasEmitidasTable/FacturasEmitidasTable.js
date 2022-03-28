@@ -50,7 +50,11 @@ export function FacturasEmitidasTable({project}) {
                 <td className="factura-emitida-td">{project.facturaEmitida.total}</td>
                 <td className="factura-emitida-td">{isCobrado()}</td>
             </tr>
-            </tbody>
-        </table>
+
+            )
+            }
+        </tbody>
+    </table>
+
     </>
 }
