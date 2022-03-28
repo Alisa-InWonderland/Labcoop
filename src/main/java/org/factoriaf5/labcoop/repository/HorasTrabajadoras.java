@@ -78,7 +78,7 @@ public class HorasTrabajadoras {
     }
 
     public int getNumHorasPendientes() {
-        return numHorasPendientes;
+        return numHorasAsignadas - numHorasEjecutadas;
     }
 
     public void setNumHorasPendientes(int numHorasPendientes) {

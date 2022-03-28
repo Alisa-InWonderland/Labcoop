@@ -99,7 +99,8 @@ public class FacturaRecibida {
     }
 
     public int getTotal() {
-        return total;
+
+        return (int) (cost + iva + irpf);
     }
 
     public void setTotal(int total) {

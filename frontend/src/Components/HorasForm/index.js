@@ -1,32 +1,44 @@
 import React, {useState} from 'react';
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import "./style.css"
-import Typography from "@mui/material/Typography";
+
 
 
 export const HorasForm = ({addProject, deleteProject}) => {
 
     const params  = useParams();
-
     let navigate = useNavigate();
-
     const location = useLocation();
     const data = location.state ? location.state.data : null;
+    const horasActual = data.horasTrabajadoras.findIndex(horasTrabajadoras => horasTrabajadoras.id == params.id)
 
-    const [datos, setDatos] = useState(data || {
+    let introducirHoras = data.horasTrabajadoras[horasActual] || {
+        code: '',
+        name: '',
         client: '',
-        trabajador: '',
-        numHorasAsignadas: '',
-        numHorasEjecutadas: '',
-        numHorasPendientes: '',
-        precioHora: '',
-        donePrice: '',
+        horasTrabajadoras : {
+            trabajador: '',
+            socias: '',
+            numHorasAsignadas: '',
+            numHorasEjecutadas: '',
+            numHorasPendientes: '',
+            precioHora: '',
+            donePrice: ''
+        }
 
-    })
+    };
+
+    let initialState = {
+        ...data,
+        horasTrabajadoras: introducirHoras
+    };
+
+    const [datos, setDatos] = useState(initialState)
+
 
     const handleInputChange = (event) => {
         setDatos({
-            ...datos,
+            ...data,
             [event.target.name]: event.target.value
         })
     }
@@ -34,7 +46,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
     const enviarDatos = (event) => {
         event.preventDefault()
         addProject(datos)
-            .then(() => navigate("/horasTrabajadoras"))
+            .then(() => navigate("/horas"))
     }
 
 
@@ -43,12 +55,45 @@ export const HorasForm = ({addProject, deleteProject}) => {
             <section className="experience-form-section">
                 <div className="experience-form-wrapper">
 
-                        <h1>{data ? 'Horas' : 'Nuevo proyecto'}</h1>
+                        <h1>{data ? 'Horas' : 'Introducir horas'}</h1>
                         <h3>Proyecto {datos.name}</h3>
                         <div className="experience-form-container">
                             <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
 
                                 <div className="proyecto-container">
+
+                                    <div className="experience-form-group">
+                                        <label htmlFor="">Code
+                                        </label>
+                                        <input type="text"
+                                               className="experience-form-control"
+                                               onChange={handleInputChange}
+                                               name="code"
+                                               value={datos.code}
+                                        />
+                                    </div>
+
+                                    <div className="experience-form-group">
+                                        <label htmlFor="">Nombre
+                                        </label>
+                                        <input type="text"
+                                               className="experience-form-control"
+                                               onChange={handleInputChange}
+                                               name="name"
+                                               value={datos.name}
+                                        />
+                                    </div>
+
+                                    <div className="experience-form-group">
+                                        <label htmlFor="">Cliente
+                                        </label>
+                                        <input type="text"
+                                               className="experience-form-control"
+                                               onChange={handleInputChange}
+                                               name="client"
+                                               value={datos.client}
+                                        />
+                                    </div>
 
                                         <div className="experience-form-group">
                                             <label htmlFor="">Trabajador/a
@@ -56,7 +101,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
                                             <input type="text"
                                                    className="experience-form-control"
                                                    onChange={handleInputChange}
-                                                   name="code"
+                                                   name="horasTrabajadoras.trabajador"
                                                    value={datos.horasTrabajadoras.trabajador}
                                                    />
                                         </div>
@@ -70,16 +115,6 @@ export const HorasForm = ({addProject, deleteProject}) => {
                                                     className="experience-form-control"
                                                     onChange={handleInputChange}
                                                     required/>
-                                        </div>
-
-                                        <div className="experience-form-group">
-                                            <label htmlFor="">Cliente</label>
-                                            <input type="text"
-                                                   className="experience-form-control"
-                                                   onChange={handleInputChange}
-                                                   name="client"
-                                                   value={datos.client} //Aquí no sé que clase y que variable pasarle
-                                                   required/>
                                         </div>
 
                                         <div className="experience-form-group">

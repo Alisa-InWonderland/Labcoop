@@ -16,4 +16,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-export {FacturasRecibidasView} from "./Components/FacturasRecibidasView/facturasRecibidasView";
+export {FacturasRecibidasView} from "./Components/FacturasRecibidasView";

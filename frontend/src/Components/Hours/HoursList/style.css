@@ -1,5 +1,5 @@
 
-.reservesList-title {
+.horas-trabajadoras-List-title {
     margin-bottom: 25px;
     color: black;
     font-size: 24px;
@@ -10,11 +10,11 @@
     display: flex;
     justify-content: center;
 }
-.reserva-table {
+.horas-trabajadoras-table {
     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
 }
 
-.reserva-table table{
+.horas-trabajadoras-table table{
     width: 100%;
     font-size: 12px;
     margin: 45px;
@@ -22,7 +22,7 @@
     border-collapse: collapse;
 }
 
-.reserva-th {
+.horas-trabajadoras-th {
     font-size: 13px;
     font-weight: normal;
     padding: 8px;

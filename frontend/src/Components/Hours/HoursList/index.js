@@ -21,8 +21,8 @@ export function HoursList({projects}) {
 
     return (
         <div className="table-container">
-            <section className='reservesList'>
-                <h1 className="reservesList-title">Horas trabajadas</h1>
+            <section className='horas-trabajadoras-List'>
+                <h1 className="horas-trabajadoras-List-title">Horas trabajadas</h1>
 
                 <div className="barra-de-busqueda-container-hours">
                     <input
@@ -37,19 +37,19 @@ export function HoursList({projects}) {
 
                 <div className='tablelist'>
 
-                    <table className="reserva-table">
+                    <table className="horas-trabajadoras-table">
 
-                        <tr className='reserva-table-title'>
-                            <th className='reserva-th'>Código Proyecto</th>
-                            <th className='reserva-th'>Nombre Proyecto</th>
-                            <th className='reserva-th'>Cliente</th>
-                            <th className='reserva-th'>Trabajador</th>
-                            <th className='reserva-th'>Socia</th>
-                            <th className='reserva-th'>Horas asignadas</th>
-                            <th className='reserva-th'>Horas ejecutadas</th>
-                            <th className='reserva-th'>Horas pendientes</th>
-                            <th className='reserva-th'>Precio hora</th>
-                            <th className='reserva-th'>Total</th>
+                        <tr className='horas-trabajadoras-table-title'>
+                            <th className='horas-trabajadoras-th'>Código Proyecto</th>
+                            <th className='horas-trabajadoras-th'>Nombre Proyecto</th>
+                            <th className='horas-trabajadoras-th'>Cliente</th>
+                            <th className='horas-trabajadoras-th'>Trabajador</th>
+                            <th className='horas-trabajadoras-th'>Socia</th>
+                            <th className='horas-trabajadoras-th'>Horas asignadas</th>
+                            <th className='horas-trabajadoras-th'>Horas ejecutadas</th>
+                            <th className='horas-trabajadoras-th'>Horas pendientes</th>
+                            <th className='horas-trabajadoras-th'>Precio hora</th>
+                            <th className='horas-trabajadoras-th'>Total</th>
                         </tr>
 
                         {checkHorasTrabajadoras(projects) ? <tr><td colSpan="9">No hay horas trabajadas</td></tr>

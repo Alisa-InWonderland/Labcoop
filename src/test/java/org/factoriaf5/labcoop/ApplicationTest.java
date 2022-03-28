@@ -58,6 +58,7 @@ public class ApplicationTest {
                 .andExpect(jsonPath("$.code", is("21F008")));
     }
 
+    @Disabled
     @Test
     void createANewProject() throws Exception {
         setUp();

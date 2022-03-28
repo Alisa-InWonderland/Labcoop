@@ -3,7 +3,7 @@ import * as React from "react";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
 import * as PropTypes from "prop-types";
-import {FacturasEmitidasTable} from "../FacturasEmitidasTable/FacturasEmitidasTable";
+import {FacturasEmitidasTable} from "../FacturasEmitidasTable";
 import {FacturaEmitidaForm} from "../FacturaEmitidaForm";
 
 FacturasEmitidasTable.propTypes = {project: PropTypes.any};
@@ -33,5 +33,7 @@ export function FacturasEmitidasView({addProject}) {
     }
 
     return showTable() ? <FacturasEmitidasTable project={project} /> :
+
         <FacturaEmitidaForm addProject={addProject} project={project} value="2"/>
+
 }

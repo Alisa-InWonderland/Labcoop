@@ -22,19 +22,19 @@ public class SampleDataLoader {
 
 
 
-        FacturaEmitida facturaProyecto1 = new FacturaEmitida(1, "1/1/2022", 10000, 2100, 12100, true);
-        FacturaEmitida facturaProyecto2 = new FacturaEmitida( 2, "1/1/2022", 10000, 2100, 12100, false);
-        FacturaEmitida facturaProyecto3 = new FacturaEmitida(5544, "ene22", 100, 2, 1000, true);
+        FacturaEmitida facturaProyecto1 = new FacturaEmitida(1, "1/1/2022", 10000, 2100, 0, true);
+        FacturaEmitida facturaProyecto2 = new FacturaEmitida( 2, "1/1/2022", 10000, 2100, 0, false);
+        FacturaEmitida facturaProyecto3 = new FacturaEmitida(5544, "ene22", 100, 2, 0, true);
 
-        FacturaRecibida facturaRProyecto2 = new FacturaRecibida("Externo", "010-2022", "2/2/2022", "Looky", 2000, 420, 0, 2420, true);
-        FacturaRecibida facturaR1Proyecto2 = new FacturaRecibida("Socia", "2200156", "1/1/2022", "ETCS", 1000, 210, 0, 1210, false);
-        FacturaRecibida facturaR2Proyecto2 = new FacturaRecibida("Transport", "2309", "16/1/2022", "LabDos", 50, 5, 10, 65, false);
-        FacturaRecibida facturaRProyecto4 = new FacturaRecibida("HoresLab", "2404", "2/DEC", "Laburoo", 350, 70, 40, 420, true);
-        FacturaRecibida facturaR1Proyecto4 = new FacturaRecibida( "HoresLab", "2405", "2/FEB", "Laburoo", 350, 70, 40, 420, true);
+        FacturaRecibida facturaRProyecto2 = new FacturaRecibida("Externo", "010-2022", "2/2/2022", "Looky", 2000, 420, 0, 0, true);
+        FacturaRecibida facturaR1Proyecto2 = new FacturaRecibida("Socia", "2200156", "1/1/2022", "ETCS", 1000, 210, 0, 0, false);
+        FacturaRecibida facturaR2Proyecto2 = new FacturaRecibida("Transport", "2309", "16/1/2022", "LabDos", 50, 5, 10, 0, false);
+        FacturaRecibida facturaRProyecto4 = new FacturaRecibida("HoresLab", "2404", "2/DEC", "Laburoo", 350, 70, 40, 0, true);
+        FacturaRecibida facturaR1Proyecto4 = new FacturaRecibida( "HoresLab", "2405", "2/FEB", "Laburoo", 350, 70, 40, 0, true);
 
-        HorasTrabajadoras horasTrabajadorasProyecto2 = new HorasTrabajadoras( "Andres", "LabCoop", 200, 160, 40, 35,  0);
-        HorasTrabajadoras horasTrabajadoras2Proyecto2 = new HorasTrabajadoras( "Guernica", "LabCoop", 100, 60, 40, 35,  0);
-        HorasTrabajadoras horasTrabajadoras3proyecto2 = new HorasTrabajadoras( "Nuria", "Apostrof", 250, 40, 40, 35,  0);
+        HorasTrabajadoras horasTrabajadorasProyecto2 = new HorasTrabajadoras( "Andres", "LabCoop", 200, 160, 0, 35,  0);
+        HorasTrabajadoras horasTrabajadoras2Proyecto2 = new HorasTrabajadoras( "Guernica", "LabCoop", 100, 60, 0, 35,  0);
+        HorasTrabajadoras horasTrabajadoras3proyecto2 = new HorasTrabajadoras( "Nuria", "Apostrof", 250, 40, 0, 35,  0);
 
 
         // TODO: Builder pattern
