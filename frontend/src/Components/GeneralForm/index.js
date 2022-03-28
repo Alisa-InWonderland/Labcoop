@@ -65,71 +65,71 @@ export const GeneralForm = ({addProject, deleteProject}) => {
 
                     <h1>{data ? 'General' : 'Nuevo proyecto'}</h1>
                     <h3>Proyecto {datos.name}</h3>
-                    <div className="experience-form-container">
-                        <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
+                    <div className="general-form-container">
+                        <form  className="edit-general-form" onSubmit={enviarDatos} action="">
 
                             <div className="general-proyecto-container">
 
-                                <div className="datos-proyecto">
+                                <div className="general-datos-proyecto">
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Código Proyecto</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}
                                                name="code"
                                                value={datos.code}
                                                />
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Nombre Proyecto</label>
                                         <input  type="text"
                                                 value={datos.name}
                                                 name="name"
-                                                className="experience-form-control"
+                                                className="general-form-control"
                                                 onChange={handleInputChange}
                                                 required/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Cliente</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}
                                                name="client"
                                                value={datos.client}
                                                required/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Coordinadora</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}
                                                name="manager"
                                                value={datos.manager}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Estado</label>
                                         <input type="text"
                                                value={datos.status}
                                                name="status"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Area</label>
                                         <input type="text"
                                                value={datos.area}
                                                name="area"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Tipo</label>
                                         <input type="text"
                                                value={datos.type}
@@ -139,52 +139,52 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                     </div>
 
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Tamaño</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}
                                                value={datos.size}
                                                name="size"/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Target</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}
                                                value={datos.target}
                                                name="target"/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Fecha inicio</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}
                                                value={datos.startdate}
                                                name="startdate"/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Fecha cierre</label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="general-form-control"
                                                onChange={handleInputChange}
                                                value={datos.enddate}
                                                name="enddate"/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">Descripción</label>
                                         <textarea type="text"
                                                   value={datos.comments}
                                                   name="comments" cols="50" rows="3"
-                                                  className="experience-form-control"
+                                                  className="general-form-control"
                                                   onChange={handleInputChange}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">
                                             Observaciones<br/>
                                             Coordinación
@@ -192,11 +192,11 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                         <textarea type="text"
                                                   value={datos.observationsC}
                                                   name="observationsC" cols="50" rows="3"
-                                                  className="experience-form-control"
+                                                  className="general-form-control"
                                                   onChange={handleInputChange}/>
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="general-form-group">
                                         <label htmlFor="">
                                             Observaciones<br/>
                                             Administración
@@ -204,7 +204,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                         <textarea type="text"
                                                   value={datos.observationsA}
                                                   name="observationsA" cols="50" rows="3"
-                                                  className="experience-form-control"
+                                                  className="general-form-control"
                                                   onChange={handleInputChange}/>
                                     </div>
                                 </div>
@@ -213,66 +213,66 @@ export const GeneralForm = ({addProject, deleteProject}) => {
 
                                     <div className="total-previsto">
 
-                                        <h3 className="total-previsto-title">Total Previsto</h3>
+                                        <h4 className="total-previsto-title">Total Previsto</h4>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Presupuesto previsto</label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}
                                                    name="previousBudget"
                                                    value={datos.previousBudget}
                                             />
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Gastos Socias previstos</label>
                                             <input  type="text"
                                                     value={datos.previousCoCost}
                                                     name="previousCoCost"
-                                                    className="experience-form-control"
+                                                    className="general-form-control"
                                                     onChange={handleInputChange}
                                                     required/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Gastos externos previstos</label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}
                                                    name="previousExtExpenses"
                                                    value={datos.previousExtExpenses}
                                                    required/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Gastos personal previstos</label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}
                                                    name="workersExpenses"
                                                    value={datos.workersExpenses}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">% Gestión</label>
                                             <input type="text"
                                                    value={datos.managePercent}
                                                    name="managePercent"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Otros gastos previstos</label>
                                             <input type="text"
                                                    value={datos.otherExpenses}
                                                    name="otherExpenses"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Margen</label>
                                             <input type="text"
                                                    value={datos.margin}
@@ -284,67 +284,67 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                     </div>
                                     <div className="total-ejecutado">
 
-                                        <h3 className="total-ejecutado-title">Total Ejecutado</h3>
+                                        <h4 className="total-ejecutado-title">Total Ejecutado</h4>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Presupuesto ejecutado
                                             </label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}
                                                    name="executedBudget"
                                                    value={datos.executedBudget}
                                             />
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Gastos Socias ejecutado</label>
                                             <input  type="text"
                                                     value={datos.executedCoCost}
                                                     name="executedCoCost"
-                                                    className="experience-form-control"
+                                                    className="general-form-control"
                                                     onChange={handleInputChange}
                                                     required/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Gastos externos ejecutado</label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}
                                                    name="executedExtExpenses"
                                                    value={datos.executedExtExpenses}
                                                    required/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Gastos personal ejecutados</label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}
                                                    name="executedWorkersExpenses"
                                                    value={datos.executedWorkersExpenses}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">% Gestión</label>
                                             <input type="text"
                                                    value={datos.executedManagePercent}
                                                    name="executedManagePercent"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Otros gastos ejecutados</label>
                                             <input type="text"
                                                    value={datos.executedOtherExpenses}
                                                    name="executedOtherExpenses"
-                                                   className="experience-form-control"
+                                                   className="general-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="general-form-group">
                                             <label htmlFor="">Margen
                                             </label>
                                             <input type="text"

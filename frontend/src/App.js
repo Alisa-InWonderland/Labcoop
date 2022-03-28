@@ -16,12 +16,11 @@ import {getHours} from "./Services/getHours";
 import {HorasForm} from "./Components/HorasForm";
 import {ProjectList} from "./Components/Projects/ProjectList";
 import {GeneralForm} from "./Components/GeneralForm";
+import {HorasTrabajadorasView} from "./Components/HorasTrabajadorasView";
 
 function App() {
 
   const [projects, setProjects] = useState([]);
-
-
   const [requiresUpdate, setRequiresUpdate] = useState(true);
 
 
