@@ -11,6 +11,7 @@ import * as PropTypes from "prop-types";
 import {HorasTrabajadorasView} from "../HorasTrabajadorasView";
 
 FacturasRecibidasView.propTypes = {value: PropTypes.string};
+FacturasEmitidasView.propTypes = {value: PropTypes.string};
 
 
 export function ProjectForm({addProject, deleteProject}) {

@@ -51,103 +51,103 @@ export const HorasForm = ({addProject, deleteProject}) => {
 
 
     return (
-        <div className='section-form-experience'>
-            <section className="experience-form-section">
-                <div className="experience-form-wrapper">
+        <div className='section-form-horas'>
+            <section className="horas-form-section">
+                <div className="horas-form-wrapper">
 
                         <h1>{data ? 'Horas' : 'Introducir horas'}</h1>
                         <h3>Proyecto {datos.name}</h3>
-                        <div className="experience-form-container">
-                            <form  className="edit-experience-form" onSubmit={enviarDatos} action="">
+                        <div className="horas-form-container">
+                            <form  className="edit-horas-form" onSubmit={enviarDatos} action="">
 
                                 <div className="proyecto-container">
 
-                                    <div className="experience-form-group">
+                                    <div className="horas-form-group">
                                         <label htmlFor="">Code
                                         </label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="horas-form-control"
                                                onChange={handleInputChange}
                                                name="code"
                                                value={datos.code}
                                         />
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="horas-form-group">
                                         <label htmlFor="">Nombre
                                         </label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="horas-form-control"
                                                onChange={handleInputChange}
                                                name="name"
                                                value={datos.name}
                                         />
                                     </div>
 
-                                    <div className="experience-form-group">
+                                    <div className="horas-form-group">
                                         <label htmlFor="">Cliente
                                         </label>
                                         <input type="text"
-                                               className="experience-form-control"
+                                               className="horas-form-control"
                                                onChange={handleInputChange}
                                                name="client"
                                                value={datos.client}
                                         />
                                     </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="horas-form-group">
                                             <label htmlFor="">Trabajador/a
                                             </label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="horas-form-control"
                                                    onChange={handleInputChange}
                                                    name="horasTrabajadoras.trabajador"
                                                    value={datos.horasTrabajadoras.trabajador}
                                                    />
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="horas-form-group">
                                             <label htmlFor="">Socias
                                             </label>
                                             <input  type="text"
                                                     value={datos.horasTrabajadoras.socias}
                                                     name="horasTrabajadoras.socias"
-                                                    className="experience-form-control"
+                                                    className="horas-form-control"
                                                     onChange={handleInputChange}
                                                     required/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="horas-form-group">
                                             <label htmlFor="">Horas Asignadas
                                             </label>
                                             <input type="text"
-                                                   className="experience-form-control"
+                                                   className="horas-form-control"
                                                    onChange={handleInputChange}
                                                    name="horasTrabajadoras.numHorasAsignadas"
                                                    value={datos.horasTrabajadoras.numHorasAsignadas}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="horas-form-group">
                                             <label htmlFor="">Horas Ejecutadas
                                             </label>
                                             <input type="text"
                                                    value={datos.horasTrabajadoras.numHorasEjecutadas}
                                                    name="horasTrabajadoras.numHorasEjecutadas"
-                                                   className="experience-form-control"
+                                                   className="horas-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="horas-form-group">
                                             <label htmlFor="">Horas Pendientes
                                             </label>
                                             <input type="text"
                                                    value={datos.horasTrabajadoras.numHorasPendientes}
                                                    name="horasTrabajadoras.numHorasPendientes"
-                                                   className="experience-form-control"
+                                                   className="horas-form-control"
                                                    onChange={handleInputChange}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="horas-form-group">
                                             <label htmlFor="">Precio Hora
                                             </label>
                                             <input type="text"
@@ -157,7 +157,7 @@ export const HorasForm = ({addProject, deleteProject}) => {
                                                    onChange={handleInputChange}/>
                                         </div>
 
-                                        <div className="experience-form-group">
+                                        <div className="horas-form-group">
                                             <label htmlFor="">Total
                                             </label>
                                             <input type="text"
