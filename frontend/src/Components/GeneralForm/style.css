@@ -70,10 +70,11 @@ h4 {
     display: flex;
     flex-direction: column;
 }
-.general-datos-proyecto .general-form-group input,
-.general-datos-proyecto .general-form-group textarea {
+.general-datos-proyecto > .general-form-group input {
     width: 60%;
+
 }
+
 .general-form-group {
     margin-bottom: 15px;
     display: flex;
@@ -82,8 +83,8 @@ h4 {
 }
 
 .general-form-group input {
-    width: 30%;
-    height: 20px;
+    width: 25%;
+    height: 25px;
     border-radius: 5px;
     border: 1px solid #ccc7c7;
     padding: 5px;
@@ -96,7 +97,6 @@ h4 {
 }
 
 .general-form-group input:hover {
-    cursor: pointer;
     border-style: solid;
     border-width: 2px;
     border-color: #AB005A;
@@ -107,7 +107,7 @@ h4 {
     padding: 3px;
     margin-left: 20px;
     border-radius: 5px;
-    width: 50%;
+    width: 60%;
     overflow: hidden;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);

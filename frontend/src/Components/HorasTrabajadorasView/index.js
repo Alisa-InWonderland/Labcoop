@@ -34,7 +34,7 @@ export function HorasTrabajadorasView({addProject}) {
         return !editMode && project.horasTrabajadoras.length !== 0;
     }
 
-    return showTable() ?   <HorasTrabajadorasTable project={project} /> :
+    return showTable() ?   <HorasTrabajadorasTable project={project} editMode={editMode}/> :
         <HorasForm addProject={addProject} value="3"/>
 
 }
