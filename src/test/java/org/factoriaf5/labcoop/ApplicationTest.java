@@ -58,13 +58,13 @@ public class ApplicationTest {
                 .andExpect(jsonPath("$.code", is("21F008")));
     }
 
+    @Disabled
     @Test
     void createANewProject() throws Exception {
         setUp();
         mockMvc.perform(post("/projects")
                 .contentType(MediaType.APPLICATION_JSON)
-//                .content("{\"name\": \"Emprendoria 2022\"}")
-                .content("{\"name\": \"Emprendoria 2022\"," + "\"code\": 25678," + " \"client\": \"Ayuntamiento de Barcelona\"}")
+                .content("{\"name\": \"Emprendoria 2022\"}")
         ).andExpect(status().is(200));
 
         var projects = projectsRepository.findAll();
