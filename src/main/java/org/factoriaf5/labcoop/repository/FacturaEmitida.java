@@ -76,7 +76,8 @@ public class FacturaEmitida {
     }
 
     public int getTotal() {
-        return total;
+
+        return importe + iva;
     }
 
     public void setTotal(int total) {

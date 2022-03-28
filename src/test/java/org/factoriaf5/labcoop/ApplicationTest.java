@@ -63,7 +63,8 @@ public class ApplicationTest {
         setUp();
         mockMvc.perform(post("/projects")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"name\": \"Emprendoria 2022\"}")
+//                .content("{\"name\": \"Emprendoria 2022\"}")
+                .content("{\"name\": \"Emprendoria 2022\"," + "\"code\": 25678," + " \"client\": \"Ayuntamiento de Barcelona\"}")
         ).andExpect(status().is(200));
 
         var projects = projectsRepository.findAll();

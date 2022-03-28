@@ -308,7 +308,7 @@ public class Project implements Serializable {
     }
 
     public int getExecutedWorkersExpenses() {
-        return horasTrabajadoras.stream().map(h -> h.getNumHorasEjecutadas() * h.getPrecioHora()).reduce(0,Integer::sum);
+        return horasTrabajadoras.stream().map(HorasTrabajadoras::getDonePrice).reduce(0,Integer::sum);
     }
 
     public void setExecutedWorkersExpenses(int executedWorkersExpenses) {
