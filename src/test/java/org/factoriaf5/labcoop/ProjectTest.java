@@ -15,6 +15,12 @@ import org.junit.jupiter.api.Test;
 class ProjectTest {
 
     @Test
+    void calculaHorasPendientesConLaDiferenciaEntreHorasAsignadasYHorasEjecutadas() {
+        HorasTrabajadoras horasTrabajadorasProyecto2 = new HorasTrabajadoras( "Andres", "LabCoop", 200, 160, 0, 35,  0);
+        assertThat(horasTrabajadorasProyecto2.getNumHorasPendientes(), equalTo(40));
+    }
+
+    @Test
     void calculaTotalDeFacturaRecibidaSumandoCostIvaIrpf() {
         FacturaRecibida facturaRProyecto2 = new FacturaRecibida("Externo", "010-2022", "2/2/2022", "Looky", 2000, 420, 0, 0, true);
 

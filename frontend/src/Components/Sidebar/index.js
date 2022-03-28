@@ -15,7 +15,6 @@ export default function Sidebar() {
                 <img
                     src="/logo.png"
                     alt="logo"
-
                 />
 
             </ImageListItem>
