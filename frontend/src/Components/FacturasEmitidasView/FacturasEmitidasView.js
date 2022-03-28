@@ -1,4 +1,4 @@
-{/*import {FacturaRecibidaForm} from "../FacturaRecibidaForm";
+import {FacturaRecibidaForm} from "../FacturaRecibidaForm";
 import * as React from "react";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
@@ -34,4 +34,4 @@ export function FacturasEmitidasView({addProject}) {
 
     return showTable() ? <FacturasEmitidasTable project={project} /> :
         <FacturaEmitidaForm addProject={addProject} value="3"/>
-}*/}
+}

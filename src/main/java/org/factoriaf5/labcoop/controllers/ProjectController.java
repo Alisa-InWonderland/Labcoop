@@ -80,7 +80,7 @@ public class ProjectController {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 
-    @PostMapping("project/{id}/facturas-recibidas/")
+    @PostMapping("project/facturas-recibidas/")
     public FacturaRecibida CreateNewFacturaR (@RequestBody FacturaRecibida facturaRecibida){
         return facturasRecibidasRepository.save(facturaRecibida);
     }
