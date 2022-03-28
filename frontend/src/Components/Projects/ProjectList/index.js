@@ -19,7 +19,7 @@ export function ProjectList({projects}) {
             <section className='reservesList'>
                 <h1 className="reservesList-title">Proyectos</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-project">
                     <input
                         className="barra-de-busqueda"
                         name="project"
@@ -63,6 +63,7 @@ export function ProjectList({projects}) {
                             // ) {
                             //     return <ProjectListItem key={project.id} project={project}/>;
                             // }
+
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0

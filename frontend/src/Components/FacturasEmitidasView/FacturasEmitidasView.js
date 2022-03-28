@@ -29,9 +29,9 @@ export function FacturasEmitidasView({addProject}) {
     })
 
     function showTable() {
-        return !editMode && project.facturaEmitida;
+        return !editMode && project.facturaEmitida !== null;
     }
 
     return showTable() ? <FacturasEmitidasTable project={project} /> :
-        <FacturaEmitidaForm addProject={addProject} value="3"/>
+        <FacturaEmitidaForm addProject={addProject} project={project} value="2"/>
 }

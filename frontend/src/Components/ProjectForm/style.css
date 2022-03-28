@@ -174,7 +174,13 @@ label {
     color:#ffffff;
 }
 
+#mui-tab-list {
+    color: #AB005A !important;
+}
 
+.css-1aquho2-MuiTabs-indicator {
+    color: #AB005A !important;
+}
 
 @media(max-width: 844px) {
     .experience-form-section {

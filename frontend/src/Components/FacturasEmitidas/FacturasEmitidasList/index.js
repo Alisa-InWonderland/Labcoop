@@ -29,7 +29,7 @@ export function FacturasEmitidasList({projects}) {
             <section className='reservesList'>
                 <h1 className="reservesList-title">Facturas Emitidas</h1>
 
-                <div className="barra-de-busqueda-container">
+                <div className="barra-de-busqueda-container-facturasE">
                     <input
                         className="barra-de-busqueda"
                         name="project"
@@ -37,11 +37,6 @@ export function FacturasEmitidasList({projects}) {
                         onChange={getData}
                         placeholder="Busca un proyecto"
                     />
-
-                        <button className="btn-orange">
-                            <Link className="btn-orange-link" to='/facturas-emitidas/new'>Nueva factura</Link>
-                        </button>
-
 
                 </div>
 
@@ -57,7 +52,7 @@ export function FacturasEmitidasList({projects}) {
                             <th className='factura-emitida-th'>Cliente</th>
                             <th className='factura-emitida-th'>Importe</th>
                             <th className='factura-emitida-th'>IVA</th>
-                            <th className='factura-emitida-th'>TOTAL</th>
+                            <th className='factura-emitida-th'>Total</th>
                             <th className='factura-emitida-th'>Cobrado</th>
                         </tr>
 

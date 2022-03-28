@@ -16,6 +16,7 @@ public class ProjectController {
     private final FacturasEmitidasRepository facturasEmitidasRepository;
     private final HorasTrabajadorasRepository horasTrabajadorasRepository;
 
+
     @Autowired
     public ProjectController(ProjectsRepository projectsRepository, FacturasRecibidasRepository facturasRecibidasRepository, FacturasEmitidasRepository facturasEmitidasRepository, HorasTrabajadorasRepository horasTrabajadorasRepository) {
         this.projectsRepository = projectsRepository;
@@ -23,7 +24,6 @@ public class ProjectController {
         this.facturasEmitidasRepository = facturasEmitidasRepository;
         this.horasTrabajadorasRepository = horasTrabajadorasRepository;
     }
-
 
     @GetMapping("/projects")
     public List<Project> allProjects() {
@@ -64,23 +64,22 @@ public class ProjectController {
     }
 
     @GetMapping("/facturas-recibidas")
-    public List<Project> allInvoicesProject() {
+    public List<Project> allProjectsFacturasRecibidas() {
         return projectsRepository.findAll();
     }
 
     @GetMapping("/facturas-recibidas/{id}")
-    public Project findFacturaR (@PathVariable("id") Long id){
-
-        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
-    }
-
-    @GetMapping("/horas/{id}")
-    public Project horasTrabajadoras(@PathVariable("id") Long id) {
+    public Project findFacturaR(@PathVariable("id") Long id) {
         return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
     }
 
     @GetMapping("/horas")
     public List<Project> horasTrabajadas() {
-       return projectsRepository.findAll();
+        return projectsRepository.findAll();
     }
+    @GetMapping("/horas/{id}")
+    public Project horasTrabajadoras(@PathVariable("id") Long id) {
+        return projectsRepository.findById(id).orElseThrow(ProjectNotFoundException::new);
+    }
+
 }
