@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProjectsRepository extends JpaRepository<Project, Long> {
 
+    Project getFacturasRecibidas(FacturaRecibida facturaRecibida);
 }

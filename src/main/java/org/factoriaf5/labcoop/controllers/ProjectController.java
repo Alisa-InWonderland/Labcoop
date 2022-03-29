@@ -90,4 +90,10 @@ public class ProjectController {
        return projectsRepository.findAll();
     }
 
+    @PostMapping("/projects/{id}/facturas-recibidas")
+    public Project CreateNewFacturaR (@RequestBody FacturaRecibida facturaRecibida){
+
+       return projectsRepository.getFacturasRecibidas(facturaRecibida);
+    }
+
 }
