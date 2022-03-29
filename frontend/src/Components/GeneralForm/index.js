@@ -222,7 +222,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                                    onChange={handleInputChange}
                                                    name="previousBudget"
                                                    value={datos.previousBudget}
-                                            />
+                                                   required/>
                                         </div>
 
                                         <div className="general-form-group">
@@ -232,7 +232,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                                     name="previousCoCost"
                                                     className="general-form-control"
                                                     onChange={handleInputChange}
-                                                    required/>
+                                            />
                                         </div>
 
                                         <div className="general-form-group">
@@ -242,7 +242,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                                    onChange={handleInputChange}
                                                    name="previousExtExpenses"
                                                    value={datos.previousExtExpenses}
-                                                   required/>
+                                                   />
                                         </div>
 
                                         <div className="general-form-group">
@@ -294,7 +294,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                                    onChange={handleInputChange}
                                                    name="executedBudget"
                                                    value={datos.executedBudget}
-                                            />
+                                                   required/>
                                         </div>
 
                                         <div className="general-form-group">
@@ -304,7 +304,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                                     name="executedCoCost"
                                                     className="general-form-control"
                                                     onChange={handleInputChange}
-                                                    required/>
+                                            />
                                         </div>
 
                                         <div className="general-form-group">
@@ -314,7 +314,7 @@ export const GeneralForm = ({addProject, deleteProject}) => {
                                                    onChange={handleInputChange}
                                                    name="executedExtExpenses"
                                                    value={datos.executedExtExpenses}
-                                                   required/>
+                                                   />
                                         </div>
 
                                         <div className="general-form-group">
