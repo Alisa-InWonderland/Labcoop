@@ -1,9 +1,9 @@
-import {HorasForm} from "../HorasForm";
+import {HorasForm} from "../../Forms/HorasForm";
 import * as React from "react";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
 import * as PropTypes from "prop-types";
-import {HorasTrabajadorasTable} from "../HorasTrabajadorasTable";
+import {HorasTrabajadorasTable} from "../../Tables/HorasTrabajadorasTable";
 
 
 HorasTrabajadorasTable.propTypes = {project: PropTypes.any};

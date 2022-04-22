@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css"
-import {FacturasEmitidasListItem} from "../FacturasEmitidasListItem/index";
+import {FacturasEmitidasListItem} from "../FacturasEmitidasListItem";
 import {Link} from "react-router-dom";
 
 

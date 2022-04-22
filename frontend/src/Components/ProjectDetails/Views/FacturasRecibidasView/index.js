@@ -1,9 +1,9 @@
-import {FacturaRecibidaForm} from "../FacturaRecibidaForm";
+import {FacturaRecibidaForm} from "../../Forms/FacturaRecibidaForm";
 import * as React from "react";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
 import * as PropTypes from "prop-types";
-import {FacturasRecibidasTable} from "../FacturasRecibidasTable";
+import {FacturasRecibidasTable} from "../../Tables/FacturasRecibidasTable";
 
 FacturasRecibidasTable.propTypes = {project: PropTypes.any};
 

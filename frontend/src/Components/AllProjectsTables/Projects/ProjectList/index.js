@@ -4,7 +4,6 @@ import {ProjectListItem} from "../ProjectListItem";
 import {Link} from "react-router-dom";
 
 
-
 export function ProjectList({projects}) {
 
 
@@ -57,12 +56,12 @@ export function ProjectList({projects}) {
 
                         {projects.map((project) => {
 
-                            // if (
-                            //     project.name.toLowerCase().indexOf(state.filter) >= 0 ||
-                            //     state.filter.length === 0
-                            // ) {
-                            //     return <ProjectListItem key={project.id} project={project}/>;
-                            // }
+                            if (
+                                project.name.toLowerCase().indexOf(state.filter) >= 0 ||
+                                state.filter.length === 0
+                            ) {
+                                return <ProjectListItem key={project.id} project={project}/>;
+                            }
 
                             if (
                                 project.client.toLowerCase().indexOf(state.filter) >= 0 ||
@@ -78,12 +77,6 @@ export function ProjectList({projects}) {
                                 return <ProjectListItem key={project.id} project={project}/>;
                             }
 
-                            if (
-                                project.target.toLowerCase().indexOf(state.filter) >= 0 ||
-                                state.filter.length === 0
-                            ) {
-                                return <ProjectListItem key={project.id} project={project}/>;
-                            }
                             if (
                                 project.type.toLowerCase().indexOf(state.filter) >= 0 ||
                                 state.filter.length === 0

@@ -2,12 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./style.css"
 
-
-
-
 export function ProjectListItem({project}) {
 
-    const { id, code, name, client, manager, status, type, size, target, previousBudget, previousCoCost, previousExtExpenses, workersExpenses, managePercent, otherExpenses, margin, facturaEmitida } = project;
+    const { id, code, name, client, status, type, target, previousBudget, previousCoCost, previousExtExpenses, workersExpenses, managePercent, otherExpenses, margin } = project;
 
 
     return (
@@ -19,7 +16,7 @@ export function ProjectListItem({project}) {
                 to={`/projects/${id}`}
                 state={{data: project}}
                 >
-                {name || 'no name'}
+                {name}
                 </Link>
             </td>
             <td className="reserva-td">{client}</td>

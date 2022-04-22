@@ -4,17 +4,17 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import {GeneralForm} from "../GeneralForm/index";
-import {FacturasRecibidasView} from "../FacturasRecibidasView";
-import {FacturasEmitidasView} from "../FacturasEmitidasView";
+import {ProjectForm} from "../ProjectForm";
+import {FacturasRecibidasView} from "../../Views/FacturasRecibidasView";
+import {FacturasEmitidasView} from "../../Views/FacturasEmitidasView";
 import * as PropTypes from "prop-types";
-import {HorasTrabajadorasView} from "../HorasTrabajadorasView";
+import {HorasTrabajadorasView} from "../../Views/HorasTrabajadorasView";
 
 FacturasRecibidasView.propTypes = {value: PropTypes.string};
 FacturasEmitidasView.propTypes = {value: PropTypes.string};
 
 
-export function ProjectForm({addProject, deleteProject}) {
+export function FormTabs({addProject, deleteProject}) {
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -35,7 +35,7 @@ export function ProjectForm({addProject, deleteProject}) {
                     </Box>
 
                     <TabPanel id="mui-tab-list" value="1">
-                        <GeneralForm addProject={addProject} deleteProject={deleteProject} value="1"/>
+                        <ProjectForm addProject={addProject} deleteProject={deleteProject} value="1"/>
                     </TabPanel>
 
                     <TabPanel value="2">
