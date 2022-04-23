@@ -43,22 +43,6 @@ export function FacturasRecibidasList({projects}) {
 
                         <tr className='facturas-recibidas-table-title'>
                             {tableTitles.map((item, index) =>  <th className='facturas-recibidas-th' key={index}>{item}</th>)}
-                            {/*<th className='facturas-recibidas-th'>Código Proyecto*/}
-                            {/*</th>*/}
-                            {/*<th className='facturas-recibidas-th'>Nombre Proyecto</th>*/}
-                            {/*<th className='facturas-recibidas-th'>Tipo gasto*/}
-                            {/*</th>*/}
-                            {/*<th className='facturas-recibidas-th'>Nº Factura*/}
-                            {/*</th>*/}
-                            {/*<th className='facturas-recibidas-th'>Fecha</th>*/}
-                            {/*<th className='facturas-recibidas-th'>Proveedor*/}
-                            {/*</th>*/}
-                            {/*<th className='facturas-recibidas-th'>Importe</th>*/}
-                            {/*<th className='facturas-recibidas-th'>IVA</th>*/}
-                            {/*<th className='facturas-recibidas-th'>IRPF</th>*/}
-                            {/*<th className='facturas-recibidas-th'>TOTAL</th>*/}
-                            {/*<th className='facturas-recibidas-th'>Pagado*/}
-                            {/*</th>*/}
                         </tr>
 
                         {checkFacturaRecibida(projects) ? <tr><td colSpan="9">No hay facturas recibidas</td></tr>

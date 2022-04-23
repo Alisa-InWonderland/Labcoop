@@ -30,8 +30,6 @@ export function ProjectList({projects}) {
                         <button className="btn-orange">
                             <Link className="btn-orange-link" to='/projects/new'>Nuevo proyecto</Link>
                         </button>
-
-
                 </div>
 
                 <div className='tablelist'>
@@ -40,19 +38,6 @@ export function ProjectList({projects}) {
 
                         <tr className='reserva-table-title'>
                             {tableTitles.map((item, index) =>  <th className='reserva-th' key={index}>{item}</th>)}
-                            {/*<th className='reserva-th'>Código</th>*/}
-                            {/*<th className='reserva-th'>Nombre Proyecto</th>*/}
-                            {/*<th className='reserva-th'>Cliente</th>*/}
-                            {/*<th className='reserva-th'>Estado</th>*/}
-                            {/*<th className='reserva-th'>Tipo</th>*/}
-                            {/*<th className='reserva-th'>Target</th>*/}
-                            {/*<th className='reserva-th'>Presupuesto prev.</th>*/}
-                            {/*<th className='reserva-th'>Gastos socias prev.</th>*/}
-                            {/*<th className='reserva-th'>Gastos ext. prev.</th>*/}
-                            {/*<th className='reserva-th'>Gasto personal</th>*/}
-                            {/*<th className='reserva-th'>% gestión</th>*/}
-                            {/*<th className='reserva-th'>Otros gastos</th>*/}
-                            {/*<th className='reserva-th'>Margen</th>*/}
                         </tr>
 
                         {projects.map((project) => {

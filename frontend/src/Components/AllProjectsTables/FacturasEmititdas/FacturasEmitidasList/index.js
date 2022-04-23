@@ -43,15 +43,6 @@ export function FacturasEmitidasList({projects}) {
 
                         <tr className='factura-emitida-table-title'>
                             {tableTitles.map((item, index) =>  <th className='factura-emitida-th' key={index}>{item}</th>)}
-                            {/*<th className='factura-emitida-th'>Código</th>*/}
-                            {/*<th className='factura-emitida-th'>Nombre Proyecto</th>*/}
-                            {/*<th className='factura-emitida-th'>Nº Factura</th>*/}
-                            {/*<th className='factura-emitida-th'>Fecha</th>*/}
-                            {/*<th className='factura-emitida-th'>Cliente</th>*/}
-                            {/*<th className='factura-emitida-th'>Importe</th>*/}
-                            {/*<th className='factura-emitida-th'>IVA</th>*/}
-                            {/*<th className='factura-emitida-th'>Total</th>*/}
-                            {/*<th className='factura-emitida-th'>Cobrado</th>*/}
                         </tr>
 
                         {checkFacturaEmitida(projects) ? <tr><td colSpan="9">No hay facturas emitidas</td></tr>

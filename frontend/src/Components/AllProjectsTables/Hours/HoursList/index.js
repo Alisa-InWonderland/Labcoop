@@ -41,16 +41,6 @@ export function HoursList({projects}) {
 
                         <tr className='horas-trabajadoras-table-title'>
                             {tableTitles.map((item, index) =>  <th className='horas-trabajadoras-th' key={index}>{item}</th>)}
-                            {/*<th className='horas-trabajadoras-th'>Código Proyecto</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Nombre Proyecto</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Cliente</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Trabajador</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Socia</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Horas asignadas</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Horas ejecutadas</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Horas pendientes</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Precio hora</th>*/}
-                            {/*<th className='horas-trabajadoras-th'>Total</th>*/}
                         </tr>
 
                         {checkHorasTrabajadoras(projects) ? <tr><td colSpan="9">No hay horas trabajadas</td></tr>
