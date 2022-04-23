@@ -2,11 +2,9 @@ import {FacturaRecibidaForm} from "../../Forms/FacturaRecibidaForm";
 import * as React from "react";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
-import * as PropTypes from "prop-types";
 import {FacturasEmitidasTable} from "../../Tables/FacturasEmitidasTable";
 import {FacturaEmitidaForm} from "../../Forms/FacturaEmitidaForm";
 
-FacturasEmitidasTable.propTypes = {project: PropTypes.any};
 
 export function FacturasEmitidasView({addProject}) {
 

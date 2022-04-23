@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css"
 import {FacturasEmitidasListItem} from "../FacturasEmitidasListItem";
-import {Link} from "react-router-dom";
 
 
 
@@ -9,6 +8,7 @@ export function FacturasEmitidasList({projects}) {
 
 
     const [state, setState] = React.useState({filter: ""});
+    const tableTitles = ['Código Proyecto', 'Nombre Proyecto', 'Nº Factura', 'Fecha', 'Cliente', 'Importe', 'IVA', 'Total', 'Cobrado'];
 
     function getData(val) {
         setState({filter: val.target.value.toLowerCase()});
@@ -16,12 +16,9 @@ export function FacturasEmitidasList({projects}) {
 
 
     function checkFacturaEmitida(projects) {
-
         const facturaEmitidaExist = projects.find(item => item.facturaEmitida !== null);
         return facturaEmitidaExist === undefined;
-
      }
-
 
 
     return (
@@ -45,15 +42,16 @@ export function FacturasEmitidasList({projects}) {
                     <table className="factura-emitida-table">
 
                         <tr className='factura-emitida-table-title'>
-                            <th className='factura-emitida-th'>Código</th>
-                            <th className='factura-emitida-th'>Nombre Proyecto</th>
-                            <th className='factura-emitida-th'>Nº Factura</th>
-                            <th className='factura-emitida-th'>Fecha</th>
-                            <th className='factura-emitida-th'>Cliente</th>
-                            <th className='factura-emitida-th'>Importe</th>
-                            <th className='factura-emitida-th'>IVA</th>
-                            <th className='factura-emitida-th'>Total</th>
-                            <th className='factura-emitida-th'>Cobrado</th>
+                            {tableTitles.map((item, index) =>  <th className='factura-emitida-th' key={index}>{item}</th>)}
+                            {/*<th className='factura-emitida-th'>Código</th>*/}
+                            {/*<th className='factura-emitida-th'>Nombre Proyecto</th>*/}
+                            {/*<th className='factura-emitida-th'>Nº Factura</th>*/}
+                            {/*<th className='factura-emitida-th'>Fecha</th>*/}
+                            {/*<th className='factura-emitida-th'>Cliente</th>*/}
+                            {/*<th className='factura-emitida-th'>Importe</th>*/}
+                            {/*<th className='factura-emitida-th'>IVA</th>*/}
+                            {/*<th className='factura-emitida-th'>Total</th>*/}
+                            {/*<th className='factura-emitida-th'>Cobrado</th>*/}
                         </tr>
 
                         {checkFacturaEmitida(projects) ? <tr><td colSpan="9">No hay facturas emitidas</td></tr>

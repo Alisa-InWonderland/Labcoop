@@ -10,8 +10,8 @@ import {FacturasEmitidasView} from "../../Views/FacturasEmitidasView";
 import * as PropTypes from "prop-types";
 import {HorasTrabajadorasView} from "../../Views/HorasTrabajadorasView";
 
-FacturasRecibidasView.propTypes = {value: PropTypes.string};
-FacturasEmitidasView.propTypes = {value: PropTypes.string};
+// FacturasRecibidasView.propTypes = {value: PropTypes.string};
+// FacturasEmitidasView.propTypes = {value: PropTypes.string};
 
 
 export function FormTabs({addProject, deleteProject}) {

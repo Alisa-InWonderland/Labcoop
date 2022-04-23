@@ -7,8 +7,8 @@ import {Link} from "react-router-dom";
 
 export function HoursList({projects}) {
 
-
     const [state, setState] = React.useState({filter: ""});
+    const tableTitles = ['Código Proyecto', 'Nombre Proyecto', 'Cliente', 'Trabajador', 'Socia', 'Horas asignadas', 'Horas ejecutadas', 'Horas pendientes', 'Precio hora', 'Total'];
 
     function getData(val) {
         setState({filter: val.target.value.toLowerCase()});
@@ -40,16 +40,17 @@ export function HoursList({projects}) {
                     <table className="horas-trabajadoras-table">
 
                         <tr className='horas-trabajadoras-table-title'>
-                            <th className='horas-trabajadoras-th'>Código Proyecto</th>
-                            <th className='horas-trabajadoras-th'>Nombre Proyecto</th>
-                            <th className='horas-trabajadoras-th'>Cliente</th>
-                            <th className='horas-trabajadoras-th'>Trabajador</th>
-                            <th className='horas-trabajadoras-th'>Socia</th>
-                            <th className='horas-trabajadoras-th'>Horas asignadas</th>
-                            <th className='horas-trabajadoras-th'>Horas ejecutadas</th>
-                            <th className='horas-trabajadoras-th'>Horas pendientes</th>
-                            <th className='horas-trabajadoras-th'>Precio hora</th>
-                            <th className='horas-trabajadoras-th'>Total</th>
+                            {tableTitles.map((item, index) =>  <th className='horas-trabajadoras-th' key={index}>{item}</th>)}
+                            {/*<th className='horas-trabajadoras-th'>Código Proyecto</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Nombre Proyecto</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Cliente</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Trabajador</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Socia</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Horas asignadas</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Horas ejecutadas</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Horas pendientes</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Precio hora</th>*/}
+                            {/*<th className='horas-trabajadoras-th'>Total</th>*/}
                         </tr>
 
                         {checkHorasTrabajadoras(projects) ? <tr><td colSpan="9">No hay horas trabajadas</td></tr>

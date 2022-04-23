@@ -1,4 +1,4 @@
-import {API_URL, API_URL_HOURS} from "./settings";
+import {API_URL_HOURS} from "./settings";
 
 export function getHoursById(id) {
 

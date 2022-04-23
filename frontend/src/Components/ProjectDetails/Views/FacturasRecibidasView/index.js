@@ -2,10 +2,8 @@ import {FacturaRecibidaForm} from "../../Forms/FacturaRecibidaForm";
 import * as React from "react";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
-import * as PropTypes from "prop-types";
 import {FacturasRecibidasTable} from "../../Tables/FacturasRecibidasTable";
 
-FacturasRecibidasTable.propTypes = {project: PropTypes.any};
 
 export function FacturasRecibidasView({addProject}) {
 
@@ -29,6 +27,7 @@ export function FacturasRecibidasView({addProject}) {
             paidOut: ''
         }
     })
+
 
     function showTable() {
         return !editMode && project.facturasRecibidas.length !== 0;
