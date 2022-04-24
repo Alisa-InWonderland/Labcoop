@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import styles from "./styles.module.scss";
 import { FacturasEmitidasListItem } from "../FacturasEmitidasListItem";
 
 export function FacturasEmitidasList({ projects }) {
@@ -28,13 +28,12 @@ export function FacturasEmitidasList({ projects }) {
   }
 
   return (
-    <div className="table-container">
-      <section className="reservesList">
-        <h1 className="reservesList-title">Facturas Emitidas</h1>
+    <div className={styles.container}>
+      <section>
+        <h1 className={styles.sectionTitle}>Facturas Emitidas</h1>
 
-        <div className="barra-de-busqueda-container-facturasE">
+        <div className={styles.searchBarContainer}>
           <input
-            className="barra-de-busqueda"
             name="project"
             type="text"
             onChange={getData}
@@ -42,11 +41,11 @@ export function FacturasEmitidasList({ projects }) {
           />
         </div>
 
-        <div className="tablelist">
-          <table className="factura-emitida-table">
-            <tr className="factura-emitida-table-title">
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+            <tr>
               {tableTitles.map((item, index) => (
-                <th className="factura-emitida-th" key={index}>
+                <th className={styles.tableHeaders} key={index}>
                   {item}
                 </th>
               ))}

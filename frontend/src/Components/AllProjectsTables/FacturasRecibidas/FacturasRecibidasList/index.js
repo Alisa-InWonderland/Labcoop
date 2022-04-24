@@ -1,7 +1,6 @@
 import React from "react";
-import "./style.css";
+import styles from "./styles.module.scss";
 import { FacturasRecibidasListItem } from "../FacturasRecibidasListItem";
-import { Link } from "react-router-dom";
 
 export function FacturasRecibidasList({ projects }) {
   const [state, setState] = React.useState({ filter: "" });
@@ -31,13 +30,12 @@ export function FacturasRecibidasList({ projects }) {
   }
 
   return (
-    <div className="table-container">
-      <section className="facturas-recibidas-list">
-        <h1 className="facturas-recibidas-list-title">Facturas Recibidas</h1>
+    <div className={styles.container}>
+      <section>
+        <h1 className={styles.sectionTitle}>Facturas Recibidas</h1>
 
-        <div className="barra-de-busqueda-container-facturasR">
+        <div className={styles.searchBarContainer}>
           <input
-            className="barra-de-busqueda"
             name="project"
             type="text"
             onChange={getData}
@@ -45,11 +43,11 @@ export function FacturasRecibidasList({ projects }) {
           />
         </div>
 
-        <div className="tablelist">
-          <table className="facturas-recibidas-table">
-            <tr className="facturas-recibidas-table-title">
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+            <tr>
               {tableTitles.map((item, index) => (
-                <th className="facturas-recibidas-th" key={index}>
+                <th className={styles.tableHeaders} key={index}>
                   {item}
                 </th>
               ))}
