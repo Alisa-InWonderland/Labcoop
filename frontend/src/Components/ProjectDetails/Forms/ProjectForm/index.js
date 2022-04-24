@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import styles from "./styles.module.scss";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
@@ -388,16 +387,16 @@ export const ProjectForm = ({ addProject, deleteProject }) => {
                 </div>
               </div>
 
-              <div className={styles.btnFlexbox}>
+              <div className={styles.btnContainer}>
                 <div>
-                  <button type="submit" className={styles.btnEdit}>
+                  <button type="submit" className={styles.btn}>
                     Guardar
                   </button>
                 </div>
 
                 <div>
                   <button
-                    className={styles.btnEdit}
+                    className={styles.btn}
                     onClick={() => deleteProject(params.id)}
                   >
                     Eliminar

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import "./style.css";
+import styles from "../HorasForm/styles.module.scss";
 
 export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
   const params = useParams();
@@ -48,67 +48,58 @@ export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
   const isPagado = () => (datos.facturasRecibidas.paidOut ? "Sí" : "No");
 
   return (
-    <div className="section-form-factura-recibida">
-      <section className="factura-recibida-form-section">
-        <div className="factura-recibida-form-wrapper">
+    <div className={styles.container}>
+      <section className={styles.section}>
+        <div className={styles.formWrapper}>
           <h1>{data ? "Factura recibida" : "Nueva factura"}</h1>
           <h3>Proyecto {datos.name}</h3>
-          <div className="factura-recibida-form-container">
-            <form
-              className="edit-factura-recibida-form"
-              onSubmit={enviarDatos}
-              action=""
-            >
-              <div className="proyecto-container">
-                <div className="factura-recibida-form-group">
+          <div>
+            <form onSubmit={enviarDatos} action="">
+              <div className={styles.projectContainer}>
+                <div className={styles.formGroup}>
                   <label htmlFor="">Code</label>
                   <input
                     type="text"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                     name="code"
                     value={datos.code}
                   />
                 </div>
 
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Nombre</label>
                   <input
                     type="text"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                     name="name"
                     value={datos.name}
                   />
                 </div>
 
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Tipo de gasto</label>
                   <input
                     type="text"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                     name="facturasRecibidas.expenseType"
                     value={datos.facturasRecibidas.expenseType}
                   />
                 </div>
 
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Nº Factura</label>
                   <input
                     type="text"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                     name="facturasRecibidas.numInvoices"
                     value={datos.facturasRecibidas.numInvoices}
                   />
                 </div>
 
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Fecha</label>
                   <input
                     type="text"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                     name="facturasRecibidas.date"
                     value={datos.facturasRecibidas.date}
@@ -116,79 +107,73 @@ export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
                   />
                 </div>
 
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Proveedor</label>
                   <input
                     type="text"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                     name="facturasRecibidas.supplier"
                     value={datos.facturasRecibidas.supplier}
                     required
                   />
                 </div>
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Total</label>
                   <input
                     type="text"
                     value={datos.facturasRecibidas.cost}
                     name="facturasRecibidas.cost"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                   />
                 </div>
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">IVA</label>
                   <input
                     type="text"
                     value={datos.facturasRecibidas.iva}
                     name="facturasRecibidas.iva"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                   />
                 </div>
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">IRPF</label>
                   <input
                     type="text"
                     value={datos.facturasRecibidas.irpf}
                     name="facturasRecibidas.irpf"
-                    className="factura-recibida-form-control"
                     onChange={handleInputChange}
                   />
                 </div>
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Total</label>
                   <input
                     type="text"
                     value={datos.facturasRecibidas.total}
                     name="facturasRecibidas.total"
-                    className="form-control"
                     onChange={handleInputChange}
                   />
                 </div>
 
-                <div className="factura-recibida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Pagado</label>
                   <input
                     type="text"
                     value={isPagado()}
                     name="facturasRecibidas.paidOut"
-                    className="form-control"
                     onChange={handleInputChange}
                   />
                 </div>
 
-                <div className="btn-flexbox">
-                  <div className="btn-edit-container">
-                    <button type="submit" className="btn-edit">
+                <div className={styles.btnContainer}>
+                  <div>
+                    <button type="submit" className={styles.btn}>
                       Guardar
                     </button>
                   </div>
 
-                  <div className="btn-edit-container">
+                  <div>
                     <button
-                      className="btn-edit"
+                      className={styles.btn}
                       onClick={() => deleteProject(params.id)}
                     >
                       Eliminar

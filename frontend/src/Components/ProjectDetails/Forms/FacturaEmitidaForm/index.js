@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import "./style.css";
+import styles from "../HorasForm/styles.module.scss";
 
 export const FacturaEmitidaForm = ({ addProject, deleteProject }) => {
   const params = useParams();
@@ -39,45 +39,38 @@ export const FacturaEmitidaForm = ({ addProject, deleteProject }) => {
   const isCobrado = () => (datos.facturaEmitida.cobrado ? "Sí" : "No");
 
   return (
-    <div className="section-form-factura-emitida">
-      <section className="factura-emitida-form-section">
-        <div className="factura-emitida-form-wrapper">
+    <div className={styles.container}>
+      <section className={styles.section}>
+        <div className={styles.formWrapper}>
           <h1>{data ? "Factura emitida" : "Nueva factura"}</h1>
           <h3>Proyecto {datos.name}</h3>
-          <div className="factura-emitida-form-container">
-            <form
-              className="edit-factura-emitida-form"
-              onSubmit={enviarDatos}
-              action=""
-            >
-              <div className="proyecto-container">
-                <div className="factura-emitida-form-group">
+          <div>
+            <form onSubmit={enviarDatos} action="">
+              <div className={styles.projectContainer}>
+                <div className={styles.formGroup}>
                   <label htmlFor="">Nº Factura</label>
                   <input
                     type="text"
-                    className="factura-emitida-form-control"
                     onChange={handleInputChange}
                     name="facturaEmitida.numFactura"
                     value={datos.facturaEmitida.numFactura}
                   />
                 </div>
 
-                <div className="factura-emitida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Fecha</label>
                   <input
                     type="text"
                     value={datos.facturaEmitida.fecha}
                     name="facturaEmitida.fecha"
-                    className="factura-emitida-form-control"
                     onChange={handleInputChange}
                   />
                 </div>
 
-                <div className="factura-emitida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Cliente</label>
                   <input
                     type="text"
-                    className="factura-emitida-form-control"
                     onChange={handleInputChange}
                     name="client"
                     value={datos.client}
@@ -85,61 +78,57 @@ export const FacturaEmitidaForm = ({ addProject, deleteProject }) => {
                   />
                 </div>
 
-                <div className="factura-emitida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Importe</label>
                   <input
                     type="text"
-                    className="factura-emitida-form-control"
                     onChange={handleInputChange}
                     name="facturaEmitida.importe"
                     value={datos.facturaEmitida.importe}
                   />
                 </div>
 
-                <div className="factura-emitida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">IVA</label>
                   <input
                     type="text"
                     value={datos.facturaEmitida.iva}
                     name="facturaEmitida.iva"
-                    className="factura-emitida-form-control"
                     onChange={handleInputChange}
                   />
                 </div>
 
-                <div className="factura-emitida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Total</label>
                   <input
                     type="text"
                     value={datos.facturaEmitida.total}
                     name="facturaEmitida.total"
-                    className="factura-emitida-form-control"
                     onChange={handleInputChange}
                   />
                 </div>
 
-                <div className="factura-emitida-form-group">
+                <div className={styles.formGroup}>
                   <label htmlFor="">Cobrado</label>
                   <input
                     type="text"
                     value={isCobrado()}
                     name="facturaEmitida.cobrado"
-                    className="form-control"
                     onChange={handleInputChange}
                   />
                 </div>
               </div>
 
-              <div className="btn-flexbox">
-                <div className="btn-edit-container">
-                  <button type="submit" className="btn-edit">
+              <div className={styles.btnContainer}>
+                <div>
+                  <button type="submit" className={styles.btn}>
                     Guardar
                   </button>
                 </div>
 
-                <div className="btn-edit-container">
+                <div>
                   <button
-                    className="btn-edit"
+                    className={styles.btn}
                     onClick={() => deleteProject(params.id)}
                   >
                     Eliminar
