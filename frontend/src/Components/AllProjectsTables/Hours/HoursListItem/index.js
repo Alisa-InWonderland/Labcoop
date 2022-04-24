@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import { Link } from "react-router-dom";
+import classnames from "classnames";
 
 export function HoursListItem({ project }) {
   const { code, name, client, horasTrabajadoras } = project;
@@ -9,7 +11,11 @@ export function HoursListItem({ project }) {
       <td className={styles.tableCell}>{code}</td>
       <td className={styles.tableCell}>{name}</td>
       <td className={styles.tableCell}>{client}</td>
-      <td className={styles.tableCell}>{horasTrabajador.trabajador}</td>
+      <td className={classnames(styles.tableCell, styles.cellLink)}>
+        <Link to={`/horas/${horasTrabajador.id}`} state={{ data: project }}>
+          {horasTrabajador.trabajador}
+        </Link>
+      </td>
       <td className={styles.tableCell}>{horasTrabajador.socias}</td>
       <td className={styles.tableCell}>{horasTrabajador.numHorasAsignadas}</td>
       <td className={styles.tableCell}>{horasTrabajador.numHorasEjecutadas}</td>
