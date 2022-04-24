@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import styles from "./styles.module.scss";
 import { ProjectListItem } from "../ProjectListItem";
 import { Link } from "react-router-dom";
 
@@ -26,31 +26,28 @@ export function ProjectList({ projects }) {
   }
 
   return (
-    <div className="table-container">
-      <section className="reservesList">
-        <h1 className="reservesList-title">Proyectos</h1>
+    <div className={styles.container}>
+      <section>
+        <h1 className={styles.sectionTitle}>Proyectos</h1>
 
-        <div className="barra-de-busqueda-container-project">
+        <div className={styles.searchBarContainer}>
           <input
-            className="barra-de-busqueda"
             name="project"
             type="text"
             onChange={getData}
             placeholder="Busca un proyecto"
           />
 
-          <button className="btn-orange">
-            <Link className="btn-orange-link" to="/projects/new">
-              Nuevo proyecto
-            </Link>
+          <button className={styles.btn}>
+            <Link to="/projects/new">Nuevo proyecto</Link>
           </button>
         </div>
 
-        <div className="tablelist">
-          <table className="reserva-table">
-            <tr className="reserva-table-title">
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+            <tr>
               {tableTitles.map((item, index) => (
-                <th className="reserva-th" key={index}>
+                <th className={styles.tableHeaders} key={index}>
                   {item}
                 </th>
               ))}

@@ -1,0 +1,17 @@
+.tableRow {
+    height: auto;
+    .tableCell {
+        padding: 8px;
+        background: #ffffff;
+        border-bottom: 1px solid #fff;
+        color: #000000;
+        border-top: 1px solid transparent;
+    }
+}
+.cellLink:hover {
+    background: #AB005A;
+    color: #AB005A;
+    cursor: pointer;
+}
+
+
