@@ -13,7 +13,7 @@ export function HoursList({ projects }) {
     "Horas asignadas",
     "Horas ejecutadas",
     "Horas pendientes",
-    "Precio hora",
+    "Precio/Hora",
     "Total",
   ];
 

@@ -1,43 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./style.css";
+import styles from "./styles.module.scss";
+import classnames from "classnames";
 
 export function FacturasEmitidasTable({ project }) {
   const isCobrado = () => (project.facturaEmitida.cobrado ? "Sí" : "No");
+  const tableTitles = [
+    "Código Proyecto",
+    "Nombre Proyecto",
+    "Nº Factura",
+    "Fecha",
+    "Cliente",
+    "Importe",
+    "IVA",
+    "Total",
+    "Cobrado",
+  ];
+
   return (
     <>
-      <div className="btn-facturaE-wrapper">
-        <button className="btn-orange btn-facturaE">
-          <Link
-            className="btn-link-facturaE"
-            to={`/facturas-emitidas/new`}
-            state={{ data: project }}
-          >
+      <div className={styles.btnWrapper}>
+        <button className={styles.btn}>
+          <Link to={`/facturas-emitidas/new`} state={{ data: project }}>
             Nueva factura
           </Link>
         </button>
       </div>
 
-      <table>
+      <table className={styles.table}>
         <thead>
-          <tr className="factura-emitida-table-title">
-            <th className="factura-emitida-th">Código</th>
-            <th className="factura-emitida-th">Nombre Proyecto</th>
-            <th className="factura-emitida-th">Nº Factura</th>
-            <th className="factura-emitida-th">Fecha</th>
-            <th className="factura-emitida-th">Cliente</th>
-            <th className="factura-emitida-th">Importe</th>
-            <th className="factura-emitida-th">IVA</th>
-            <th className="factura-emitida-th">TOTAL</th>
-            <th className="factura-emitida-th">Cobrado</th>
+          <tr>
+            {tableTitles.map((item, index) => (
+              <th className={styles.tableHeaders} key={index}>
+                {item}
+              </th>
+            ))}
           </tr>
         </thead>
-
         <tbody>
-          <tr className="factura-emitida-table-row">
-            <td className="factura-emitida-td">{project.code}</td>
-            <td className="factura-emitida-td">{project.name}</td>
-            <td className="factura-emitida-td num-factura">
+          <tr className={styles.tableRow}>
+            <td className={styles.tableCell}>{project.code}</td>
+            <td className={styles.tableCell}>{project.name}</td>
+            <td className={classnames(styles.tableCell, styles.cellLink)}>
               <Link
                 to={`/facturas-emitidas/${project.facturaEmitida.id}`}
                 state={{ data: project }}
@@ -45,18 +49,14 @@ export function FacturasEmitidasTable({ project }) {
                 {project.facturaEmitida.numFactura}
               </Link>
             </td>
-            <td className="factura-emitida-td">
-              {project.facturaEmitida.fecha}
-            </td>
-            <td className="factura-emitida-td">{project.client}</td>
-            <td className="factura-emitida-td">
+            <td className={styles.tableCell}>{project.facturaEmitida.fecha}</td>
+            <td className={styles.tableCell}>{project.client}</td>
+            <td className={styles.tableCell}>
               {project.facturaEmitida.importe}
             </td>
-            <td className="factura-emitida-td">{project.facturaEmitida.iva}</td>
-            <td className="factura-emitida-td">
-              {project.facturaEmitida.total}
-            </td>
-            <td className="factura-emitida-td">{isCobrado()}</td>
+            <td className={styles.tableCell}>{project.facturaEmitida.iva}</td>
+            <td className={styles.tableCell}>{project.facturaEmitida.total}</td>
+            <td className={styles.tableCell}>{isCobrado()}</td>
           </tr>
         </tbody>
       </table>

@@ -1,11 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./styles.module.scss";
+import classnames from "classnames";
 
 export function HorasTrabajadorasTable({ project }) {
+  const tableTitles = [
+    "Código Proyecto",
+    "Nombre Proyecto",
+    "Cliente",
+    "Trabajador",
+    "Socia",
+    "Horas asignadas",
+    "Horas ejecutadas",
+    "Horas pendientes",
+    "Precio/Hora",
+    "Total",
+  ];
+
   return (
     <>
-      <div className="btn-facturaE-wrapper">
-        <button className="btn-orange btn-facturaE">
+      <div className={styles.btnWrapper}>
+        <button className={styles.btn}>
           <Link
             className="btn-link-facturaE"
             to={`/horas/new`}
@@ -16,29 +31,24 @@ export function HorasTrabajadorasTable({ project }) {
         </button>
       </div>
 
-      <table>
+      <table className={styles.table}>
         <thead>
-          <tr className="horas-trabajadoras-table">
-            <th className="horas-trabajadoras-th">Código proyecto</th>
-            <th className="horas-trabajadoras-th">Nombre proyecto</th>
-            <th className="horas-trabajadoras-th">Cliente</th>
-            <th className="horas-trabajadoras-th">Trabajador</th>
-            <th className="horas-trabajadoras-th">Socias</th>
-            <th className="horas-trabajadoras-th">Nº Horas Asignadas</th>
-            <th className="horas-trabajadoras-th">Nº Horas Ejecutas</th>
-            <th className="horas-trabajadoras-th">Nº horas Pendientes</th>
-            <th className="horas-trabajadoras-th">Precio/Hora</th>
-            <th className="horas-trabajadoras-th">Precio Total</th>
+          <tr>
+            {tableTitles.map((item, index) => (
+              <th className={styles.tableHeaders} key={index}>
+                {item}
+              </th>
+            ))}
           </tr>
         </thead>
 
         <tbody>
           {project.horasTrabajadoras.map((horasTrabajadoras) => (
-            <tr>
-              <td className="horas-trabajadoras-td">{project.code}</td>
-              <td className="horas-trabajadoras-td">{project.name}</td>
-              <td className="horas-trabajadoras-td">{project.client}</td>
-              <td className="horas-trabajadoras-td num-factura">
+            <tr className={styles.tableRow}>
+              <td className={styles.tableCell}>{project.code}</td>
+              <td className={styles.tableCell}>{project.name}</td>
+              <td className={styles.tableCell}>{project.client}</td>
+              <td className={classnames(styles.tableCell, styles.cellLink)}>
                 <Link
                   to={`/horas/${horasTrabajadoras.id}`}
                   state={{ data: project }}
@@ -46,22 +56,20 @@ export function HorasTrabajadorasTable({ project }) {
                   {horasTrabajadoras.trabajador}
                 </Link>
               </td>
-              <td className="horas-trabajadoras-td">
-                {horasTrabajadoras.socias}
-              </td>
-              <td className="horas-trabajadoras-td">
+              <td className={styles.tableCell}>{horasTrabajadoras.socias}</td>
+              <td className={styles.tableCell}>
                 {horasTrabajadoras.numHorasAsignadas}
               </td>
-              <td className="horas-trabajadoras-td">
+              <td className={styles.tableCell}>
                 {horasTrabajadoras.numHorasEjecutadas}
               </td>
-              <td className="horas-trabajadoras-td">
+              <td className={styles.tableCell}>
                 {horasTrabajadoras.numHorasPendientes}
               </td>
-              <td className="horas-trabajadoras-td">
+              <td className={styles.tableCell}>
                 {horasTrabajadoras.precioHora}
               </td>
-              <td className="horas-trabajadoras-td">
+              <td className={styles.tableCell}>
                 {horasTrabajadoras.donePrice}
               </td>
             </tr>
