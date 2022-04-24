@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+h1, h2, h3, h4{
+    color:#ffffff;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+label {
+    color:#ffffff;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-position: bottom;
+    .section {
+        width: 90%;
+        background-color: #AB005A;
+        padding: 20px 20px 2px 20px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        .formWrapper {
+            margin-bottom: 30px;
+            h1 {
+                font-size: 30px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                text-align: center;
+            }
+            h3 {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.projectContainer {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    .projectData {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .projectDataInput {
+            width: 60%;
+        }
+    }
+    .totales {
+        display: flex;
+        flex-direction: column;
+        .totalPrevistoTitle {
+            margin-bottom: 20px;
+        }
+
+        .totalEjecutadoTitle {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+.generalFormGroup {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    textarea, select {
+        background-color: #ffffff;
+        padding: 3px;
+        margin-left: 20px;
+        border-radius: 5px;
+        width: 60%;
+        overflow: hidden;
+        -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        border: 1px solid #ffffff;
+    }
+    textarea:hover {
+        cursor: pointer;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #AB005A;
+    }
+    input {
+        width: 25%;
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid #ccc7c7;
+        padding: 5px;
+        margin-left: 25px;
+        background-color: #ffffff;
+        -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        display: flex;
+        justify-content: space-between;
+        &:hover {
+            border-style: solid;
+            border-width: 2px;
+            border-color: #AB005A;
+        }
+    }
+}
+
+
+.addGeneralForm {
+    margin-bottom: 20px;
+}
+
+.btnAdd {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+
+
+.btnEdit:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.btnEdit:after {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, .5), 7px 7px 20px 0 rgba(0, 0, 0, .1), 4px 4px 5px 0 rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+    background-color: #cbc8c8;
+    right: 0;
+}
+
+.btnEdit:active {
+    top: 2px;
+}
+
+.btnFlexbox {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    .btnEdit {
+        background-color: #ffffff;
+        font-size: 15px;
+        min-width: 130px;
+        height: 40px;
+        color: #000000;
+        padding: 5px 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, .5), 7px 7px 20px 0 rgba(0, 0, 0, .1), 4px 4px 5px 0 rgba(0, 0, 0, .1);
+        z-index: 1;
+        margin-top: 15px;
+    }
+}
+
+
+
+
+@media(max-width: 844px) {
+    .section {
+        width: 100%;
+    }
+}
+
+
+@media(min-width: 845px) and (max-width: 1180px) {
+    .container {
+        background-position: right;
+    }
+}
