@@ -63,20 +63,20 @@ export function HoursList({ projects }) {
                 .filter((project) => project.horasTrabajadoras.length !== 0)
                 .map((project) => {
                   if (
-                    project.name.toLowerCase().indexOf(state.filter) >= 0 ||
+                    project.name.toLowerCase().includes(state.filter) ||
                     state.filter.length === 0
                   ) {
                     return <HoursListItem key={project.id} project={project} />;
                   }
                   if (
-                    project.code.toLowerCase().indexOf(state.filter) >= 0 ||
+                    project.code.toLowerCase().includes(state.filter) ||
                     state.filter.length === 0
                   ) {
                     return <HoursListItem key={project.id} project={project} />;
                   }
 
                   if (
-                    project.client.toLowerCase().indexOf(state.filter) >= 0 ||
+                    project.client.toLowerCase().includes(state.filter) ||
                     state.filter.length === 0
                   ) {
                     return <HoursListItem key={project.id} project={project} />;

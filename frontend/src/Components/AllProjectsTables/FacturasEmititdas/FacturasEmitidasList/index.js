@@ -62,7 +62,7 @@ export function FacturasEmitidasList({ projects }) {
                 .filter((project) => project.facturaEmitida !== null)
                 .map((project) => {
                   if (
-                    project.code.toLowerCase().indexOf(state.filter) >= 0 ||
+                    project.code.toLowerCase().includes(state.filter) ||
                     state.filter.length === 0
                   ) {
                     return (
@@ -74,7 +74,7 @@ export function FacturasEmitidasList({ projects }) {
                   }
 
                   if (
-                    project.name.toLowerCase().indexOf(state.filter) >= 0 ||
+                    project.name.toLowerCase().includes(state.filter) ||
                     state.filter.length === 0
                   ) {
                     return (
@@ -86,7 +86,7 @@ export function FacturasEmitidasList({ projects }) {
                   }
 
                   if (
-                    project.client.toLowerCase().indexOf(state.filter) >= 0 ||
+                    project.client.toLowerCase().includes(state.filter) ||
                     state.filter.length === 0
                   ) {
                     return (

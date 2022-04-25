@@ -57,34 +57,34 @@ export function ProjectList({ projects }) {
 
             {projects.map((project) => {
               if (
-                project.name.toLowerCase().indexOf(state.filter) >= 0 ||
+                project.name.toLowerCase().includes(state.filter) ||
                 state.filter.length === 0
               ) {
                 return <ProjectListItem key={project.id} project={project} />;
               }
 
               if (
-                project.client.toLowerCase().indexOf(state.filter) >= 0 ||
+                project.client.toLowerCase().includes(state.filter) ||
                 state.filter.length === 0
               ) {
                 return <ProjectListItem key={project.id} project={project} />;
               }
 
               if (
-                project.code.toLowerCase().indexOf(state.filter) >= 0 ||
+                project.code.toLowerCase().includes(state.filter) ||
                 state.filter.length === 0
               ) {
                 return <ProjectListItem key={project.id} project={project} />;
               }
 
               if (
-                project.type.toLowerCase().indexOf(state.filter) >= 0 ||
+                project.type.toLowerCase().includes(state.filter) ||
                 state.filter.length === 0
               ) {
                 return <ProjectListItem key={project.id} project={project} />;
               }
               if (
-                project.status.toLowerCase().indexOf(state.filter) >= 0 ||
+                project.status.toLowerCase().includes(state.filter) ||
                 state.filter.length === 0
               ) {
                 return <ProjectListItem key={project.id} project={project} />;
