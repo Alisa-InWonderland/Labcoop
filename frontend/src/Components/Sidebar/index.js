@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./style.css";
+import styles from "./styles.module.scss";
 import Paper from "@mui/material/Paper";
 import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,12 +9,12 @@ import { ImageListItem } from "@mui/material";
 
 export default function Sidebar() {
   return (
-    <Paper elevation={5} sx={{ width: 200 }}>
-      <ImageListItem className="image">
+    <Paper elevation={5} sx={{ width: 200 }} className={styles.paper}>
+      <ImageListItem className={styles.image}>
         <img src="/logo.png" alt="logo" />
       </ImageListItem>
 
-      <MenuList className="sidebar" dense>
+      <MenuList className={styles.sidebar} dense>
         <MenuItem>
           <ListItemText>
             <Link to="/projects">Proyectos</Link>

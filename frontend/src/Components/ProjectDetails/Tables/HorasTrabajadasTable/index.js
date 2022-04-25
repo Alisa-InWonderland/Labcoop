@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./styles.module.scss";
+import styles from "../FacturasEmitidasTable/styles.module.scss";
 import classnames from "classnames";
 
-export function HorasTrabajadorasTable({ project }) {
+export function HorasTrabajadasTable({ project }) {
   const tableTitles = [
     "Código Proyecto",
     "Nombre Proyecto",
@@ -21,11 +21,7 @@ export function HorasTrabajadorasTable({ project }) {
     <>
       <div className={styles.btnWrapper}>
         <button className={styles.btn}>
-          <Link
-            className="btn-link-facturaE"
-            to={`/horas/new`}
-            state={{ data: project }}
-          >
+          <Link to={`/horas/new`} state={{ data: project }}>
             Introducir horas
           </Link>
         </button>

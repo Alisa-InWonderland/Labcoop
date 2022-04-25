@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import styles from "./styles.module.scss";
+import styles from "../FacturasEmitidasTable/styles.module.scss";
 import classnames from "classnames";
 
 export function FacturasRecibidasTable({ project }) {

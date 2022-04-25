@@ -7,11 +7,8 @@ import TabPanel from "@mui/lab/TabPanel";
 import { ProjectForm } from "../ProjectForm";
 import { FacturasRecibidasView } from "../../Views/FacturasRecibidasView";
 import { FacturasEmitidasView } from "../../Views/FacturasEmitidasView";
-import * as PropTypes from "prop-types";
 import { HorasTrabajadorasView } from "../../Views/HorasTrabajadorasView";
-
-// FacturasRecibidasView.propTypes = {value: PropTypes.string};
-// FacturasEmitidasView.propTypes = {value: PropTypes.string};
+import styles from "./styles.module.scss";
 
 export function FormTabs({ addProject, deleteProject }) {
   const [value, setValue] = React.useState("1");
@@ -26,13 +23,14 @@ export function FormTabs({ addProject, deleteProject }) {
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
             <Tab
+              className={styles.tab}
               classes={{ label: 'id="mui-tab-list"' }}
               label="General"
               value="1"
             />
-            <Tab label="Facturas emitidas" value="2" />
-            <Tab label="Facturas recibidas" value="3" />
-            <Tab label="Horas" value="4" />
+            <Tab className={styles.tab} label="Facturas emitidas" value="2" />
+            <Tab className={styles.tab} label="Facturas recibidas" value="3" />
+            <Tab className={styles.tab} label="Horas" value="4" />
           </TabList>
         </Box>
 

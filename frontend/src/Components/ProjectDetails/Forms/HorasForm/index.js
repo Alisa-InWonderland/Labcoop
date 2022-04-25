@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import styles from "./styles.module.scss";
+import styles from ".././comonStyles/styles.module.scss";
+import style from "./style.module.scss";
+import classnames from "classnames";
 
 export const HorasForm = ({ addProject, deleteProject }) => {
   const params = useParams();
@@ -47,7 +49,7 @@ export const HorasForm = ({ addProject, deleteProject }) => {
 
   return (
     <div className={styles.container}>
-      <section className={styles.section}>
+      <section className={classnames(styles.section, style.section)}>
         <div className={styles.formWrapper}>
           <h1>{data ? "Horas" : "Introducir horas"}</h1>
           <h3>Proyecto {datos.name}</h3>

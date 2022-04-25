@@ -8,7 +8,6 @@ label {
     color:#ffffff;
 }
 
-
 .container {
     width: 100%;
     display: flex;
@@ -16,7 +15,8 @@ label {
     padding: 20px;
     margin: 20px;
     .section {
-        width: 46%;
+        width: 40%;
+        min-width: 500px;
         background-color: #AB005A;
         padding: 20px;
         border-radius: 10px;
@@ -79,6 +79,7 @@ label {
     display: flex;
     justify-content: center;
     gap: 15px;
+    margin-top: 25px;
     .btn {
         background-color: #fff;
         font-size: 15px;

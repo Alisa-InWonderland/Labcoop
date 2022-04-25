@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { getProjects } from "./Services/getProjects";
@@ -71,7 +71,7 @@ function App() {
     <div className="App" id="grid">
       <Sidebar />
 
-      <main className="main" id="areaB">
+      <main className="main">
         <Routes>
           <Route
             path="/projects"
@@ -115,7 +115,9 @@ function App() {
           />
           <Route
             path="/facturas-emitidas/:id"
-            element={<FacturaEmitidaForm addProject={addProject} />}
+            element={
+              <FacturaEmitidaForm addProject={addProject} projects={projects} />
+            }
           />
           <Route
             path="/facturas-emitidas/new"

@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import { ProjectListItem } from "../ProjectListItem";
 import { Link } from "react-router-dom";
 
 export function ProjectList({ projects }) {
-  const [state, setState] = React.useState({ filter: "" });
   const tableTitles = [
     "Código Proyecto",
     "Nombre Proyecto",
@@ -21,8 +20,10 @@ export function ProjectList({ projects }) {
     "Margen",
   ];
 
-  function getData(val) {
-    setState({ filter: val.target.value.toLowerCase() });
+  const [state, setState] = useState({ filter: "" });
+  function getData(event) {
+    const value = event.target.value;
+    setState({ filter: value.toLowerCase() });
   }
 
   return (
@@ -87,8 +88,6 @@ export function ProjectList({ projects }) {
               ) {
                 return <ProjectListItem key={project.id} project={project} />;
               }
-
-              return "";
             })}
           </table>
         </div>

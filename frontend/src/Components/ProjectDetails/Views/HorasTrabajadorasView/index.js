@@ -2,7 +2,7 @@ import { HorasForm } from "../../Forms/HorasForm";
 import * as React from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { HorasTrabajadorasTable } from "../../Tables/HorasTrabajadorasTable";
+import { HorasTrabajadasTable } from "../../Tables/HorasTrabajadasTable";
 
 export function HorasTrabajadorasView({ addProject }) {
   const [editMode, setEditMode] = useState(false);
@@ -32,7 +32,7 @@ export function HorasTrabajadorasView({ addProject }) {
   }
 
   return showTable() ? (
-    <HorasTrabajadorasTable project={project} editMode={editMode} />
+    <HorasTrabajadasTable project={project} editMode={editMode} />
   ) : (
     <HorasForm addProject={addProject} value="3" />
   );

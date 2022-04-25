@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import styles from "../HorasForm/styles.module.scss";
+import styles from ".././comonStyles/styles.module.scss";
+import style from "./style.module.scss";
+import classnames from "classnames";
 
 export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
   const params = useParams();
@@ -49,7 +51,7 @@ export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
 
   return (
     <div className={styles.container}>
-      <section className={styles.section}>
+      <section className={classnames(styles.section, style.section)}>
         <div className={styles.formWrapper}>
           <h1>{data ? "Factura recibida" : "Nueva factura"}</h1>
           <h3>Proyecto {datos.name}</h3>
@@ -163,22 +165,22 @@ export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
                     onChange={handleInputChange}
                   />
                 </div>
+              </div>
 
-                <div className={styles.btnContainer}>
-                  <div>
-                    <button type="submit" className={styles.btn}>
-                      Guardar
-                    </button>
-                  </div>
+              <div className={styles.btnContainer}>
+                <div>
+                  <button type="submit" className={styles.btn}>
+                    Guardar
+                  </button>
+                </div>
 
-                  <div>
-                    <button
-                      className={styles.btn}
-                      onClick={() => deleteProject(params.id)}
-                    >
-                      Eliminar
-                    </button>
-                  </div>
+                <div>
+                  <button
+                    className={styles.btn}
+                    onClick={() => deleteProject(params.id)}
+                  >
+                    Eliminar
+                  </button>
                 </div>
               </div>
             </form>

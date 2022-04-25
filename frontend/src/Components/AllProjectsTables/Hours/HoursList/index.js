@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles.module.scss";
+import styles from "../../Projects/ProjectList/styles.module.scss";
 import { HoursListItem } from "../HoursListItem";
 
 export function HoursList({ projects }) {
