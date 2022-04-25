@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../Projects/ProjectList/styles.module.scss";
 import { HoursListItem } from "../HoursListItem";
 
 export function HoursList({ projects }) {
-  const [state, setState] = React.useState({ filter: "" });
   const tableTitles = [
     "Código Proyecto",
     "Nombre Proyecto",
@@ -17,8 +16,11 @@ export function HoursList({ projects }) {
     "Total",
   ];
 
-  function getData(val) {
-    setState({ filter: val.target.value.toLowerCase() });
+  const [state, setState] = useState({ filter: "" });
+
+  function getData(event) {
+    const value = event.target.value;
+    setState({ filter: value.toLowerCase() });
   }
 
   function checkHorasTrabajadoras(projects) {
@@ -73,7 +75,12 @@ export function HoursList({ projects }) {
                     return <HoursListItem key={project.id} project={project} />;
                   }
 
-                  return "";
+                  if (
+                    project.client.toLowerCase().indexOf(state.filter) >= 0 ||
+                    state.filter.length === 0
+                  ) {
+                    return <HoursListItem key={project.id} project={project} />;
+                  }
                 })
             )}
           </table>

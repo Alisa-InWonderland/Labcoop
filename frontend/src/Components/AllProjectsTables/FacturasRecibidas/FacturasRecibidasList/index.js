@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../Projects/ProjectList/styles.module.scss";
 import { FacturasRecibidasListItem } from "../FacturasRecibidasListItem";
 
 export function FacturasRecibidasList({ projects }) {
-  const [state, setState] = React.useState({ filter: "" });
   const tableTitles = [
     "Código Proyecto",
     "Nombre Proyecto",
@@ -18,8 +17,11 @@ export function FacturasRecibidasList({ projects }) {
     "Pagado",
   ];
 
-  function getData(val) {
-    setState({ filter: val.target.value.toLowerCase() });
+  const [state, setState] = useState({ filter: "" });
+
+  function getData(event) {
+    const value = event.target.value;
+    setState({ filter: value.toLowerCase() });
   }
 
   function checkFacturaRecibida(projects) {
@@ -84,8 +86,6 @@ export function FacturasRecibidasList({ projects }) {
                       />
                     );
                   }
-
-                  return "";
                 })
             )}
           </table>

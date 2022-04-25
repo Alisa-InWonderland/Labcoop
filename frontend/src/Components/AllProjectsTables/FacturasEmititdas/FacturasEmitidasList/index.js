@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../Projects/ProjectList/styles.module.scss";
 import { FacturasEmitidasListItem } from "../FacturasEmitidasListItem";
 
 export function FacturasEmitidasList({ projects }) {
-  const [state, setState] = React.useState({ filter: "" });
   const tableTitles = [
     "Código Proyecto",
     "Nombre Proyecto",
@@ -16,8 +15,11 @@ export function FacturasEmitidasList({ projects }) {
     "Cobrado",
   ];
 
-  function getData(val) {
-    setState({ filter: val.target.value.toLowerCase() });
+  const [state, setState] = useState({ filter: "" });
+
+  function getData(event) {
+    const value = event.target.value;
+    setState({ filter: value.toLowerCase() });
   }
 
   function checkFacturaEmitida(projects) {
@@ -94,8 +96,6 @@ export function FacturasEmitidasList({ projects }) {
                       />
                     );
                   }
-
-                  return "";
                 })
             )}
           </table>

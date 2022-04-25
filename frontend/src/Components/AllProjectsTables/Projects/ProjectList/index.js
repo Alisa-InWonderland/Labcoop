@@ -21,6 +21,7 @@ export function ProjectList({ projects }) {
   ];
 
   const [state, setState] = useState({ filter: "" });
+
   function getData(event) {
     const value = event.target.value;
     setState({ filter: value.toLowerCase() });
