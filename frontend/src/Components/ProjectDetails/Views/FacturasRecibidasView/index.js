@@ -5,8 +5,6 @@ import { useLocation } from "react-router-dom";
 import { FacturasRecibidasTable } from "../../Tables/FacturasRecibidasTable";
 
 export function FacturasRecibidasView({ addProject }) {
-  const [editMode, setEditMode] = useState(false);
-
   const location = useLocation();
   const data = location.state ? location.state.data : null;
 
@@ -29,12 +27,12 @@ export function FacturasRecibidasView({ addProject }) {
   );
 
   function showTable() {
-    return !editMode && project.facturasRecibidas.length !== 0;
+    return project.facturasRecibidas.length !== 0;
   }
 
   return showTable() ? (
     <FacturasRecibidasTable project={project} />
   ) : (
-    <FacturaRecibidaForm addProject={addProject} project={project} value="3" />
+    <FacturaRecibidaForm addProject={addProject} project={project} />
   );
 }

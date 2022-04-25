@@ -5,8 +5,6 @@ import { useLocation } from "react-router-dom";
 import { HorasTrabajadasTable } from "../../Tables/HorasTrabajadasTable";
 
 export function HorasTrabajadorasView({ addProject }) {
-  const [editMode, setEditMode] = useState(false);
-
   const location = useLocation();
   const data = location.state ? location.state.data : null;
 
@@ -28,12 +26,12 @@ export function HorasTrabajadorasView({ addProject }) {
   );
 
   function showTable() {
-    return !editMode && project.horasTrabajadoras.length !== 0;
+    return project.horasTrabajadoras.length !== 0;
   }
 
   return showTable() ? (
-    <HorasTrabajadasTable project={project} editMode={editMode} />
+    <HorasTrabajadasTable project={project} />
   ) : (
-    <HorasForm addProject={addProject} value="3" />
+    <HorasForm addProject={addProject} project={project} />
   );
 }

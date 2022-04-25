@@ -5,8 +5,6 @@ import { FacturasEmitidasTable } from "../../Tables/FacturasEmitidasTable";
 import { FacturaEmitidaForm } from "../../Forms/FacturaEmitidaForm";
 
 export function FacturasEmitidasView({ addProject }) {
-  const [editMode, setEditMode] = useState(false);
-
   const location = useLocation();
   const data = location.state ? location.state.data : null;
 
@@ -25,12 +23,12 @@ export function FacturasEmitidasView({ addProject }) {
   );
 
   function showTable() {
-    return !editMode && project.facturaEmitida !== null;
+    return project.facturaEmitida !== null;
   }
 
   return showTable() ? (
     <FacturasEmitidasTable project={project} />
   ) : (
-    <FacturaEmitidaForm addProject={addProject} project={project} value="2" />
+    <FacturaEmitidaForm addProject={addProject} project={project} />
   );
 }
