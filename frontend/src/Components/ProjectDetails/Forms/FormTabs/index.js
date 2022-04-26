@@ -9,8 +9,22 @@ import { FacturasRecibidasView } from "../../Views/FacturasRecibidasView";
 import { FacturasEmitidasView } from "../../Views/FacturasEmitidasView";
 import { HorasTrabajadorasView } from "../../Views/HorasTrabajadorasView";
 import styles from "./styles.module.scss";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  customTabs: {
+    "& .Mui-selected": {
+      color: "#AB005A",
+    },
+    "& .MuiTabs-indicator": {
+      background: "#AB005A",
+    },
+  },
+});
 
 export function FormTabs({ addProject, deleteProject }) {
+  const classes = useStyles();
+
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
@@ -21,13 +35,17 @@ export function FormTabs({ addProject, deleteProject }) {
     <Box sx={{ width: "100%", typography: "body1" }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
+          <TabList
+            onChange={handleChange}
+            aria-label="lab API tabs example"
+            classes={{ root: classes.customTabs }}
+          >
             <Tab
-              className={styles.tab}
               classes={{ label: 'id="mui-tab-list"' }}
               label="General"
               value="1"
             />
+
             <Tab className={styles.tab} label="Facturas emitidas" value="2" />
             <Tab className={styles.tab} label="Facturas recibidas" value="3" />
             <Tab className={styles.tab} label="Horas" value="4" />
