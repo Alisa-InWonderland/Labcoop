@@ -107,6 +107,7 @@ export const FacturaEmitidaForm = ({ addProject, deleteProject }) => {
                     value={datos.facturaEmitida.total}
                     name="facturaEmitida.total"
                     onChange={handleInputChange}
+                    disabled
                   />
                 </div>
 
