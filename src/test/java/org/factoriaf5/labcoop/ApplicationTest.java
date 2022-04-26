@@ -44,7 +44,7 @@ public class ApplicationTest {
                 .andExpect(jsonPath("$[0].code", equalTo("21F010")));
     }
 
-   @Disabled
+
     @Test
     void findProjectsById() throws Exception {
         mockMvc.perform(get("/projects/3"))

@@ -1,31 +1,27 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import "./style.css";
+import styles from "../../Projects/ProjectListItem/styles.module.scss";
+import { Link } from "react-router-dom";
+import classnames from "classnames";
 
+export function HoursListItem({ project }) {
+  const { code, name, client, horasTrabajadoras } = project;
 
-
-
-export function HoursListItem({project}) {
-
-    const { code, name, client, horasTrabajadoras } = project;
-
-    return (
-        horasTrabajadoras.map( horasTrabajador =>
-        <tr className='horas-trabajadoras-table-row'>
-            <td className="horas-trabajadoras-td">{code}</td>
-            <td className="horas-trabajadoras-td">{name}</td>
-            <td className="horas-trabajadoras-td">{client}</td>
-            <td className="horas-trabajadoras-td">{horasTrabajador.trabajador}</td>
-            <td className="horas-trabajadoras-td">{horasTrabajador.socias}</td>
-            <td className="horas-trabajadoras-td">{horasTrabajador.numHorasAsignadas}</td>
-            <td className="horas-trabajadoras-td">{horasTrabajador.numHorasEjecutadas}</td>
-            <td className="horas-trabajadoras-td">{horasTrabajador.numHorasPendientes}</td>
-            <td className="horas-trabajadoras-td">{horasTrabajador.precioHora}</td>
-            <td className="horas-trabajadoras-td">{horasTrabajador.donePrice}</td>
-        </tr>
-
-        ));
-
-
+  return horasTrabajadoras.map((horasTrabajador) => (
+    <tr className={styles.tableRow}>
+      <td className={styles.tableCell}>{code}</td>
+      <td className={styles.tableCell}>{name}</td>
+      <td className={styles.tableCell}>{client}</td>
+      <td className={classnames(styles.tableCell, styles.cellLink)}>
+        <Link to={`/horas/${horasTrabajador.id}`} state={{ data: project }}>
+          {horasTrabajador.trabajador}
+        </Link>
+      </td>
+      <td className={styles.tableCell}>{horasTrabajador.socias}</td>
+      <td className={styles.tableCell}>{horasTrabajador.numHorasAsignadas}</td>
+      <td className={styles.tableCell}>{horasTrabajador.numHorasEjecutadas}</td>
+      <td className={styles.tableCell}>{horasTrabajador.numHorasPendientes}</td>
+      <td className={styles.tableCell}>{horasTrabajador.precioHora}</td>
+      <td className={styles.tableCell}>{horasTrabajador.donePrice}</td>
+    </tr>
+  ));
 }
-

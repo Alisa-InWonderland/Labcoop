@@ -1,33 +1,28 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../FacturasEmitidasTable/styles.module.scss";
 import classnames from "classnames";
 
-export function FacturasRecibidasTable({ project }) {
+export function HorasTrabajadasTable({ project }) {
   const tableTitles = [
     "Código Proyecto",
     "Nombre Proyecto",
-    "Tipo gasto",
-    "Nº Factura",
-    "Fecha",
-    "Proveedor",
-    "Importe",
-    "IVA",
-    "IRPF",
+    "Cliente",
+    "Trabajador",
+    "Socia",
+    "Horas asignadas",
+    "Horas ejecutadas",
+    "Horas pendientes",
+    "Precio/Hora",
     "Total",
-    "Pagado",
   ];
 
   return (
     <>
       <div className={styles.btnWrapper}>
         <button className={styles.btn}>
-          <Link
-            className="btn-link-facturaE"
-            to={`/facturas-recibidas/new`}
-            state={{ data: project }}
-          >
-            Nueva factura
+          <Link to={`/horas/new`} state={{ data: project }}>
+            Introducir horas
           </Link>
         </button>
       </div>
@@ -44,27 +39,34 @@ export function FacturasRecibidasTable({ project }) {
         </thead>
 
         <tbody>
-          {project.facturasRecibidas.map((factura) => (
+          {project.horasTrabajadoras.map((horasTrabajadoras) => (
             <tr className={styles.tableRow}>
               <td className={styles.tableCell}>{project.code}</td>
               <td className={styles.tableCell}>{project.name}</td>
-              <td className={styles.tableCell}>{factura.expenseType} </td>
+              <td className={styles.tableCell}>{project.client}</td>
               <td className={classnames(styles.tableCell, styles.cellLink)}>
                 <Link
-                  to={`/facturas-recibidas/${factura.id}`}
+                  to={`/horas/${horasTrabajadoras.id}`}
                   state={{ data: project }}
                 >
-                  {factura.numInvoices}
+                  {horasTrabajadoras.trabajador}
                 </Link>
               </td>
-              <td className={styles.tableCell}>{factura.date}</td>
-              <td className={styles.tableCell}>{factura.supplier}</td>
-              <td className={styles.tableCell}>{factura.cost}</td>
-              <td className={styles.tableCell}>{factura.iva}</td>
-              <td className={styles.tableCell}>{factura.irpf}</td>
-              <td className={styles.tableCell}>{factura.total}</td>
+              <td className={styles.tableCell}>{horasTrabajadoras.socias}</td>
               <td className={styles.tableCell}>
-                {factura.paidOut ? "Sí" : "No"}
+                {horasTrabajadoras.numHorasAsignadas}
+              </td>
+              <td className={styles.tableCell}>
+                {horasTrabajadoras.numHorasEjecutadas}
+              </td>
+              <td className={styles.tableCell}>
+                {horasTrabajadoras.numHorasPendientes}
+              </td>
+              <td className={styles.tableCell}>
+                {horasTrabajadoras.precioHora}
+              </td>
+              <td className={styles.tableCell}>
+                {horasTrabajadoras.donePrice}
               </td>
             </tr>
           ))}
