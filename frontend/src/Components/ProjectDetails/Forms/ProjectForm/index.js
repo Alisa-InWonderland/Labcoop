@@ -305,6 +305,7 @@ export const ProjectForm = ({ addProject, deleteProject }) => {
                         value={datos.margin}
                         name="margin"
                         onChange={handleInputChange}
+                        disabled
                       />
                     </div>
                   </div>
@@ -331,6 +332,7 @@ export const ProjectForm = ({ addProject, deleteProject }) => {
                         value={datos.executedCoCost}
                         name="executedCoCost"
                         onChange={handleInputChange}
+                        disabled
                       />
                     </div>
 
@@ -341,6 +343,7 @@ export const ProjectForm = ({ addProject, deleteProject }) => {
                         onChange={handleInputChange}
                         name="executedExtExpenses"
                         value={datos.executedExtExpenses}
+                        disabled
                       />
                     </div>
 
@@ -351,6 +354,7 @@ export const ProjectForm = ({ addProject, deleteProject }) => {
                         onChange={handleInputChange}
                         name="executedWorkersExpenses"
                         value={datos.executedWorkersExpenses}
+                        disabled
                       />
                     </div>
 
@@ -371,6 +375,7 @@ export const ProjectForm = ({ addProject, deleteProject }) => {
                         value={datos.executedOtherExpenses}
                         name="executedOtherExpenses"
                         onChange={handleInputChange}
+                        disabled
                       />
                     </div>
 
@@ -381,6 +386,7 @@ export const ProjectForm = ({ addProject, deleteProject }) => {
                         value={datos.executedMargin}
                         name="executedMargin"
                         onChange={handleInputChange}
+                        disabled
                       />
                     </div>
                   </div>

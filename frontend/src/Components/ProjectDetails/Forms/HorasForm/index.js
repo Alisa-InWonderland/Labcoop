@@ -134,6 +134,7 @@ export const HorasForm = ({ addProject, deleteProject }) => {
                     value={datos.horasTrabajadoras.numHorasPendientes}
                     name="horasTrabajadoras.numHorasPendientes"
                     onChange={handleInputChange}
+                    disabled
                   />
                 </div>
 
@@ -154,6 +155,7 @@ export const HorasForm = ({ addProject, deleteProject }) => {
                     value={datos.horasTrabajadoras.donePrice}
                     name="horasTrabajadoras.donePrice"
                     onChange={handleInputChange}
+                    disabled
                   />
                 </div>
               </div>

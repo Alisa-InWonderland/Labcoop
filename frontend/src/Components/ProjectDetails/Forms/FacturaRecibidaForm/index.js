@@ -120,7 +120,7 @@ export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
                   />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="">Total</label>
+                  <label htmlFor="">Importe</label>
                   <input
                     type="text"
                     value={datos.facturasRecibidas.cost}
@@ -153,6 +153,7 @@ export const FacturaRecibidaForm = ({ addProject, deleteProject }) => {
                     value={datos.facturasRecibidas.total}
                     name="facturasRecibidas.total"
                     onChange={handleInputChange}
+                    disabled
                   />
                 </div>
 
